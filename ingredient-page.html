@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Ingrédient - Reggenerate</title>
+    <link rel="stylesheet" href="styles.css?v=2">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header style="margin: 0; padding: 0;">
+        <nav style="position: fixed; top: 0; width: 100%; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(20px); z-index: 1000; padding: 10px 0; border-bottom: 1px solid #e5e5e5; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+            <div style="display: flex; justify-content: space-between; align-items: center; max-width: 1400px; margin: 0 auto; padding: 0 24px;">
+                <div style="display: flex; align-items: center;">
+                    <h2 style="color: #1a1a1a; font-weight: 600; font-size: 1.25rem; letter-spacing: -0.02em; margin: 0;">Reggenerate</h2>
+                </div>
+                <ul style="display: flex; list-style: none; gap: 2rem; margin: 0; padding: 0;">
+                    <li><a href="index.html#produit" style="text-decoration: none; color: #1a1a1a; font-weight: 500; font-size: 0.95rem; transition: color 0.2s ease;">Produit</a></li>
+                    <li><a href="index.html#tendances" style="text-decoration: none; color: #1a1a1a; font-weight: 500; font-size: 0.95rem; transition: color 0.2s ease;">Tendances</a></li>
+                    <li><a href="index.html#temoignages" style="text-decoration: none; color: #1a1a1a; font-weight: 500; font-size: 0.95rem; transition: color 0.2s ease;">Témoignages</a></li>
+                    <li><a href="index.html#technique" style="text-decoration: none; color: #1a1a1a; font-weight: 500; font-size: 0.95rem; transition: color 0.2s ease;">Documentation</a></li>
+                    <li><a href="index.html#about" style="text-decoration: none; color: #1a1a1a; font-weight: 500; font-size: 0.95rem; transition: color 0.2s ease;">À propos</a></li>
+                    <li><a href="index.html#contact" style="text-decoration: none; color: #1a1a1a; font-weight: 500; font-size: 0.95rem; transition: color 0.2s ease;">Contact</a></li>
+                </ul>
+                <div style="display: none;">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section style="background: linear-gradient(135deg, #2eb2a4 0%, #4e53a3 100%); color: white; padding: 3rem 0 2rem; text-align: center; margin-top: 60px;">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge" style="background: rgba(255,255,255,0.2); color: white; padding: 0.5rem 1rem; border-radius: 20px; display: inline-block; margin-bottom: 1rem;">
+                    <span>🥚 Biomolécules d'Œuf</span>
+                </div>
+                <h1 style="font-size: 3rem; font-weight: 700; margin-bottom: 1rem; line-height: 1.2; color: white;">Nos <span class="highlight">Ingrédients Innovants</span></h1>
+                <p class="hero-subtitle" style="font-size: 1.1rem; opacity: 0.9; margin-bottom: 0; color: white;">Découvrez notre gamme complète d'ingrédients naturels, cliniquement prouvés et brevetés, extraits des membranes d'œufs pour révolutionner la nutrition clinique.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Produits avec Onglets -->
+    <section class="section products-section" style="padding: 3rem 0; background: #fafafa;">
+        <div class="container">
+            <div class="section-header" style="text-align: center; margin-bottom: 3rem;">
+                <h2 style="font-size: 2.5rem; font-weight: 700; color: #1a1a1a; margin-bottom: 1rem;">Nos Ingrédients Principaux</h2>
+                <p style="font-size: 1.1rem; color: #666; max-width: 600px; margin: 0 auto;">Une gamme complète d'ingrédients naturels pour répondre à tous vos besoins de formulation</p>
+            </div>
+
+            <!-- Onglets -->
+            <div class="tabs-container" style="max-width: 1200px; margin: 0 auto;">
+                <div class="tabs-header" style="display: flex; border-bottom: 2px solid #e5e5e5; margin-bottom: 2rem;">
+                    <button class="tab-button active" onclick="showTab('allegations')" style="flex: 1; padding: 1rem 2rem; background: none; border: none; font-size: 1.1rem; font-weight: 600; color: #666; cursor: pointer; border-bottom: 3px solid transparent; transition: all 0.3s ease;">Allégations</button>
+                    <button class="tab-button" onclick="showTab('technique')" style="flex: 1; padding: 1rem 2rem; background: none; border: none; font-size: 1.1rem; font-weight: 600; color: #666; cursor: pointer; border-bottom: 3px solid transparent; transition: all 0.3s ease;">Technique</button>
+                    <button class="tab-button" onclick="showTab('sourcing')" style="flex: 1; padding: 1rem 2rem; background: none; border: none; font-size: 1.1rem; font-weight: 600; color: #666; cursor: pointer; border-bottom: 3px solid transparent; transition: all 0.3s ease;">Sourcing</button>
+                    <button class="tab-button" onclick="showTab('reglementaire')" style="flex: 1; padding: 1rem 2rem; background: none; border: none; font-size: 1.1rem; font-weight: 600; color: #666; cursor: pointer; border-bottom: 3px solid transparent; transition: all 0.3s ease;">Réglementaire</button>
+                </div>
+
+                <!-- Onglet Allégations -->
+                <div id="allegations" class="tab-content active" style="display: block;">
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem;">
+                        <!-- Colonne gauche : Allégations Santé Validées -->
+                        <div>
+                            <h3 style="font-size: 1.5rem; font-weight: 700; color: #1a1a1a; margin-bottom: 2rem; display: flex; align-items: center; gap: 0.5rem;">
+                                <span style="font-size: 1.2rem;">✅</span>
+                                Allégations Santé Validées
+                            </h3>
+                            <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+                                <div style="background: white; border-radius: 12px; padding: 1.5rem; border: 1px solid #e5e5e5;">
+                                    <div style="display: flex; align-items: flex-start; gap: 1rem;">
+                                        <span style="color: #2eb2a4; font-size: 1.2rem;">✅</span>
+                                        <div>
+                                            <h4 style="font-weight: 600; color: #1a1a1a; margin-bottom: 0.5rem;">Améliore l'élasticité de la peau</h4>
+                                            <p style="color: #666; font-size: 0.9rem;">Étude clinique sur 120 participants - 67% d'amélioration</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div style="background: white; border-radius: 12px; padding: 1.5rem; border: 1px solid #e5e5e5;">
+                                    <div style="display: flex; align-items: flex-start; gap: 1rem;">
+                                        <span style="color: #2eb2a4; font-size: 1.2rem;">✅</span>
+                                        <div>
+                                            <h4 style="font-weight: 600; color: #1a1a1a; margin-bottom: 0.5rem;">Soutient la santé articulaire</h4>
+                                            <p style="color: #666; font-size: 0.9rem;">Réduction de 40% des douleurs articulaires</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div style="background: white; border-radius: 12px; padding: 1.5rem; border: 1px solid #e5e5e5;">
+                                    <div style="display: flex; align-items: flex-start; gap: 1rem;">
+                                        <span style="color: #2eb2a4; font-size: 1.2rem;">✅</span>
+                                        <div>
+                                            <h4 style="font-weight: 600; color: #1a1a1a; margin-bottom: 0.5rem;">Favorise la régénération tissulaire</h4>
+                                            <p style="color: #666; font-size: 0.9rem;">Biomarqueurs validés - 3x plus assimilable</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div style="background: white; border-radius: 12px; padding: 1.5rem; border: 1px solid #e5e5e5;">
+                                    <div style="display: flex; align-items: flex-start; gap: 1rem;">
+                                        <span style="color: #2eb2a4; font-size: 1.2rem;">✅</span>
+                                        <div>
+                                            <h4 style="font-weight: 600; color: #1a1a1a; margin-bottom: 0.5rem;">Antioxydant naturel</h4>
+                                            <p style="color: #666; font-size: 0.9rem;">Test ORAC élevé - Protection cellulaire</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Colonne droite : Études Cliniques -->
+                        <div>
+                            <h3 style="font-size: 1.5rem; font-weight: 700; color: #1a1a1a; margin-bottom: 2rem;">Études Cliniques</h3>
+                            <div style="display: flex; flex-direction: column; gap: 2rem;">
+                                <div style="background: linear-gradient(135deg, #2eb2a4 0%, #4e53a3 100%); color: white; border-radius: 16px; padding: 2rem; text-align: center;">
+                                    <div style="font-size: 3rem; font-weight: 700; margin-bottom: 0.5rem;">3x</div>
+                                    <div style="font-size: 1.1rem; font-weight: 600;">Plus assimilable</div>
+                                    <div style="font-size: 0.9rem; opacity: 0.9; margin-top: 0.5rem;">vs collagène marin standard</div>
+                                </div>
+                                
+                                <div style="background: linear-gradient(135deg, #4e53a3 0%, #2eb2a4 100%); color: white; border-radius: 16px; padding: 2rem; text-align: center;">
+                                    <div style="font-size: 3rem; font-weight: 700; margin-bottom: 0.5rem;">67%</div>
+                                    <div style="font-size: 1.1rem; font-weight: 600;">Amélioration élasticité</div>
+                                    <div style="font-size: 0.9rem; opacity: 0.9; margin-top: 0.5rem;">après 8 semaines</div>
+                                </div>
+                                
+                                <div style="background: white; border-radius: 12px; padding: 1.5rem; border: 1px solid #e5e5e5; text-align: center;">
+                                    <button style="background: #2eb2a4; color: white; border: none; padding: 1rem 2rem; border-radius: 8px; font-weight: 600; cursor: pointer; display: inline-flex; align-items: center; gap: 0.5rem;">
+                                        <span>📄</span>
+                                        Consulter les études
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+                <!-- Onglet Technique -->
+                <div id="technique" class="tab-content" style="display: none;">
+                    <div style="display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 3rem;">
+                        <!-- Colonne principale : Spécifications Techniques -->
+                        <div>
+                            <h3 style="font-size: 1.5rem; font-weight: 700; color: #1a1a1a; margin-bottom: 2rem;">Spécifications Techniques</h3>
+                            <div style="background: white; border-radius: 12px; padding: 2rem; border: 1px solid #e5e5e5;">
+                                <table style="width: 100%; border-collapse: collapse;">
+                                    <thead>
+                                        <tr style="border-bottom: 2px solid #e5e5e5;">
+                                            <th style="text-align: left; padding: 1rem 0; font-weight: 600; color: #1a1a1a;">Paramètre</th>
+                                            <th style="text-align: left; padding: 1rem 0; font-weight: 600; color: #1a1a1a;">Valeur</th>
+                                            <th style="text-align: left; padding: 1rem 0; font-weight: 600; color: #1a1a1a;">Notes</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr style="border-bottom: 1px solid #e5e5e5;">
+                                            <td style="padding: 1rem 0; color: #1a1a1a;">Dosage recommandé</td>
+                                            <td style="padding: 1rem 0; color: #2eb2a4; font-weight: 600;">250-500mg/jour</td>
+                                            <td style="padding: 1rem 0; color: #666;">Optimisé pour biodisponibilité</td>
+                                        </tr>
+                                        <tr style="border-bottom: 1px solid #e5e5e5;">
+                                            <td style="padding: 1rem 0; color: #1a1a1a;">Forme</td>
+                                            <td style="padding: 1rem 0; color: #2eb2a4; font-weight: 600;">Poudre fine</td>
+                                            <td style="padding: 1rem 0; color: #666;">100% soluble à froid</td>
+                                        </tr>
+                                        <tr style="border-bottom: 1px solid #e5e5e5;">
+                                            <td style="padding: 1rem 0; color: #1a1a1a;">Couleur</td>
+                                            <td style="padding: 1rem 0; color: #2eb2a4; font-weight: 600;">Blanc à crème</td>
+                                            <td style="padding: 1rem 0; color: #666;">Neutre, sans odeur</td>
+                                        </tr>
+                                        <tr style="border-bottom: 1px solid #e5e5e5;">
+                                            <td style="padding: 1rem 0; color: #1a1a1a;">Compatibilité</td>
+                                            <td style="padding: 1rem 0; color: #2eb2a4; font-weight: 600;">pH 3-9</td>
+                                            <td style="padding: 1rem 0; color: #666;">Stable thermiquement</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="padding: 1rem 0; color: #1a1a1a;">Conservation</td>
+                                            <td style="padding: 1rem 0; color: #2eb2a4; font-weight: 600;">24 mois</td>
+                                            <td style="padding: 1rem 0; color: #666;">Température ambiante</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <!-- Colonne Applications Recommandées -->
+                        <div>
+                            <h3 style="font-size: 1.5rem; font-weight: 700; color: #1a1a1a; margin-bottom: 2rem;">Applications Recommandées</h3>
+                            <div style="display: flex; flex-direction: column; gap: 1rem;">
+                                <div style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: white; border-radius: 8px; border: 1px solid #e5e5e5;">
+                                    <span style="color: #2eb2a4; font-size: 1.1rem;">✅</span>
+                                    <span style="color: #1a1a1a; font-weight: 500;">Compléments alimentaires beauté</span>
+                                </div>
+                                <div style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: white; border-radius: 8px; border: 1px solid #e5e5e5;">
+                                    <span style="color: #2eb2a4; font-size: 1.1rem;">✅</span>
+                                    <span style="color: #1a1a1a; font-weight: 500;">Nutraceutiques anti-âge</span>
+                                </div>
+                                <div style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: white; border-radius: 8px; border: 1px solid #e5e5e5;">
+                                    <span style="color: #2eb2a4; font-size: 1.1rem;">✅</span>
+                                    <span style="color: #1a1a1a; font-weight: 500;">Formulations articulaires</span>
+                                </div>
+                                <div style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: white; border-radius: 8px; border: 1px solid #e5e5e5;">
+                                    <span style="color: #2eb2a4; font-size: 1.1rem;">✅</span>
+                                    <span style="color: #1a1a1a; font-weight: 500;">Boissons fonctionnelles</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Colonne Avantages Formulateurs -->
+                        <div>
+                            <h3 style="font-size: 1.5rem; font-weight: 700; color: #1a1a1a; margin-bottom: 2rem;">Avantages Formulateurs</h3>
+                            <div style="display: flex; flex-direction: column; gap: 1rem;">
+                                <div style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: white; border-radius: 8px; border: 1px solid #e5e5e5;">
+                                    <span style="color: #2eb2a4; font-size: 1.1rem;">⚡</span>
+                                    <span style="color: #1a1a1a; font-weight: 500;">Stable dans toutes galéniques</span>
+                                </div>
+                                <div style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: white; border-radius: 8px; border: 1px solid #e5e5e5;">
+                                    <span style="color: #2eb2a4; font-size: 1.1rem;">⚡</span>
+                                    <span style="color: #1a1a1a; font-weight: 500;">Neutre en goût et odeur</span>
+                                </div>
+                                <div style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: white; border-radius: 8px; border: 1px solid #e5e5e5;">
+                                    <span style="color: #2eb2a4; font-size: 1.1rem;">⚡</span>
+                                    <span style="color: #1a1a1a; font-weight: 500;">Facile à intégrer</span>
+                                </div>
+                                <div style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: white; border-radius: 8px; border: 1px solid #e5e5e5;">
+                                    <span style="color: #2eb2a4; font-size: 1.1rem;">⚡</span>
+                                    <span style="color: #1a1a1a; font-weight: 500;">Haute biodisponibilité</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Onglet Sourcing -->
+                <div id="sourcing" class="tab-content" style="display: none;">
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem;">
+                        <!-- Colonne gauche : Sourcing Responsable -->
+                        <div>
+                            <h3 style="font-size: 1.5rem; font-weight: 700; color: #1a1a1a; margin-bottom: 2rem; display: flex; align-items: center; gap: 0.5rem;">
+                                <span style="font-size: 1.2rem;">🌿</span>
+                                Sourcing Responsable
+                            </h3>
+                            <div style="display: flex; flex-direction: column; gap: 2rem;">
+                                <div style="background: white; border-radius: 12px; padding: 2rem; border: 1px solid #e5e5e5;">
+                                    <h4 style="font-weight: 600; color: #1a1a1a; margin-bottom: 1rem;">Origine des Membranes</h4>
+                                    <p style="color: #666; line-height: 1.6;">Membranes d'œufs issues d'élevages en plein air, collectées auprès de partenaires certifiés bien-être animal.</p>
+                                </div>
+                                
+                                <div style="background: white; border-radius: 12px; padding: 2rem; border: 1px solid #e5e5e5;">
+                                    <h4 style="font-weight: 600; color: #1a1a1a; margin-bottom: 1rem;">Processus Breveté</h4>
+                                    <p style="color: #666; line-height: 1.6;">Extraction enzymatique douce préservant l'intégrité des peptides bioactifs. Zéro solvant chimique.</p>
+                                </div>
+                                
+                                <div style="background: white; border-radius: 12px; padding: 2rem; border: 1px solid #e5e5e5;">
+                                    <h4 style="font-weight: 600; color: #1a1a1a; margin-bottom: 1rem;">Traçabilité Complète</h4>
+                                    <p style="color: #666; line-height: 1.6;">Suivi de lot de l'élevage au produit fini. Certificats d'analyse fournis pour chaque batch.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Colonne droite : Impact Environnemental -->
+                        <div>
+                            <h3 style="font-size: 1.5rem; font-weight: 700; color: #1a1a1a; margin-bottom: 2rem;">Impact Environnemental</h3>
+                            <div style="display: flex; flex-direction: column; gap: 2rem;">
+                                <div style="background: linear-gradient(135deg, #90EE90 0%, #98FB98 100%); color: #1a1a1a; border-radius: 16px; padding: 2rem; text-align: center;">
+                                    <div style="font-size: 3rem; font-weight: 700; margin-bottom: 0.5rem;">90%</div>
+                                    <div style="font-size: 1.1rem; font-weight: 600;">Réduction carbone</div>
+                                    <div style="font-size: 0.9rem; opacity: 0.8; margin-top: 0.5rem;">vs collagène marin</div>
+                                </div>
+                                
+                                <div style="background: linear-gradient(135deg, #98FB98 0%, #90EE90 100%); color: #1a1a1a; border-radius: 16px; padding: 2rem; text-align: center;">
+                                    <div style="font-size: 3rem; font-weight: 700; margin-bottom: 0.5rem;">100%</div>
+                                    <div style="font-size: 1.1rem; font-weight: 600;">Valorisation co-produits</div>
+                                    <div style="font-size: 0.9rem; opacity: 0.8; margin-top: 0.5rem;">économie circulaire</div>
+                                </div>
+                                
+                                <div style="background: white; border-radius: 12px; padding: 1.5rem; border: 1px solid #e5e5e5; text-align: center;">
+                                    <button style="background: #2eb2a4; color: white; border: none; padding: 1rem 2rem; border-radius: 8px; font-weight: 600; cursor: pointer;">
+                                        Économie Circulaire
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Onglet Réglementaire -->
+                <div id="reglementaire" class="tab-content" style="display: none;">
+                    <div style="display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 3rem;">
+                        <!-- Colonne principale : Certifications & Conformités -->
+                        <div>
+                            <h3 style="font-size: 1.5rem; font-weight: 700; color: #1a1a1a; margin-bottom: 2rem;">Certifications & Conformités</h3>
+                            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem;">
+                                <div style="background: white; border-radius: 12px; padding: 1.5rem; border: 1px solid #e5e5e5; text-align: center;">
+                                    <div style="font-size: 2rem; margin-bottom: 0.5rem;">☪️</div>
+                                    <h4 style="font-weight: 600; color: #1a1a1a; margin-bottom: 0.5rem;">Halal</h4>
+                                    <span style="color: #2eb2a4; font-weight: 600; font-size: 0.9rem;">Certifié</span>
+                                </div>
+                                
+                                <div style="background: white; border-radius: 12px; padding: 1.5rem; border: 1px solid #e5e5e5; text-align: center;">
+                                    <div style="font-size: 2rem; margin-bottom: 0.5rem;">🛡️</div>
+                                    <h4 style="font-weight: 600; color: #1a1a1a; margin-bottom: 0.5rem;">Non-OGM</h4>
+                                    <span style="color: #2eb2a4; font-weight: 600; font-size: 0.9rem;">Garanti</span>
+                                </div>
+                                
+                                <div style="background: white; border-radius: 12px; padding: 1.5rem; border: 1px solid #e5e5e5; text-align: center;">
+                                    <div style="font-size: 2rem; margin-bottom: 0.5rem;">✡️</div>
+                                    <h4 style="font-weight: 600; color: #1a1a1a; margin-bottom: 0.5rem;">Kosher</h4>
+                                    <span style="color: #2eb2a4; font-weight: 600; font-size: 0.9rem;">Certifié</span>
+                                </div>
+                                
+                                <div style="background: white; border-radius: 12px; padding: 1.5rem; border: 1px solid #e5e5e5; text-align: center;">
+                                    <div style="font-size: 2rem; margin-bottom: 0.5rem;">✅</div>
+                                    <h4 style="font-weight: 600; color: #1a1a1a; margin-bottom: 0.5rem;">HACCP</h4>
+                                    <span style="color: #2eb2a4; font-weight: 600; font-size: 0.9rem;">Conforme</span>
+                                </div>
+                                
+                                <div style="background: white; border-radius: 12px; padding: 1.5rem; border: 1px solid #e5e5e5; text-align: center;">
+                                    <div style="font-size: 2rem; margin-bottom: 0.5rem;">🌿</div>
+                                    <h4 style="font-weight: 600; color: #1a1a1a; margin-bottom: 0.5rem;">Végétarien</h4>
+                                    <span style="color: #2eb2a4; font-weight: 600; font-size: 0.9rem;">Validé</span>
+                                </div>
+                                
+                                <div style="background: white; border-radius: 12px; padding: 1.5rem; border: 1px solid #e5e5e5; text-align: center;">
+                                    <div style="font-size: 2rem; margin-bottom: 0.5rem;">📄</div>
+                                    <h4 style="font-weight: 600; color: #1a1a1a; margin-bottom: 0.5rem;">ISO 22000</h4>
+                                    <span style="color: #2eb2a4; font-weight: 600; font-size: 0.9rem;">Certifié</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Colonne Statut Réglementaire -->
+                        <div>
+                            <h3 style="font-size: 1.5rem; font-weight: 700; color: #1a1a1a; margin-bottom: 2rem;">Statut Réglementaire</h3>
+                            <div style="display: flex; flex-direction: column; gap: 1rem;">
+                                <div style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: white; border-radius: 8px; border: 1px solid #e5e5e5;">
+                                    <span style="color: #2eb2a4; font-size: 1.1rem;">✅</span>
+                                    <span style="color: #1a1a1a; font-weight: 500;">Novel Food approuvé EU</span>
+                                </div>
+                                <div style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: white; border-radius: 8px; border: 1px solid #e5e5e5;">
+                                    <span style="color: #2eb2a4; font-size: 1.1rem;">✅</span>
+                                    <span style="color: #1a1a1a; font-weight: 500;">GRAS status USA</span>
+                                </div>
+                                <div style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: white; border-radius: 8px; border: 1px solid #e5e5e5;">
+                                    <span style="color: #2eb2a4; font-size: 1.1rem;">✅</span>
+                                    <span style="color: #1a1a1a; font-weight: 500;">Santé Canada approuvé</span>
+                                </div>
+                                <div style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: white; border-radius: 8px; border: 1px solid #e5e5e5;">
+                                    <span style="color: #2eb2a4; font-size: 1.1rem;">✅</span>
+                                    <span style="color: #1a1a1a; font-weight: 500;">Conforme ANVISA Brésil</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Colonne Documentation -->
+                        <div>
+                            <h3 style="font-size: 1.5rem; font-weight: 700; color: #1a1a1a; margin-bottom: 2rem;">Documentation</h3>
+                            <div style="display: flex; flex-direction: column; gap: 1rem;">
+                                <div style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: white; border-radius: 8px; border: 1px solid #e5e5e5;">
+                                    <span style="color: #2eb2a4; font-size: 1.1rem;">📄</span>
+                                    <span style="color: #1a1a1a; font-weight: 500;">Dossier réglementaire complet</span>
+                                </div>
+                                <div style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: white; border-radius: 8px; border: 1px solid #e5e5e5;">
+                                    <span style="color: #2eb2a4; font-size: 1.1rem;">⬇️</span>
+                                    <span style="color: #1a1a1a; font-weight: 500;">Certificats d'analyse</span>
+                                </div>
+                                <div style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: white; border-radius: 8px; border: 1px solid #e5e5e5;">
+                                    <span style="color: #2eb2a4; font-size: 1.1rem;">🛡️</span>
+                                    <span style="color: #1a1a1a; font-weight: 500;">Études de sécurité</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Contact -->
+    <section id="contact" class="section contact-section" style="padding: 4rem 0; background: #fafafa;">
+        <div class="container">
+            <div class="section-header" style="text-align: center; margin-bottom: 3rem;">
+                <h2 style="font-size: 2.5rem; font-weight: 700; color: #1a1a1a; margin-bottom: 1rem;">Demandez un Échantillon</h2>
+                <p style="font-size: 1.1rem; color: #666; max-width: 600px; margin: 0 auto;">Contactez notre équipe technique pour recevoir un échantillon et commencer à formuler avec nos ingrédients</p>
+            </div>
+
+            <div class="contact-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; max-width: 1200px; margin: 0 auto;">
+                <div class="contact-form" style="background: white; border-radius: 16px; padding: 2rem; border: 1px solid #e5e5e5;">
+                    <form>
+                        <div class="form-group" style="margin-bottom: 1.5rem;">
+                            <label for="name" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: #1a1a1a;">Nom complet *</label>
+                            <input type="text" id="name" name="name" required style="width: 100%; padding: 0.75rem; border: 1px solid #e5e5e5; border-radius: 8px; font-size: 1rem;">
+                        </div>
+                        <div class="form-group" style="margin-bottom: 1.5rem;">
+                            <label for="company" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: #1a1a1a;">Entreprise *</label>
+                            <input type="text" id="company" name="company" required style="width: 100%; padding: 0.75rem; border: 1px solid #e5e5e5; border-radius: 8px; font-size: 1rem;">
+                        </div>
+                        <div class="form-group" style="margin-bottom: 1.5rem;">
+                            <label for="email" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: #1a1a1a;">Email *</label>
+                            <input type="email" id="email" name="email" required style="width: 100%; padding: 0.75rem; border: 1px solid #e5e5e5; border-radius: 8px; font-size: 1rem;">
+                        </div>
+                        <div class="form-group" style="margin-bottom: 1.5rem;">
+                            <label for="phone" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: #1a1a1a;">Téléphone</label>
+                            <input type="tel" id="phone" name="phone" style="width: 100%; padding: 0.75rem; border: 1px solid #e5e5e5; border-radius: 8px; font-size: 1rem;">
+                        </div>
+                        <div class="form-group" style="margin-bottom: 1.5rem;">
+                            <label for="sector" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: #1a1a1a;">Secteur d'activité *</label>
+                            <select id="sector" name="sector" required style="width: 100%; padding: 0.75rem; border: 1px solid #e5e5e5; border-radius: 8px; font-size: 1rem;">
+                                <option value="">Sélectionnez votre secteur</option>
+                                <option value="nutricosmetique">Nutricosmétique</option>
+                                <option value="nutrition-sportive">Nutrition sportive</option>
+                                <option value="complements-alimentaires">Compléments alimentaires</option>
+                                <option value="nutrition-clinique">Nutrition clinique</option>
+                                <option value="autre">Autre</option>
+                            </select>
+                        </div>
+                        <div class="form-group" style="margin-bottom: 1.5rem;">
+                            <label for="product" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: #1a1a1a;">Produit d'intérêt</label>
+                            <select id="product" name="product" style="width: 100%; padding: 0.75rem; border: 1px solid #e5e5e5; border-radius: 8px; font-size: 1rem;">
+                                <option value="">Sélectionnez un produit</option>
+                                <option value="mobility">Reggenerate™ Mobility</option>
+                                <option value="beauty">Reggenerate™ Beauty</option>
+                                <option value="performance">Reggenerate™ Performance</option>
+                                <option value="tous">Tous les produits</option>
+                            </select>
+                        </div>
+                        <div class="form-group" style="margin-bottom: 2rem;">
+                            <label for="message" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: #1a1a1a;">Message</label>
+                            <textarea id="message" name="message" rows="4" placeholder="Décrivez votre projet et vos besoins..." style="width: 100%; padding: 0.75rem; border: 1px solid #e5e5e5; border-radius: 8px; font-size: 1rem; resize: vertical;"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="background: #2eb2a4; color: white; border: none; padding: 1rem 2rem; border-radius: 8px; font-weight: 600; cursor: pointer; width: 100%; font-size: 1rem;">Demander un échantillon</button>
+                    </form>
+                </div>
+
+                <div class="contact-info" style="background: white; border-radius: 16px; padding: 2rem; border: 1px solid #e5e5e5;">
+                    <h3 style="font-size: 1.5rem; font-weight: 700; color: #1a1a1a; margin-bottom: 1rem;">Notre Équipe Technique</h3>
+                    <p style="color: #666; margin-bottom: 2rem; line-height: 1.6;">Notre équipe d'experts est là pour vous accompagner à chaque étape de votre projet.</p>
+                    
+                    <div class="contact-details" style="display: flex; flex-direction: column; gap: 1.5rem; margin-bottom: 2rem;">
+                        <div class="contact-item" style="display: flex; align-items: center; gap: 1rem;">
+                            <span style="font-size: 1.5rem;">📧</span>
+                            <div>
+                                <h4 style="font-weight: 600; color: #1a1a1a; margin-bottom: 0.25rem;">Email</h4>
+                                <p style="color: #666;">contact@reggenerate.com</p>
+                            </div>
+                        </div>
+                        <div class="contact-item" style="display: flex; align-items: center; gap: 1rem;">
+                            <span style="font-size: 1.5rem;">📞</span>
+                            <div>
+                                <h4 style="font-weight: 600; color: #1a1a1a; margin-bottom: 0.25rem;">Téléphone</h4>
+                                <p style="color: #666;">+33 1 23 45 67 89</p>
+                            </div>
+                        </div>
+                        <div class="contact-item" style="display: flex; align-items: center; gap: 1rem;">
+                            <span style="font-size: 1.5rem;">🌍</span>
+                            <div>
+                                <h4 style="font-weight: 600; color: #1a1a1a; margin-bottom: 0.25rem;">Adresse</h4>
+                                <p style="color: #666;">123 Innovation Street<br>75001 Paris, France</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="response-time" style="background: #f8f9fa; border-radius: 8px; padding: 1rem;">
+                        <h4 style="font-weight: 600; color: #1a1a1a; margin-bottom: 0.5rem;">Délai de réponse</h4>
+                        <p style="color: #666; margin: 0;">Notre équipe vous répond sous 24h ouvrées</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>Reggenerate</h3>
+                    <p>Innovation en nutrition clinique avec des biomolécules d'œufs brevetées et cliniquement prouvées.</p>
+                    <div class="social-links">
+                        <a href="#"><span class="emoji-icon">💼</span></a>
+                        <a href="#"><span class="emoji-icon">🐦</span></a>
+                        <a href="#"><span class="emoji-icon">📘</span></a>
+                        <a href="#"><span class="emoji-icon">📸</span></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Produits</h4>
+                    <ul>
+                        <li><a href="#mobility">Reggenerate™ Mobility</a></li>
+                        <li><a href="#beauty">Reggenerate™ Beauty</a></li>
+                        <li><a href="#performance">Reggenerate™ Performance</a></li>
+                        <li><a href="#specs">Spécifications techniques</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#samples">Échantillons</a></li>
+                        <li><a href="#documentation">Documentation</a></li>
+                        <li><a href="#assistance">Assistance technique</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Légal</h4>
+                    <ul>
+                        <li><a href="#mentions">Mentions légales</a></li>
+                        <li><a href="#confidentialite">Politique de confidentialité</a></li>
+                        <li><a href="#conditions">Conditions d'utilisation</a></li>
+                        <li><a href="#cookies">Cookies</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Reggenerate. Tous droits réservés.</p>
+                <p>Innovation brevetée - Qualité certifiée</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    
+    <!-- Script pour les onglets -->
+    <script>
+        function showTab(tabName) {
+            // Masquer tous les contenus d'onglets
+            const tabContents = document.querySelectorAll('.tab-content');
+            tabContents.forEach(content => {
+                content.style.display = 'none';
+            });
+            
+            // Retirer la classe active de tous les boutons
+            const tabButtons = document.querySelectorAll('.tab-button');
+            tabButtons.forEach(button => {
+                button.classList.remove('active');
+                button.style.color = '#666';
+                button.style.borderBottom = '3px solid transparent';
+            });
+            
+            // Afficher l'onglet sélectionné
+            const selectedTab = document.getElementById(tabName);
+            if (selectedTab) {
+                selectedTab.style.display = 'block';
+            }
+            
+            // Activer le bouton correspondant
+            const activeButton = document.querySelector(`[onclick="showTab('${tabName}')"]`);
+            if (activeButton) {
+                activeButton.classList.add('active');
+                activeButton.style.color = '#2eb2a4';
+                activeButton.style.borderBottom = '3px solid #2eb2a4';
+            }
+        }
+        
+        // Initialiser avec l'onglet Allégations actif
+        document.addEventListener('DOMContentLoaded', function() {
+            showTab('allegations');
+        });
+    </script>
+</body>
+</html>
