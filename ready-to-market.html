@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produits Ready-to-Market - Reggenerate™</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav style="position: fixed; top: 0; width: 100%; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(20px); z-index: 1000; padding: 10px 0; border-bottom: 1px solid #e5e5e5; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+            <div class="logo" style="display: flex; align-items: center; gap: 0.5rem;">
+                <div style="width: 32px; height: 32px; background: linear-gradient(135deg, #2eb2a4 0%, #4e53a3 100%); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 1.2rem;">R</div>
+                <span style="font-size: 1.5rem; font-weight: 700; color: #1a1a1a;">Reggenerate™</span>
+            </div>
+            <div class="nav-links" style="display: flex; gap: 2rem; align-items: center;">
+                <a href="index.html" style="text-decoration: none; color: #1a1a1a; font-weight: 500;">Accueil</a>
+                <a href="ingredient-page.html" style="text-decoration: none; color: #1a1a1a; font-weight: 500;">Ingrédient</a>
+                <a href="clients-page.html" style="text-decoration: none; color: #1a1a1a; font-weight: 500;">Nos Clients</a>
+                <a href="ready-to-market.html" style="text-decoration: none; color: #2eb2a4; font-weight: 600;">Ready-to-Market</a>
+                <a href="#contact" style="text-decoration: none; color: #1a1a1a; font-weight: 500;">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header style="margin: 0; padding: 0;">
+        <!-- Hero Section -->
+        <section style="background: linear-gradient(135deg, #2eb2a4 0%, #4e53a3 100%); color: white; padding: 3rem 0 2rem; text-align: center; margin-top: 60px;">
+            <div class="container">
+                <div style="background: rgba(255, 255, 255, 0.2); display: inline-block; padding: 0.5rem 1rem; border-radius: 20px; margin-bottom: 1rem;">
+                    <span style="font-size: 0.9rem; font-weight: 500;">🚀 Produits Prêts à Commercialiser</span>
+                </div>
+                <h1 style="font-size: 3rem; font-weight: 700; margin-bottom: 1rem;">Produits Ready-to-Market</h1>
+                <p style="font-size: 1.2rem; max-width: 600px; margin: 0 auto; opacity: 0.9;">Formulations complètes avec Reggenerate™ intégré, prêtes à être commercialisées immédiatement</p>
+            </div>
+        </section>
+    </header>
+
+    <!-- Section Produits -->
+    <section style="padding: 4rem 0; background: #fafafa;">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 3rem;">
+                <h2 style="font-size: 2.5rem; font-weight: 700; color: #1a1a1a; margin-bottom: 1rem;">Nos Formulations Complètes</h2>
+                <p style="font-size: 1.1rem; color: #666; max-width: 600px; margin: 0 auto;">Des produits finis avec Reggenerate™, testés et validés, prêts à être commercialisés sous votre marque</p>
+            </div>
+
+            <!-- Filtres -->
+            <div style="display: flex; justify-content: center; gap: 1rem; margin-bottom: 3rem; flex-wrap: wrap;">
+                <button class="filter-btn active" onclick="filterProducts('all')" style="padding: 0.75rem 1.5rem; border: 2px solid #2eb2a4; background: #2eb2a4; color: white; border-radius: 25px; font-weight: 600; cursor: pointer; transition: all 0.3s ease;">Tous</button>
+                <button class="filter-btn" onclick="filterProducts('beauty')" style="padding: 0.75rem 1.5rem; border: 2px solid #e5e5e5; background: white; color: #666; border-radius: 25px; font-weight: 600; cursor: pointer; transition: all 0.3s ease;">Beauté</button>
+                <button class="filter-btn" onclick="filterProducts('mobility')" style="padding: 0.75rem 1.5rem; border: 2px solid #e5e5e5; background: white; color: #666; border-radius: 25px; font-weight: 600; cursor: pointer; transition: all 0.3s ease;">Mobilité</button>
+                <button class="filter-btn" onclick="filterProducts('performance')" style="padding: 0.75rem 1.5rem; border: 2px solid #e5e5e5; background: white; color: #666; border-radius: 25px; font-weight: 600; cursor: pointer; transition: all 0.3s ease;">Performance</button>
+            </div>
+
+            <!-- Grille des produits -->
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem; max-width: 1400px; margin: 0 auto;">
+                
+                <!-- Produit 1: Gummies Cheveux -->
+                <div class="product-card" data-category="beauty" style="background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.1); transition: transform 0.3s ease;">
+                    <div style="position: relative; height: 250px; background: linear-gradient(135deg, #FFB6C1 0%, #FFC0CB 100%); display: flex; align-items: center; justify-content: center;">
+                        <div style="font-size: 4rem;">🍬</div>
+                        <div style="position: absolute; top: 1rem; right: 1rem; background: #2eb2a4; color: white; padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.8rem; font-weight: 600;">BEAUTÉ</div>
+                    </div>
+                    <div style="padding: 2rem;">
+                        <h3 style="font-size: 1.4rem; font-weight: 700; color: #1a1a1a; margin-bottom: 0.5rem;">Good Hair Gummies</h3>
+                        <p style="color: #2eb2a4; font-weight: 600; margin-bottom: 1rem;">Gummies Pousse Cheveux</p>
+                        <p style="color: #666; margin-bottom: 1.5rem; line-height: 1.6;">Gummies délicieux pour stimuler la pousse des cheveux avec Reggenerate™ et des vitamines essentielles.</p>
+                        
+                        <div style="margin-bottom: 1.5rem;">
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                                <span style="font-weight: 500; color: #1a1a1a;">Galenique:</span>
+                                <span style="color: #666;">Gummies</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                                <span style="font-weight: 500; color: #1a1a1a;">Dosage:</span>
+                                <span style="color: #666;">2 gummies/jour</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                                <span style="font-weight: 500; color: #1a1a1a;">Durée:</span>
+                                <span style="color: #666;">3 mois</span>
+                            </div>
+                        </div>
+                        
+                        <div style="display: flex; gap: 1rem;">
+                            <button style="flex: 1; background: #2eb2a4; color: white; border: none; padding: 0.75rem; border-radius: 8px; font-weight: 600; cursor: pointer;">Demander un échantillon</button>
+                            <button style="background: white; color: #2eb2a4; border: 2px solid #2eb2a4; padding: 0.75rem; border-radius: 8px; font-weight: 600; cursor: pointer;">📋</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Produit 2: Collagène Articulaire -->
+                <div class="product-card" data-category="mobility" style="background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.1); transition: transform 0.3s ease;">
+                    <div style="position: relative; height: 250px; background: linear-gradient(135deg, #90EE90 0%, #98FB98 100%); display: flex; align-items: center; justify-content: center;">
+                        <div style="font-size: 4rem;">💊</div>
+                        <div style="position: absolute; top: 1rem; right: 1rem; background: #2eb2a4; color: white; padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.8rem; font-weight: 600;">MOBILITÉ</div>
+                    </div>
+                    <div style="padding: 2rem;">
+                        <h3 style="font-size: 1.4rem; font-weight: 700; color: #1a1a1a; margin-bottom: 0.5rem;">Mobility Plus</h3>
+                        <p style="color: #2eb2a4; font-weight: 600; margin-bottom: 1rem;">Collagène Articulaire</p>
+                        <p style="color: #666; margin-bottom: 1.5rem; line-height: 1.6;">Formulation complète pour la mobilité articulaire avec Reggenerate™ et glucosamine.</p>
+                        
+                        <div style="margin-bottom: 1.5rem;">
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                                <span style="font-weight: 500; color: #1a1a1a;">Galenique:</span>
+                                <span style="color: #666;">Gélules</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                                <span style="font-weight: 500; color: #1a1a1a;">Dosage:</span>
+                                <span style="color: #666;">2 gélules/jour</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                                <span style="font-weight: 500; color: #1a1a1a;">Durée:</span>
+                                <span style="color: #666;">6 mois</span>
+                            </div>
+                        </div>
+                        
+                        <div style="display: flex; gap: 1rem;">
+                            <button style="flex: 1; background: #2eb2a4; color: white; border: none; padding: 0.75rem; border-radius: 8px; font-weight: 600; cursor: pointer;">Demander un échantillon</button>
+                            <button style="background: white; color: #2eb2a4; border: 2px solid #2eb2a4; padding: 0.75rem; border-radius: 8px; font-weight: 600; cursor: pointer;">📋</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Produit 3: Barre Chocolat -->
+                <div class="product-card" data-category="beauty" style="background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.1); transition: transform 0.3s ease;">
+                    <div style="position: relative; height: 250px; background: linear-gradient(135deg, #8B4513 0%, #D2691E 100%); display: flex; align-items: center; justify-content: center;">
+                        <div style="font-size: 4rem;">🍫</div>
+                        <div style="position: absolute; top: 1rem; right: 1rem; background: #2eb2a4; color: white; padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.8rem; font-weight: 600;">BEAUTÉ</div>
+                    </div>
+                    <div style="padding: 2rem;">
+                        <h3 style="font-size: 1.4rem; font-weight: 700; color: #1a1a1a; margin-bottom: 0.5rem;">Beauty Bar</h3>
+                        <p style="color: #2eb2a4; font-weight: 600; margin-bottom: 1rem;">Barre Chocolat Collagène</p>
+                        <p style="color: #666; margin-bottom: 1.5rem; line-height: 1.6;">Barre chocolat délicieuse enrichie en Reggenerate™ pour la beauté de la peau.</p>
+                        
+                        <div style="margin-bottom: 1.5rem;">
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                                <span style="font-weight: 500; color: #1a1a1a;">Galenique:</span>
+                                <span style="color: #666;">Barre</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                                <span style="font-weight: 500; color: #1a1a1a;">Dosage:</span>
+                                <span style="color: #666;">1 barre/jour</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                                <span style="font-weight: 500; color: #1a1a1a;">Durée:</span>
+                                <span style="color: #666;">1 mois</span>
+                            </div>
+                        </div>
+                        
+                        <div style="display: flex; gap: 1rem;">
+                            <button style="flex: 1; background: #2eb2a4; color: white; border: none; padding: 0.75rem; border-radius: 8px; font-weight: 600; cursor: pointer;">Demander un échantillon</button>
+                            <button style="background: white; color: #2eb2a4; border: 2px solid #2eb2a4; padding: 0.75rem; border-radius: 8px; font-weight: 600; cursor: pointer;">📋</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Produit 4: Performance Sport -->
+                <div class="product-card" data-category="performance" style="background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.1); transition: transform 0.3s ease;">
+                    <div style="position: relative; height: 250px; background: linear-gradient(135deg, #FF6B6B 0%, #FF8E8E 100%); display: flex; align-items: center; justify-content: center;">
+                        <div style="font-size: 4rem;">💪</div>
+                        <div style="position: absolute; top: 1rem; right: 1rem; background: #2eb2a4; color: white; padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.8rem; font-weight: 600;">PERFORMANCE</div>
+                    </div>
+                    <div style="padding: 2rem;">
+                        <h3 style="font-size: 1.4rem; font-weight: 700; color: #1a1a1a; margin-bottom: 0.5rem;">Performance Pro</h3>
+                        <p style="color: #2eb2a4; font-weight: 600; margin-bottom: 1rem;">Récupération Musculaire</p>
+                        <p style="color: #666; margin-bottom: 1.5rem; line-height: 1.6;">Formulation optimisée pour la récupération musculaire et les performances sportives.</p>
+                        
+                        <div style="margin-bottom: 1.5rem;">
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                                <span style="font-weight: 500; color: #1a1a1a;">Galenique:</span>
+                                <span style="color: #666;">Poudre</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                                <span style="font-weight: 500; color: #1a1a1a;">Dosage:</span>
+                                <span style="color: #666;">1 dose/jour</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                                <span style="font-weight: 500; color: #1a1a1a;">Durée:</span>
+                                <span style="color: #666;">3 mois</span>
+                            </div>
+                        </div>
+                        
+                        <div style="display: flex; gap: 1rem;">
+                            <button style="flex: 1; background: #2eb2a4; color: white; border: none; padding: 0.75rem; border-radius: 8px; font-weight: 600; cursor: pointer;">Demander un échantillon</button>
+                            <button style="background: white; color: #2eb2a4; border: 2px solid #2eb2a4; padding: 0.75rem; border-radius: 8px; font-weight: 600; cursor: pointer;">📋</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Produit 5: Boisson Collagène -->
+                <div class="product-card" data-category="beauty" style="background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.1); transition: transform 0.3s ease;">
+                    <div style="position: relative; height: 250px; background: linear-gradient(135deg, #87CEEB 0%, #B0E0E6 100%); display: flex; align-items: center; justify-content: center;">
+                        <div style="font-size: 4rem;">🥤</div>
+                        <div style="position: absolute; top: 1rem; right: 1rem; background: #2eb2a4; color: white; padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.8rem; font-weight: 600;">BEAUTÉ</div>
+                    </div>
+                    <div style="padding: 2rem;">
+                        <h3 style="font-size: 1.4rem; font-weight: 700; color: #1a1a1a; margin-bottom: 0.5rem;">Beauty Drink</h3>
+                        <p style="color: #2eb2a4; font-weight: 600; margin-bottom: 1rem;">Boisson Collagène</p>
+                        <p style="color: #666; margin-bottom: 1.5rem; line-height: 1.6;">Boisson rafraîchissante enrichie en Reggenerate™ pour la beauté de la peau.</p>
+                        
+                        <div style="margin-bottom: 1.5rem;">
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                                <span style="font-weight: 500; color: #1a1a1a;">Galenique:</span>
+                                <span style="color: #666;">Boisson</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                                <span style="font-weight: 500; color: #1a1a1a;">Dosage:</span>
+                                <span style="color: #666;">1 bouteille/jour</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                                <span style="font-weight: 500; color: #1a1a1a;">Durée:</span>
+                                <span style="color: #666;">1 mois</span>
+                            </div>
+                        </div>
+                        
+                        <div style="display: flex; gap: 1rem;">
+                            <button style="flex: 1; background: #2eb2a4; color: white; border: none; padding: 0.75rem; border-radius: 8px; font-weight: 600; cursor: pointer;">Demander un échantillon</button>
+                            <button style="background: white; color: #2eb2a4; border: 2px solid #2eb2a4; padding: 0.75rem; border-radius: 8px; font-weight: 600; cursor: pointer;">📋</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Produit 6: Anti-âge Premium -->
+                <div class="product-card" data-category="beauty" style="background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.1); transition: transform 0.3s ease;">
+                    <div style="position: relative; height: 250px; background: linear-gradient(135deg, #FF69B4 0%, #FFB6C1 100%); display: flex; align-items: center; justify-content: center;">
+                        <div style="font-size: 4rem;">✨</div>
+                        <div style="position: absolute; top: 1rem; right: 1rem; background: #2eb2a4; color: white; padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.8rem; font-weight: 600;">BEAUTÉ</div>
+                    </div>
+                    <div style="padding: 2rem;">
+                        <h3 style="font-size: 1.4rem; font-weight: 700; color: #1a1a1a; margin-bottom: 0.5rem;">Anti-Age Premium</h3>
+                        <p style="color: #2eb2a4; font-weight: 600; margin-bottom: 1rem;">Formulation Anti-âge</p>
+                        <p style="color: #666; margin-bottom: 1.5rem; line-height: 1.6;">Formulation premium anti-âge avec Reggenerate™ et antioxydants naturels.</p>
+                        
+                        <div style="margin-bottom: 1.5rem;">
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                                <span style="font-weight: 500; color: #1a1a1a;">Galenique:</span>
+                                <span style="color: #666;">Gélules</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                                <span style="font-weight: 500; color: #1a1a1a;">Dosage:</span>
+                                <span style="color: #666;">2 gélules/jour</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                                <span style="font-weight: 500; color: #1a1a1a;">Durée:</span>
+                                <span style="color: #666;">6 mois</span>
+                            </div>
+                        </div>
+                        
+                        <div style="display: flex; gap: 1rem;">
+                            <button style="flex: 1; background: #2eb2a4; color: white; border: none; padding: 0.75rem; border-radius: 8px; font-weight: 600; cursor: pointer;">Demander un échantillon</button>
+                            <button style="background: white; color: #2eb2a4; border: 2px solid #2eb2a4; padding: 0.75rem; border-radius: 8px; font-weight: 600; cursor: pointer;">📋</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Avantages -->
+    <section style="padding: 4rem 0; background: linear-gradient(135deg, #2eb2a4 0%, #4e53a3 100%); color: white;">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 3rem;">
+                <h2 style="font-size: 2.5rem; font-weight: 700; margin-bottom: 1rem;">Pourquoi Choisir nos Produits Ready-to-Market ?</h2>
+                <p style="font-size: 1.1rem; opacity: 0.9;">Des avantages concrets pour accélérer votre mise sur le marché</p>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; max-width: 1200px; margin: 0 auto;">
+                <div style="text-align: center;">
+                    <div style="font-size: 3rem; margin-bottom: 1rem;">⚡</div>
+                    <h3 style="font-size: 1.3rem; font-weight: 700; margin-bottom: 1rem;">Développement Rapide</h3>
+                    <p style="opacity: 0.9;">De la formulation à la commercialisation en quelques semaines</p>
+                </div>
+                <div style="text-align: center;">
+                    <div style="font-size: 3rem; margin-bottom: 1rem;">🔬</div>
+                    <h3 style="font-size: 1.3rem; font-weight: 700; margin-bottom: 1rem;">Testé et Validé</h3>
+                    <p style="opacity: 0.9;">Formulations cliniquement prouvées et stabilité garantie</p>
+                </div>
+                <div style="text-align: center;">
+                    <div style="font-size: 3rem; margin-bottom: 1rem;">🏭</div>
+                    <h3 style="font-size: 1.3rem; font-weight: 700; margin-bottom: 1rem;">Façonnage Inclus</h3>
+                    <p style="opacity: 0.9;">Production par nos partenaires façonniers certifiés</p>
+                </div>
+                <div style="text-align: center;">
+                    <div style="font-size: 3rem; margin-bottom: 1rem;">📋</div>
+                    <h3 style="font-size: 1.3rem; font-weight: 700; margin-bottom: 1rem;">Documentation Complète</h3>
+                    <p style="opacity: 0.9;">Dossiers réglementaires et marketing inclus</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Contact -->
+    <section id="contact" style="padding: 4rem 0; background: #fafafa;">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 3rem;">
+                <h2 style="font-size: 2.5rem; font-weight: 700; color: #1a1a1a; margin-bottom: 1rem;">Commencez Votre Projet</h2>
+                <p style="font-size: 1.1rem; color: #666; max-width: 600px; margin: 0 auto;">Contactez notre équipe pour recevoir des échantillons et un accompagnement personnalisé</p>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; max-width: 1200px; margin: 0 auto;">
+                <div style="background: white; border-radius: 16px; padding: 2rem; border: 1px solid #e5e5e5;">
+                    <h3 style="font-size: 1.5rem; font-weight: 700; color: #1a1a1a; margin-bottom: 1rem;">Demander des échantillons</h3>
+                    <form>
+                        <div style="margin-bottom: 1.5rem;">
+                            <label style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: #1a1a1a;">Nom complet *</label>
+                            <input type="text" required style="width: 100%; padding: 0.75rem; border: 1px solid #e5e5e5; border-radius: 8px; font-size: 1rem;">
+                        </div>
+                        <div style="margin-bottom: 1.5rem;">
+                            <label style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: #1a1a1a;">Entreprise *</label>
+                            <input type="text" required style="width: 100%; padding: 0.75rem; border: 1px solid #e5e5e5; border-radius: 8px; font-size: 1rem;">
+                        </div>
+                        <div style="margin-bottom: 1.5rem;">
+                            <label style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: #1a1a1a;">Email *</label>
+                            <input type="email" required style="width: 100%; padding: 0.75rem; border: 1px solid #e5e5e5; border-radius: 8px; font-size: 1rem;">
+                        </div>
+                        <div style="margin-bottom: 1.5rem;">
+                            <label style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: #1a1a1a;">Produits d'intérêt</label>
+                            <select style="width: 100%; padding: 0.75rem; border: 1px solid #e5e5e5; border-radius: 8px; font-size: 1rem;">
+                                <option>Good Hair Gummies</option>
+                                <option>Mobility Plus</option>
+                                <option>Beauty Bar</option>
+                                <option>Performance Pro</option>
+                                <option>Beauty Drink</option>
+                                <option>Anti-Age Premium</option>
+                                <option>Tous les produits</option>
+                            </select>
+                        </div>
+                        <div style="margin-bottom: 2rem;">
+                            <label style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: #1a1a1a;">Message</label>
+                            <textarea rows="4" placeholder="Décrivez votre projet et vos besoins..." style="width: 100%; padding: 0.75rem; border: 1px solid #e5e5e5; border-radius: 8px; font-size: 1rem; resize: vertical;"></textarea>
+                        </div>
+                        <button type="submit" style="background: #2eb2a4; color: white; border: none; padding: 1rem 2rem; border-radius: 8px; font-weight: 600; cursor: pointer; width: 100%; font-size: 1rem;">Demander des échantillons</button>
+                    </form>
+                </div>
+
+                <div style="background: white; border-radius: 16px; padding: 2rem; border: 1px solid #e5e5e5;">
+                    <h3 style="font-size: 1.5rem; font-weight: 700; color: #1a1a1a; margin-bottom: 1rem;">Notre Équipe Technique</h3>
+                    <p style="color: #666; margin-bottom: 2rem; line-height: 1.6;">Notre équipe d'experts est là pour vous accompagner à chaque étape de votre projet.</p>
+                    
+                    <div style="display: flex; flex-direction: column; gap: 1.5rem; margin-bottom: 2rem;">
+                        <div style="display: flex; align-items: center; gap: 1rem;">
+                            <span style="font-size: 1.5rem;">📧</span>
+                            <div>
+                                <h4 style="font-weight: 600; color: #1a1a1a; margin-bottom: 0.25rem;">Email</h4>
+                                <p style="color: #666;">contact@reggenerate.com</p>
+                            </div>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 1rem;">
+                            <span style="font-size: 1.5rem;">📞</span>
+                            <div>
+                                <h4 style="font-weight: 600; color: #1a1a1a; margin-bottom: 0.25rem;">Téléphone</h4>
+                                <p style="color: #666;">+33 1 23 45 67 89</p>
+                            </div>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 1rem;">
+                            <span style="font-size: 1.5rem;">🌍</span>
+                            <div>
+                                <h4 style="font-weight: 600; color: #1a1a1a; margin-bottom: 0.25rem;">Adresse</h4>
+                                <p style="color: #666;">123 Innovation Street<br>75001 Paris, France</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="background: #f8f9fa; border-radius: 8px; padding: 1rem;">
+                        <h4 style="font-weight: 600; color: #1a1a1a; margin-bottom: 0.5rem;">Délai de réponse</h4>
+                        <p style="color: #666; margin: 0;">Notre équipe vous répond sous 24h ouvrées</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="background: #1a1a1a; color: white; padding: 3rem 0 1rem;">
+        <div class="container">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-bottom: 2rem;">
+                <div>
+                    <h3 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem;">Reggenerate</h3>
+                    <p style="color: #ccc; line-height: 1.6;">Innovation en nutrition clinique avec des biomolécules d'œufs brevetées et cliniquement prouvées.</p>
+                </div>
+                
+                <div>
+                    <h4 style="font-weight: 600; margin-bottom: 1rem;">Produits</h4>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="margin-bottom: 0.5rem;"><a href="ingredient-page.html" style="color: #ccc; text-decoration: none;">Reggenerate™ Mobility</a></li>
+                        <li style="margin-bottom: 0.5rem;"><a href="ingredient-page.html" style="color: #ccc; text-decoration: none;">Reggenerate™ Beauty</a></li>
+                        <li style="margin-bottom: 0.5rem;"><a href="ingredient-page.html" style="color: #ccc; text-decoration: none;">Reggenerate™ Performance</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 style="font-weight: 600; margin-bottom: 1rem;">Support</h4>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="margin-bottom: 0.5rem;"><a href="#contact" style="color: #ccc; text-decoration: none;">Contact</a></li>
+                        <li style="margin-bottom: 0.5rem;"><a href="#contact" style="color: #ccc; text-decoration: none;">Échantillons</a></li>
+                        <li style="margin-bottom: 0.5rem;"><a href="ingredient-page.html" style="color: #ccc; text-decoration: none;">Documentation</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 style="font-weight: 600; margin-bottom: 1rem;">Légal</h4>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="margin-bottom: 0.5rem;"><a href="#" style="color: #ccc; text-decoration: none;">Mentions légales</a></li>
+                        <li style="margin-bottom: 0.5rem;"><a href="#" style="color: #ccc; text-decoration: none;">Politique de confidentialité</a></li>
+                        <li style="margin-bottom: 0.5rem;"><a href="#" style="color: #ccc; text-decoration: none;">Conditions d'utilisation</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div style="border-top: 1px solid #333; padding-top: 1rem; text-align: center;">
+                <p style="color: #ccc; margin-bottom: 0.5rem;">&copy; 2024 Reggenerate. Tous droits réservés.</p>
+                <p style="color: #ccc; margin: 0;">Innovation brevetée - Qualité certifiée</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    
+    <!-- Script pour les filtres -->
+    <script>
+        function filterProducts(category) {
+            // Mettre à jour les boutons de filtre
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            filterBtns.forEach(btn => {
+                btn.classList.remove('active');
+                btn.style.background = 'white';
+                btn.style.color = '#666';
+                btn.style.border = '2px solid #e5e5e5';
+            });
+            
+            const activeBtn = event.target;
+            activeBtn.classList.add('active');
+            activeBtn.style.background = '#2eb2a4';
+            activeBtn.style.color = 'white';
+            activeBtn.style.border = '2px solid #2eb2a4';
+            
+            // Filtrer les produits
+            const products = document.querySelectorAll('.product-card');
+            products.forEach(product => {
+                if (category === 'all' || product.dataset.category === category) {
+                    product.style.display = 'block';
+                    product.style.transform = 'scale(1)';
+                } else {
+                    product.style.display = 'none';
+                    product.style.transform = 'scale(0.8)';
+                }
+            });
+        }
+        
+        // Initialiser avec tous les produits visibles
+        document.addEventListener('DOMContentLoaded', function() {
+            filterProducts('all');
+        });
+    </script>
+</body>
+</html>
