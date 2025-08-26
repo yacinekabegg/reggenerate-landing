@@ -1,0 +1,11 @@
+# build / deps
+node_modules/
+.next/
+reggenerate-site/node_modules/
+reggenerate-site/.next/
+
+# gros fichiers
+*.mp4
+*.mov
+*.zip
+*.iso
