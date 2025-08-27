@@ -260,7 +260,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     // Chargement progressif des images
-    const images = document.querySelectorAll('img');
+    const images = document.querySelectorAll('img:not(.no-fade)');
     images.forEach(img => {
         const fadeIn = () => { img.style.opacity = '1'; };
         if (img.complete) {
