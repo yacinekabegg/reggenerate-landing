@@ -171,45 +171,49 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // Bouton retour en haut
-    const backToTopBtn = document.createElement('button');
-    backToTopBtn.innerHTML = '<i class="fas fa-arrow-up"></i>';
-    backToTopBtn.className = 'back-to-top';
-    backToTopBtn.style.cssText = `
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
-        width: 50px;
-        height: 50px;
-        background: var(--primary-color);
-        color: white;
-        border: none;
-        border-radius: 50%;
-        cursor: pointer;
-        opacity: 0;
-        visibility: hidden;
-        transition: all 0.3s ease;
-        z-index: 1000;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    `;
-    
-    document.body.appendChild(backToTopBtn);
-    
-    window.addEventListener('scroll', function() {
+    // Bouton retour en haut (éviter doublon si déjà présent dans le HTML)
+    let backToTopBtn = document.querySelector('.back-to-top');
+    if (!backToTopBtn) {
+        backToTopBtn = document.createElement('button');
+        backToTopBtn.innerHTML = '<i class="fas fa-arrow-up"></i>';
+        backToTopBtn.className = 'back-to-top';
+        backToTopBtn.style.cssText = `
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            width: 56px;
+            height: 56px;
+            background: #2eb2a4;
+            color: #1a1a1a;
+            border: 3px solid #fff;
+            border-radius: 50%;
+            cursor: pointer;
+            opacity: 0.95;
+            visibility: visible;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            z-index: 1000;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.18);
+            display: flex; align-items: center; justify-content: center;
+        `;
+        document.body.appendChild(backToTopBtn);
+    }
+
+    const toggleBackToTop = () => {
         if (window.pageYOffset > 300) {
-            backToTopBtn.style.opacity = '1';
-            backToTopBtn.style.visibility = 'visible';
+            backToTopBtn.style.transform = 'scale(1)';
+            backToTopBtn.style.pointerEvents = 'auto';
         } else {
-            backToTopBtn.style.opacity = '0';
-            backToTopBtn.style.visibility = 'hidden';
+            backToTopBtn.style.transform = 'scale(0.9)';
+            backToTopBtn.style.pointerEvents = 'none';
         }
-    });
-    
+    };
+    toggleBackToTop();
+    window.addEventListener('scroll', toggleBackToTop);
+
+    backToTopBtn.addEventListener('mouseenter', ()=>{ backToTopBtn.style.boxShadow = '0 10px 28px rgba(0,0,0,0.22)'; });
+    backToTopBtn.addEventListener('mouseleave', ()=>{ backToTopBtn.style.boxShadow = '0 8px 24px rgba(0,0,0,0.18)'; });
     backToTopBtn.addEventListener('click', function() {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
+        window.scrollTo({ top: 0, behavior: 'smooth' });
     });
     
     // Animation des icônes au hover
