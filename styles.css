@@ -559,8 +559,17 @@ body {
 
 /* Section Innovation Galénique */
 .innovation-section {
-    background: var(--bg-light);
+    background: #eaf6f4;
     padding: 6rem 0;
+}
+/* H2 violet et sous-titre vert pour la section produit */
+.innovation-section .section-header h2 {
+    background: none;
+    -webkit-text-fill-color: initial;
+    color: #4e53a3;
+}
+.innovation-section .section-header .section-subtitle {
+    color: #2eb2a4;
 }
 
 .section-header {
@@ -595,11 +604,11 @@ body {
 }
 
 .innovation-card {
-    background: white;
-    border-radius: 24px;
-    padding: 2.5rem;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-    border: 1px solid rgba(0, 0, 0, 0.05);
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 6px 18px rgba(78,83,163,0.08);
+    border: 2px solid rgba(78,83,163,0.25);
     transition: all 0.4s ease;
     position: relative;
     overflow: hidden;
@@ -612,7 +621,7 @@ body {
     left: 0;
     right: 0;
     height: 4px;
-    background: linear-gradient(135deg, var(--turquoise), var(--orange));
+    background: linear-gradient(135deg, #4e53a3, #2eb2a4);
     transform: scaleX(0);
     transition: transform 0.4s ease;
 }
@@ -639,20 +648,33 @@ body {
 .innovation-icon i {
     font-size: 2rem;
     font-weight: 600;
+    color: #4e53a3;
+}
+.innovation-icon .icon-line {
+    width: 72px;
+    height: 72px;
+    color: #4e53a3; /* violet */
+}
+/* Icônes 3x plus grandes dans les cartes */
+.innovation-icon .emoji-icon {
+    font-size: 6rem;
 }
 
 .innovation-card h3 {
-    font-size: 1.5rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
-    color: var(--text-dark);
+    font-size: 1.25rem;
+    font-weight: 800;
+    margin-bottom: 0.75rem;
+    color: #4e53a3;
+    text-align: center;
+    letter-spacing: 0.2px;
 }
 
 .innovation-card p {
-    font-size: 1.1rem;
-    color: var(--text-light);
+    font-size: 1rem;
+    color: #2eb2a4;
     line-height: 1.6;
-    margin-bottom: 2rem;
+    margin-bottom: 0;
+    text-align: center;
 }
 
 .innovation-image {
@@ -678,10 +700,10 @@ body {
 }
 
 .innovation-cta .btn {
-    padding: 1rem 2.5rem;
-    font-size: 1.1rem;
-    font-weight: 600;
-    border-radius: 12px;
+    padding: 0.9rem 2rem;
+    font-size: 1rem;
+    font-weight: 700;
+    border-radius: 10px;
     display: inline-flex;
     align-items: center;
     gap: 0.75rem;
@@ -690,12 +712,147 @@ body {
 
 .innovation-cta .btn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 10px 25px rgba(243, 118, 62, 0.3);
+    box-shadow: 0 10px 25px rgba(78,83,163,0.2);
+}
+
+.btn-innovation {
+    background: #4e53a3;
+    color: #ffffff;
+}
+/* CTA centré et largeur proportionnelle à la carte Performance Galénique */
+#innovation-cta-btn {
+    display: inline-block;
+    font-size: 1.25rem; /* same size as section subtitle */
 }
 
 /* Section Tendances */
 .trends-section {
     background: white;
+}
+
+.trends-section h2 { 
+    color: #2eb2a4; /* teal title as in capture */
+}
+
+.trends-section .section-subtitle { color: #2eb2a4; }
+
+.trends-section .market-highlight { color: #f9df79; background: none; padding: 0; border-radius: 0; }
+
+.market-trends {
+    max-width: 980px;
+    margin: 0 auto 1.5rem;
+    border: 2px solid #2eb2a4; /* rounded teal frame */
+    border-radius: 18px; 
+    padding: 1rem 1.25rem; 
+}
+
+.market-trend {
+    padding: 1.25rem 0;
+    display: grid;
+    grid-template-columns: 140px 1fr; /* icon | content */
+    gap: 1rem;
+    align-items: stretch; /* allow independent vertical alignment per cell */
+}
+
+.market-trend + .market-trend { border-top: 2px dashed #2eb2a4; }
+
+.trend-content .trend-head {
+    display: grid;
+    grid-template-columns: 1fr auto auto; /* title | badge | toggle */
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+    padding: 0.25rem 0.5rem;
+    border-radius: 8px;
+    transition: background-color 0.2s ease;
+}
+
+.trend-icon-round {
+    width: 126px; /* triple size */
+    height: 126px;
+    border: 3px solid #2eb2a4;
+    color: #2eb2a4;
+    border-radius: 999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3.3rem; /* ~3x */
+    justify-self: center; /* center within the icon column */
+    align-self: center; /* vertically center within the row */
+}
+
+.trend-title {
+    font-family: 'League Spartan', 'Roboto', Arial, sans-serif;
+    font-size: 1.75rem; /* hierarchy below section title */
+    line-height: 1.15;
+    font-weight: 800;
+    color: #2eb2a4;
+    text-transform: uppercase;
+}
+
+.trend-badge {
+    margin-left: auto;
+    font-family: 'League Spartan', 'Roboto', Arial, sans-serif;
+    font-weight: 800;
+    font-size: 1rem; /* secondary hierarchy */
+    color: #fff;
+    padding: 0.25em 0.6em;
+    border-radius: 10px;
+    display: inline-block;
+    line-height: 1.1;
+    text-transform: uppercase;
+}
+
+.badge-green { background: #2eb2a4; }
+.badge-violet { background: #4e53a3; }
+.badge-orange { background: #f3763e; }
+
+.trend-body p {
+    font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+    color: #2eb2a4;
+    margin: 0.25rem 0;
+    font-size: 1rem;
+    line-height: 1.65;
+}
+
+/* Accordion behavior */
+.market-trend .trend-body { display: none; }
+.market-trend.open .trend-body { display: block; }
+
+/* Caret indicator */
+.trend-content .trend-head:hover { background-color: #eef6f5; }
+
+.trend-toggle {
+    background: #2eb2a4;
+    color: #ffffff;
+    font-family: 'League Spartan', 'Roboto', Arial, sans-serif;
+    font-weight: 800;
+    font-size: 0.85rem;
+    padding: 0.2em 0.6em;
+    border-radius: 999px;
+}
+
+.trend-body .label {
+    font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+    font-weight: 800;
+    color: #2eb2a4;
+}
+
+/* Color only the labels based on the trend's segment color */
+.market-trend.trend-green .trend-body .label { color: #2eb2a4; }
+.market-trend.trend-violet .trend-body .label { color: #4e53a3; }
+.market-trend.trend-orange .trend-body .label { color: #f3763e; }
+
+.trend-sources {
+    max-width: 980px;
+    margin: 0.5rem auto 1.75rem;
+    color: #6b7280;
+    font-size: 0.85rem;
+}
+
+.trends-cta { 
+    background: #2eb2a4; 
 }
 
 .trends-grid {
@@ -768,7 +925,15 @@ body {
 
 /* Section Témoignages */
 .testimonials-section {
-    background: var(--bg-light);
+    background: #e8f4f2; /* Light blue-green background as in reference */
+}
+
+.testimonials-section h2 {
+    color: #4e53a3; /* Dark purple title as in reference */
+}
+
+.testimonials-section .section-subtitle {
+    color: #2eb2a4; /* Light green-blue subtitle as in reference */
 }
 
 .testimonials-grid {
@@ -782,9 +947,10 @@ body {
     padding: 2.5rem;
     border-radius: 20px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-    border: 1px solid rgba(0, 0, 0, 0.05);
+    border: 2px solid #4e53a3; /* Dark purple border as in reference */
     position: relative;
     transition: all 0.3s ease;
+    overflow: visible; /* Ensure logo is not clipped */
 }
 
 .testimonial-card:hover {
@@ -811,15 +977,18 @@ body {
 }
 
 .testimonial-content {
-    margin-top: 3rem;
+    margin-top: 0;
     margin-bottom: 2rem;
+    margin-right: 220px; /* Space for logo on the right */
+    position: relative;
+    z-index: 2;
 }
 
 .testimonial-content p {
-    font-style: italic;
-    font-size: 1.1rem;
+    font-style: normal; /* Remove italic as in reference */
+    font-size: 1rem;
     line-height: 1.6;
-    color: var(--text-dark);
+    color: #374151; /* Dark grey text as in reference */
     margin: 0;
 }
 
@@ -831,24 +1000,82 @@ body {
 }
 
 .author-info h4 {
-    color: var(--text-dark);
+    color: #374151; /* Dark grey as in reference */
     margin-bottom: 0.25rem;
     font-weight: 600;
     font-size: 1rem;
 }
 
 .author-info span {
-    color: var(--text-light);
+    color: #374151; /* Dark grey as in reference */
     font-size: 0.9rem;
 }
 
 .testimonial-metric {
-    color: var(--text-dark);
+    background: white;
+    color: #2eb2a4; /* Light green text as in reference */
+    border: 2px solid #2eb2a4; /* Light green border */
     padding: 0.5rem 1rem;
-    border-radius: 20px;
+    border-radius: 8px;
     font-size: 0.8rem;
     font-weight: 600;
     white-space: nowrap;
+}
+
+/* New testimonial elements */
+.testimonial-quote-icon {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    font-size: 3rem;
+    color: #d1d5db; /* Light grey as in reference */
+    font-family: serif;
+    line-height: 1;
+    z-index: 1;
+    pointer-events: none; /* Prevent interference with logo */
+    opacity: 0.7;
+}
+
+.testimonial-logo-top-right {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    z-index: 10;
+    width: 200px;
+    height: 107px;
+}
+
+.company-logo-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+    background: transparent;
+    opacity: 1 !important;
+    transition: none !important;
+}
+
+.testimonials-cta {
+    text-align: center;
+    margin-top: 3rem;
+}
+
+.testimonials-cta-btn {
+    background: #4e53a3; /* Dark purple background */
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.testimonials-cta-btn:hover {
+    background: #3d4280;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(78, 83, 163, 0.3);
 }
 
 /* Section Détails Produit */

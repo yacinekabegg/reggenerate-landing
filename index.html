@@ -66,365 +66,561 @@
     <section id="produit" class="section innovation-section">
         <div class="container">
             <div class="section-header">
-                <h2>Innovation Galénique de Pointe</h2>
-                <p class="section-subtitle">Notre technologie révolutionnaire transforme les membranes d'œufs en biomolécules d'intérêt uniques, garantissant performance optimale et résultats cliniquement prouvés.</p>
+                <h2>Une Innovation au service de vos Projets</h2>
+                <p class="section-subtitle">Notre technologie brevetée transforme les déchets d’aujourd’hui en ingrédients de demain
+                    à haute valeur ajoutée pour vos projets nutraceutiques, food et cosmétiques.</p>
             </div>
             
             <div class="innovation-grid">
                 <div class="innovation-card">
                     <div class="innovation-icon">
-                        <span class="emoji-icon">💡</span>
+                        <svg class="icon-line" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                          <path d="M9 18h6" stroke="currentColor" stroke-linecap="round"/>
+                          <path d="M10 22h4" stroke="currentColor" stroke-linecap="round"/>
+                          <path d="M12 2a7 7 0 0 0-7 7c0 2.6 1.4 4.5 3 5.7.5.4 1 .9 1 1.6V17h6v-.7c0-.7.5-1.2 1-1.6 1.6-1.2 3-3.1 3-5.7a7 7 0 0 0-7-7Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
                     </div>
-                    <h3>Innovation</h3>
-                    <p>Technologie révolutionnaire d'extraction et purification unique de la membrane d'œuf, protégée par 3 brevets Internationaux</p>
+                    <h3>PROCÉDÉ BREVETÉ &<br> CLEAN LABEL</h3>
+                    <p>Un processus de séparation et de purification mécanique unique sans aucun solvant chimique et protégé par un brevet préservant l’intégrité naturelle des biomolécules d’intérêt</p>
+                </div>
+                
+                <div class="innovation-card" id="card-galenique">
+                    <div class="innovation-icon">
+                        <svg class="icon-line" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                          <path d="M10 2v4l-5 8a6 6 0 0 0 5 8h4a6 6 0 0 0 5-8l-5-8V2" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+                          <path d="M8 14h8M9 17h6" stroke="currentColor" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <h3>PERFORMANCE<br> GALÉNIQUE</h3>
+                    <p>Compatible avec toutes les formes galéniques grâce à sa faible posologie et son goût neutre.</p>
                 </div>
                 
                 <div class="innovation-card">
                     <div class="innovation-icon">
-                        <span class="emoji-icon">⚗️</span>
+                        <svg class="icon-line" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                          <path d="M16 3v3a4 4 0 0 1-4 4 4 4 0 0 1-4-4V3h8Z" stroke="currentColor" stroke-linejoin="round"/>
+                          <path d="M8 3H6a4 4 0 0 0-4 4v1a3 3 0 0 0 3 3h1" stroke="currentColor"/>
+                          <path d="M16 3h2a4 4 0 0 1 4 4v1a3 3 0 0 1-3 3h-1" stroke="currentColor"/>
+                          <path d="M9 14h6v3H9z" stroke="currentColor"/>
+                          <path d="M8 21h8" stroke="currentColor" stroke-linecap="round"/>
+                        </svg>
                     </div>
-                    <h3>Performance Galénique</h3>
-                    <p>Compatible avec toutes les formes galéniques, stabilité et efficacité optimisées pour une biodisponibilité maximale</p>
-                </div>
-                
-                <div class="innovation-card">
-                    <div class="innovation-icon">
-                        <span class="emoji-icon">🏆</span>
-                    </div>
-                    <h3>Produit Cliniquement Prouvé & Breveté</h3>
-                    <p>Études cliniques validées, produit naturel clean label avec toutes les certifications nécessaires (ISO, HACCP, Halal, Kosher, Bio)</p>
+                    <h3>EFFICACITÉ CLINIQUEMENT<br> PROUVÉE</h3>
+                    <p>Des études cliniques solides à l’appui de son efficacité et des garanties qualités grâce à nos certifications (ISO, HACCP).</p>
                 </div>
             </div>
             
             <div class="innovation-cta">
-                <a href="ingredient-page.html" class="btn btn-primary">
+                <a href="ingredient-page.html" class="btn btn-innovation" id="innovation-cta-btn">
                     <span class="emoji-icon">➡️</span>
-                    Accéder à la Page Ingrédient
-                </a>
-                <a href="clients-page.html" class="btn btn-outline">
-                    <span class="emoji-icon">👥</span>
-                    Voir nos Clients
+                    Accéder à la Page Notre Ingrédient >
                 </a>
             </div>
+            <script>
+              (function(){
+                function sizeCta(){
+                  var card = document.getElementById('card-galenique');
+                  var btn = document.getElementById('innovation-cta-btn');
+                  if(!card || !btn) return;
+                  var w = card.getBoundingClientRect().width;
+                  var target = Math.round(w * 4 / 3);
+                  // clamp between 260px and container width
+                  target = Math.max(260, Math.min(target, document.querySelector('.container').getBoundingClientRect().width - 48));
+                  btn.style.width = target + 'px';
+                }
+                window.addEventListener('load', sizeCta);
+                window.addEventListener('resize', sizeCta);
+              })();
+            </script>
         </div>
     </section>
 
     <!-- Section 2: Tendances du Marché -->
     <section id="tendances" class="section trends-section">
         <div class="container">
-            <h2>Répondez aux Tendances du Marché</h2>
-            <p class="section-subtitle">Investissez dans l'avenir de la nutrition avec nos solutions adaptées aux besoins émergents</p>
-            
-            <div style="max-width: 800px; margin: 0 auto;">
-                <!-- Tendance 1 -->
-                <div style="display: flex; align-items: center; gap: 1.5rem; padding: 1.5rem 0; border-bottom: 1px solid #f0f0f0;">
-                    <div style="flex-shrink: 0; width: 45px; height: 45px; background: #2eb2a4; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 1.4rem;">✨</div>
-                    <div style="flex: 1;">
-                        <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 0.5rem;">
-                            <h3 style="font-size: 1.4rem; font-weight: 600; color: #1a1a1a; margin: 0;">Beauty from Within</h3>
-                            <span style="background: #2eb2a4; color: white; padding: 0.3rem 0.8rem; border-radius: 15px; font-size: 0.8rem; font-weight: 600;">+25%</span>
+            <h2>Répondez aux Tendances du <span class="market-highlight">Marché</span></h2>
+            <p class="section-subtitle">Investissez dans l'avenir de la nutrition avec nos solutions adaptées aux besoins émergents de vos clients.</p>
+
+            <div class="market-trends">
+                <div class="market-trend trend-green open">
+                    <div class="trend-icon-round">✨</div>
+                    <div class="trend-content">
+                        <div class="trend-head" role="button" aria-expanded="true">
+                            <h3 class="trend-title">Beauté de la peau & des cheveux</h3>
+                            <span class="trend-badge badge-green">3e segment</span>
+                            <span class="trend-toggle" aria-hidden="true">Voir moins</span>
                         </div>
-                        <p style="color: #666; line-height: 1.5; font-size: 0.95rem; margin: 0;">Répondez à la demande croissante de nutricosmétiques et de solutions beauté par voie orale. Nos biomolécules d'œuf offrent des bénéfices uniques pour la peau, les cheveux et les ongles.</p>
+                        <div class="trend-body">
+                        <p><span class="label">Classement :</span> 3e segment des compléments alimentaires en Europe, et le plus dynamique en lancements (+24% de nouveaux produits entre 2020 et 2024) [1].</p>
+                        <p><span class="label">Tendances :</span> La demande se concentre sur des ingrédients naturels, durables et upcyclés : 72% des consommateurs européens préfèrent des actifs d’origine naturelle [2]. Le collagène, l’élastine et l’acide hyaluronique sont perçus comme les plus efficaces pour la peau et les cheveux [3].</p>
+                        <p><span class="label">Marché :</span> ~2,6 Md€ en Europe (2023), croissance +7%/an (CAGR 2024-2031) [3].</p>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Tendance 2 -->
-                <div style="display: flex; align-items: center; gap: 1.5rem; padding: 1.5rem 0; border-bottom: 1px solid #f0f0f0;">
-                    <div style="flex-shrink: 0; width: 45px; height: 45px; background: #4e53a3; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 1.4rem;">🏃‍♂️</div>
-                    <div style="flex: 1;">
-                        <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 0.5rem;">
-                            <h3 style="font-size: 1.4rem; font-weight: 600; color: #1a1a1a; margin: 0;">Mobility & Active Nutrition</h3>
-                            <span style="background: #4e53a3; color: white; padding: 0.3rem 0.8rem; border-radius: 15px; font-size: 0.8rem; font-weight: 600;">+18%</span>
+                <div class="market-trend trend-violet">
+                    <div class="trend-icon-round">🦴</div>
+                    <div class="trend-content">
+                        <div class="trend-head" role="button" aria-expanded="false">
+                            <h3 class="trend-title">Santé des articulations</h3>
+                            <span class="trend-badge badge-violet">4e segment</span>
+                            <span class="trend-toggle" aria-hidden="true">Voir plus</span>
                         </div>
-                        <p style="color: #666; line-height: 1.5; font-size: 0.95rem; margin: 0;">Adressez les besoins des consommateurs actifs et des seniors avec des solutions nutritionnelles ciblées pour la mobilité, la flexibilité et la vitalité quotidienne.</p>
+                        <div class="trend-body">
+                        <p><span class="label">Classement :</span> 4e segment en Europe, en croissance régulière grâce à une base fidèle et un rajeunissement de la cible [4].</p>
+                        <p><span class="label">Tendances :</span> Forte attente pour des solutions biosourcées et traçables en remplacement des glucosamines/chondroïtines animales classiques [6]. Le collagène, l’acide hyaluronique et les combinaisons avec glucosamine/chondroïtine sont parmi les actifs les plus demandés [7].</p>
+                        <p><span class="label">Marché :</span> ~1,0 Md€ en Europe (2023), croissance +6,8%/an (CAGR 2024-2030) [6].</p>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Tendance 3 -->
-                <div style="display: flex; align-items: center; gap: 1.5rem; padding: 1.5rem 0;">
-                    <div style="flex-shrink: 0; width: 45px; height: 45px; background: #f3763e; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 1.4rem;">💪</div>
-                    <div style="flex: 1;">
-                        <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 0.5rem;">
-                            <h3 style="font-size: 1.4rem; font-weight: 600; color: #1a1a1a; margin: 0;">Performance & Recovery</h3>
-                            <span style="background: #f3763e; color: white; padding: 0.3rem 0.8rem; border-radius: 15px; font-size: 0.8rem; font-weight: 600;">+22%</span>
+                <div class="market-trend trend-orange">
+                    <div class="trend-icon-round">🏃‍♂️</div>
+                    <div class="trend-content">
+                        <div class="trend-head" role="button" aria-expanded="false">
+                            <h3 class="trend-title">Performance & récupération sportive</h3>
+                            <span class="trend-badge badge-orange">2e segment</span>
+                            <span class="trend-toggle" aria-hidden="true">Voir plus</span>
                         </div>
-                        <p style="color: #666; line-height: 1.5; font-size: 0.95rem; margin: 0;">Optimisez la récupération et les performances avec nos ingrédients naturels cliniquement prouvés, parfaits pour les sportifs et les personnes actives.</p>
+                        <div class="trend-body">
+                        <p><span class="label">Classement :</span> 2e segment en Europe, derrière les vitamines & minéraux, et celui qui croît le plus vite en volume [7].</p>
+                        <p><span class="label">Tendances :</span> Les sportifs recherchent des ingrédients multi-bénéfices : récupération articulaire, élasticité et réduction des douleurs post-effort. Le collagène et l’acide hyaluronique sont de plus en plus utilisés pour la récupération musculaire et l’élasticité. Les produits durables et décabonés gagnent en popularité auprès des consommateurs jeunes [11].</p>
+                        <p><span class="label">Marché :</span> ~8,1 Md€ en Europe (2023), croissance +7,8%/an (CAGR 2023-2030) [9].</p>
+                        </div>
                     </div>
                 </div>
             </div>
-            
+
+            <div class="trend-sources">
+                <p><span class="label">Sources :</span> [1] Innova Market Insights 2024 – Nutraceuticals Europe • [2] Nutraceuticals Europe 2024 – Préférences ingrédients naturels (72% des consommateurs) • [3] Vantage/Euromonitor • [4] Grand View Research 2024 • [6] Collagène/HA Market Europe • [7] Sports Nutrition Europe 2024 • [9] Euromonitor 2024.</p>
+            </div>
+
+            <div class="cta-center">
+                <a href="ingredient-page.html" class="btn btn-primary trends-cta">
+                    Je cherche un ingrédient dans ces tendances >
+                </a>
+            </div>
 
         </div>
     </section>
+    <script>
+      (function(){
+        var heads = document.querySelectorAll('.market-trend .trend-content .trend-head');
+        heads.forEach(function(head){
+          head.addEventListener('click', function(){
+            var block = head.closest('.market-trend');
+            if(!block) return;
+            var open = block.classList.toggle('open');
+            head.setAttribute('aria-expanded', open ? 'true' : 'false');
+            var toggle = head.querySelector('.trend-toggle');
+            if(toggle){ toggle.textContent = open ? 'Voir moins' : 'Voir plus'; }
+          });
+        });
+      })();
+    </script>
 
     <!-- Section 3: Preuves Sociales -->
     <section id="temoignages" class="section testimonials-section">
         <div class="container">
-            <h2>Partenaires B2B</h2>
+            <h2>Nos Clients : Ce qu'ils en disent</h2>
             <p class="section-subtitle">Découvrez ce que nos partenaires B2B disent de nos produits</p>
             
             <div class="testimonials-grid">
                 <div class="testimonial-card">
-                    <div class="testimonial-badge">
-                        <span class="emoji-icon">💬</span>
-                        <span>Partenaire B2B</span>
+                    <div class="testimonial-quote-icon">"</div>
+                    <div class="testimonial-logo-top-right">
+                        <img src="images/oemine-logo-xxl-min.png" alt="Logo entreprise" class="company-logo-img no-fade">
                     </div>
                     <div class="testimonial-content">
-                        <p>"Reggenerate™ a transformé notre gamme de suppléments articulaires. Les résultats cliniques sont exceptionnels et nos ventes ont augmenté de 340% depuis l'intégration."</p>
+                        <p>"Reggenerate nous a permis de proposer à nos clients une alternative au collagène marin en accord avec nos valeurs. Le produit est aujourd'hui notre best-seller."</p>
                     </div>
                     <div class="testimonial-author">
                         <div class="author-info">
-                            <h4>Dr. Sarah Chen</h4>
-                            <span>VP R&D, VitaHealth Solutions</span>
+                            <h4>Caroline Chaussat</h4>
+                            <span>Responsable R&D</span>
                         </div>
                         <div class="testimonial-metric">
-                            <span>+340% ventes</span>
+                            <span>+X% DE VENTES</span>
                         </div>
                     </div>
                 </div>
                 
                 <div class="testimonial-card">
-                    <div class="testimonial-badge">
-                        <span class="emoji-icon">💬</span>
-                        <span>Partenaire B2B</span>
+                    <div class="testimonial-quote-icon">"</div>
+                    <div class="testimonial-logo-top-right">
+                        <img src="images/oemine-logo-xxl-min.png" alt="Logo entreprise" class="company-logo-img no-fade">
                     </div>
                     <div class="testimonial-content">
-                        <p>"La stabilité et la biodisponibilité de Reggenerate™ sont remarquables. Nos formulateurs adorent travailler avec cet ingrédient premium."</p>
+                        <p>"Nous cherchions depuis longtemps un collagène innovant qui puisse rentrer dans 2 gélules et non pas 10. Reggenerate nous a permis de nous différencier dans ce secteur ou la concurrence est rude."</p>
                     </div>
                     <div class="testimonial-author">
                         <div class="author-info">
-                            <h4>Marc Dubois</h4>
-                            <span>Directeur Formulation, BioNutrition</span>
+                            <h4>Hélène Blum</h4>
+                            <span>Chef de projet R&D</span>
                         </div>
                         <div class="testimonial-metric">
-                            <span>Stabilité optimale</span>
+                            <span>+X% DE VENTES</span>
                         </div>
                     </div>
                 </div>
                 
                 <div class="testimonial-card">
-                    <div class="testimonial-badge">
-                        <span class="emoji-icon">💬</span>
-                        <span>Partenaire B2B</span>
+                    <div class="testimonial-quote-icon">"</div>
+                    <div class="testimonial-logo-top-right">
+                        <img src="images/oemine-logo-xxl-min.png" alt="Logo entreprise" class="company-logo-img no-fade">
                     </div>
                     <div class="testimonial-content">
-                        <p>"Reggenerate™ nous a permis de créer le premier supplément de récupération vraiment différenciant sur le marché des sports professionnels."</p>
+                        <p>"Enfin un collagène qui n'a pas le goût de poisson et qui m'a permis de développer des barres à la fois saine et gourmande! J'aime beaucoup l'idée d'utiliser un ingrédient végétarien upcyclé et cela plaît beaucoup à mes clients."</p>
                     </div>
                     <div class="testimonial-author">
                         <div class="author-info">
-                            <h4>Jennifer Walsh</h4>
-                            <span>Chief Innovation Officer, Athletic Performance Co.</span>
+                            <h4>Catherine Kluger</h4>
+                            <span>CEO</span>
                         </div>
                         <div class="testimonial-metric">
-                            <span>Innovation leader</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Section 4: Descriptif du Produit -->
-    <section class="section product-details-section">
-        <div class="container">
-            <div class="section-header">
-                <h2>Notre Innovation : Membranes d'Œufs Riches en Biomolécules</h2>
-                <p class="section-subtitle">Nous récupérons les membranes d'œufs, sources naturelles exceptionnelles de biomolécules d'intérêt, pour créer des ingrédients révolutionnaires en nutrition clinique.</p>
-            </div>
-            
-            <!-- Processus Breveté Circul'Egg -->
-            <div style="margin: 3rem 0; padding: 2rem; background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); border-radius: 16px; border: 1px solid #dee2e6;">
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center;">
-                    <div>
-                        <h3 style="color: #2eb2a4; margin-bottom: 1rem; font-size: 1.5rem;">🛡️ Processus 100% Mécanique & Breveté</h3>
-                        <p style="font-size: 1.1rem; line-height: 1.6; color: #495057; margin-bottom: 1.5rem;">
-                            <strong>Reggenerate®</strong> est issu d'un processus d'extraction <strong>100% mécanique et breveté</strong> développé par l'entreprise <strong>Circul'Egg</strong>. Cette approche révolutionnaire garantit un produit <strong>clean label</strong> sans aucun solvant chimique, préservant ainsi l'intégrité naturelle des biomolécules d'intérêt.
-                        </p>
-                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
-                            <div style="display: flex; align-items: center; gap: 0.5rem;">
-                                <span style="color: #28a745; font-size: 1.2rem;">✅</span>
-                                <span style="font-weight: 500;">100% Mécanique</span>
-                            </div>
-                            <div style="display: flex; align-items: center; gap: 0.5rem;">
-                                <span style="color: #28a745; font-size: 1.2rem;">✅</span>
-                                <span style="font-weight: 500;">Clean Label</span>
-                            </div>
-                            <div style="display: flex; align-items: center; gap: 0.5rem;">
-                                <span style="color: #28a745; font-size: 1.2rem;">✅</span>
-                                <span style="font-weight: 500;">Breveté</span>
-                            </div>
-                            <div style="display: flex; align-items: center; gap: 0.5rem;">
-                                <span style="color: #28a745; font-size: 1.2rem;">✅</span>
-                                <span style="font-weight: 500;">Circul'Egg</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div style="text-align: center; height: 100%; display: flex; align-items: center; justify-content: center;">
-                        <img src="images/processus-membranes-oeufs.jpg" 
-                             alt="Processus mécanique d'extraction des membranes d'œufs Circul'Egg" 
-                             class="no-fade"
-                             style="width: 100%; height: 100%; object-fit: cover; border-radius: 12px; box-shadow: 0 8px 25px rgba(0,0,0,0.15); opacity: 1 !important;">
-                    </div>
-                </div>
-            </div>
-            
-            <div class="biomolecules-section">
-                <div class="biomolecules-intro">
-                    <h3>Une synergie de molécules bioactives reconnues</h3>
-                    <p>Répartition indicative des principales familles bioactives issues de la membrane d'œuf</p>
-                    
-                    <div style="max-width: 900px; margin: 0 auto;">
-                        <div style="display: grid; grid-template-columns: 1fr 3fr auto; align-items: center; gap: 1rem; padding: 0.6rem 0;">
-                            <div style="color: #1a1a1a; font-weight: 600;">Elastine</div>
-                            <div style="height: 14px; background: #eef6f5; border-radius: 999px; overflow: hidden;">
-                                <div style="height: 100%; width: 25%; background: #2eb2a4; border-radius: 999px;"></div>
-                            </div>
-                            <div style="color: #1a1a1a; font-weight: 600;">25%</div>
-                        </div>
-                        <div style="display: grid; grid-template-columns: 1fr 3fr auto; align-items: center; gap: 1rem; padding: 0.6rem 0;">
-                            <div style="color: #1a1a1a; font-weight: 600;">Collagène Type I, V, X</div>
-                            <div style="height: 14px; background: #eef6f5; border-radius: 999px; overflow: hidden;">
-                                <div style="height: 100%; width: 22%; background: #2eb2a4; border-radius: 999px;"></div>
-                            </div>
-                            <div style="color: #1a1a1a; font-weight: 600;">22%</div>
-                        </div>
-                        <div style="display: grid; grid-template-columns: 1fr 3fr auto; align-items: center; gap: 1rem; padding: 0.6rem 0;">
-                            <div style="color: #1a1a1a; font-weight: 600;">GAGs*</div>
-                            <div style="height: 14px; background: #eef6f5; border-radius: 999px; overflow: hidden;">
-                                <div style="height: 100%; width: 6%; background: #2eb2a4; border-radius: 999px;"></div>
-                            </div>
-                            <div style="color: #1a1a1a; font-weight: 600;">6%</div>
-                        </div>
-                        <div style="display: grid; grid-template-columns: 1fr 3fr auto; align-items: center; gap: 1rem; padding: 0.6rem 0;">
-                            <div style="color: #1a1a1a; font-weight: 600;">Acide Hyaluronique</div>
-                            <div style="height: 14px; background: #eef6f5; border-radius: 999px; overflow: hidden;">
-                                <div style="height: 100%; width: 4%; background: #2eb2a4; border-radius: 999px;"></div>
-                            </div>
-                            <div style="color: #1a1a1a; font-weight: 600;">4%</div>
-                        </div>
-                        <div style="display: grid; grid-template-columns: 1fr 3fr auto; align-items: center; gap: 1rem; padding: 0.6rem 0;">
-                            <div style="color: #1a1a1a; font-weight: 600;">Glucosamine</div>
-                            <div style="height: 14px; background: #eef6f5; border-radius: 999px; overflow: hidden;">
-                                <div style="height: 100%; width: 2%; background: #2eb2a4; border-radius: 999px;"></div>
-                            </div>
-                            <div style="color: #1a1a1a; font-weight: 600;">2%</div>
-                        </div>
-                        <p style="margin-top: 0.75rem; color: #6b7280; font-size: 0.9rem;">* GAGs : Glycosaminoglycanes</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="clinical-studies-section">
-                <h3>Études Cliniques Prouvées</h3>
-                <p class="studies-subtitle">Notre approche scientifique rigoureuse et nos innovations brevetées</p>
-                
-                <div class="studies-grid">
-                    <div class="study-card">
-                        <div class="study-header">
-                            <div class="study-icon">
-                                <span class="emoji-icon">🦴</span>
-                            </div>
-                            <h4>Étude Mobilité Articulaire</h4>
-                        </div>
-                        <div class="study-details">
-                            <p><strong>Design :</strong> Randomized Controlled Trial (RCT), double-blind, versus placebo</p>
-                            <p><strong>Participants :</strong> 120 sujets âgés de 60-75 ans</p>
-                            <p><strong>Durée :</strong> 12 semaines</p>
-                        </div>
-                        <div class="study-results">
-                            <h5>Résultats Clés :</h5>
-                            <ul>
-                                <li>-42% réduction de la douleur articulaire dès 4 semaines (p<0.01)</li>
-                                <li>+35% augmentation de l'amplitude de mouvement (p<0.05)</li>
-                                <li>3 fois plus efficace que le collagène bovin standard</li>
-                            </ul>
-                        </div>
-                    </div>
-                    
-                    <div class="study-card">
-                        <div class="study-header">
-                            <div class="study-icon">
-                                <span class="emoji-icon">✨</span>
-                            </div>
-                            <h4>Étude Beauté de la Peau</h4>
-                        </div>
-                        <div class="study-details">
-                            <p><strong>Design :</strong> Randomized Controlled Trial (RCT) versus collagène marin</p>
-                            <p><strong>Participants :</strong> 80 femmes âgées de 25-45 ans</p>
-                            <p><strong>Durée :</strong> 8 semaines</p>
-                        </div>
-                        <div class="study-results">
-                            <h5>Résultats Clés :</h5>
-                            <ul>
-                                <li>+28% augmentation de l'élasticité cutanée (p<0.01)</li>
-                                <li>-31% réduction des rides fines (p<0.05)</li>
-                                <li>2.5 fois plus efficace que le collagène marin</li>
-                            </ul>
+                            <span>+X% DE VENTES</span>
                         </div>
                     </div>
                 </div>
             </div>
             
-            <div class="product-cta">
-                <button data-tally-open="3lxroW" data-tally-layout="modal" data-tally-align-left="1" data-tally-hide-title="1" data-tally-overlay="1" data-tally-emoji-text="👋" data-tally-emoji-animation="wave" data-tally-auto-close="2000" data-tally-form-events-forwarding="1" class="btn btn-primary">
-                    <span class="emoji-icon">📄</span>
-                    Consulter les Études Complètes
+            <div class="testimonials-cta">
+                <button data-tally-open="3lxroW" data-tally-layout="modal" data-tally-align-left="1" data-tally-hide-title="1" data-tally-overlay="1" data-tally-emoji-text="👋" data-tally-emoji-animation="wave" data-tally-auto-close="2000" data-tally-form-events-forwarding="1" class="btn btn-primary testimonials-cta-btn">
+                    Prendre rendez-vous >
                 </button>
             </div>
         </div>
     </section>
 
-    <!-- Section 5: Documentation Technique -->
-    <section id="technique" class="section documentation-section">
+    <!-- Section avec image de fond processus-membranes-oeufs.jpg -->
+    <section style="position: relative; height: 50vh; overflow: hidden;">
+        <!-- Image de fond -->
+        <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-image: url('images/processus-membranes-oeufs.jpg'); background-size: cover; background-position: center;"></div>
+        
+        <!-- Boîte blanche avec le texte en haut -->
+        <div style="position: absolute; top: 2rem; left: 50%; transform: translateX(-50%); background: rgba(255, 255, 255, 0.95); padding: 2rem 3rem; border-radius: 12px; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1); backdrop-filter: blur(10px); max-width: 800px; width: 90%; z-index: 10;">
+            <h2 style="font-size: 2.2rem; font-weight: 700; margin-bottom: 1.5rem; color: #2eb2a4; line-height: 1.2; text-align: center;">
+                Vous ne verrez plus jamais un <span style="color: #ffd700; background: rgba(255, 215, 0, 0.2); padding: 0.2rem 0.5rem; border-radius: 8px;">œuf</span> de la même manière
+            </h2>
+            <p style="font-size: 1.2rem; line-height: 1.6; margin: 0; color: #2eb2a4; font-weight: 500; text-align: center;">
+                Via un processus d'extraction 100% mécanique et breveté, nous récupérons les membranes d'œufs, sources exceptionnelles de biomolécules d'intérêt pour la beauté de la peau et la santé des articulations.
+            </p>
+        </div>
+    </section>
+
+    <!-- Section Composition Membrane d'Œuf -->
+    <section id="composition-membrane" style="background: linear-gradient(135deg, #e8f4f8 0%, #d1e7dd 100%); padding: 4rem 0;">
         <div class="container">
-            <div class="documentation-header">
-                <h2>Documentation Technique Complète</h2>
-                <p class="section-subtitle">Accédez à toutes nos ressources techniques pour intégrer nos produits dans vos formulations</p>
-            </div>
-            
-            <div class="documentation-content">
-                <div class="documentation-list">
-                    <h3>Documentation Technique Complète</h3>
-                    <ul class="doc-items">
-                        <li>
-                            <span class="emoji-icon">✅</span>
-                            <span>Fiche technique détaillée (solubilité, granulométrie)</span>
-                        </li>
-                        <li>
-                            <span class="emoji-icon">✅</span>
-                            <span>Guide formulation (compatibilité, pH, température)</span>
-                        </li>
-                        <li>
-                            <span class="emoji-icon">✅</span>
-                            <span>Certificats (Halal, Kosher, Bio, ISO, HACCP)</span>
-                        </li>
-                        <li>
-                            <span class="emoji-icon">✅</span>
-                            <span>Claims autorisés EFSA</span>
-                        </li>
-                    </ul>
+            <div style="text-align: center; max-width: 1000px; margin: 0 auto;">
+                <!-- Titre -->
+                <h2 style="font-size: 2.5rem; font-weight: 700; color: #4a2c7a; margin-bottom: 3rem; line-height: 1.2;">
+                    La Membrane d'œuf : Une synergie de molécules bioactives reconnues
+                </h2>
+                
+                <!-- Graphique en camembert -->
+                <div style="position: relative; width: 400px; height: 400px; margin: 0 auto 2rem; display: flex; align-items: center; justify-content: center;">
+                    <!-- Camembert SVG -->
+                    <svg width="400" height="400" viewBox="0 0 400 400" style="transform: rotate(-90deg);">
+                        <!-- 25% ÉLASTINE (orange) -->
+                        <path d="M 200 200 L 200 50 A 150 150 0 0 1 306.07 106.07 Z" fill="#ff8c42" stroke="#fff" stroke-width="2"/>
+                        <!-- 22% COLLAGÈNE (orange plus foncé) -->
+                        <path d="M 200 200 L 306.07 106.07 A 150 150 0 0 1 350 200 Z" fill="#e67e22" stroke="#fff" stroke-width="2"/>
+                        <!-- 4% GAGS (orange clair) -->
+                        <path d="M 200 200 L 350 200 A 150 150 0 0 1 306.07 293.93 Z" fill="#ffa726" stroke="#fff" stroke-width="2"/>
+                        <!-- 3% ACIDE HYALURONIQUE (orange moyen) -->
+                        <path d="M 200 200 L 306.07 293.93 A 150 150 0 0 1 200 350 Z" fill="#ff9800" stroke="#fff" stroke-width="2"/>
+                        <!-- 2% GLUCOSAMINE (orange foncé) -->
+                        <path d="M 200 200 L 200 350 A 150 150 0 0 1 93.93 293.93 Z" fill="#f57c00" stroke="#fff" stroke-width="2"/>
+                        <!-- 44% AUTRES MOLÉCULES (orange très clair) -->
+                        <path d="M 200 200 L 93.93 293.93 A 150 150 0 0 1 200 50 Z" fill="#ffb74d" stroke="#fff" stroke-width="2"/>
+                    </svg>
+                    
+                    <!-- Labels avec flèches -->
+                    <div style="position: absolute; top: 0; left: 50%; transform: translateX(-50%); text-align: center;">
+                        <div style="color: #2eb2a4; font-weight: 700; font-size: 1.1rem;">25% ÉLASTINE</div>
+                        <div style="width: 0; height: 0; border-left: 8px solid transparent; border-right: 8px solid transparent; border-top: 12px solid #2eb2a4; margin: 0.5rem auto 0;"></div>
+                    </div>
+                    
+                    <div style="position: absolute; top: 20%; right: 10%; text-align: center;">
+                        <div style="color: #2eb2a4; font-weight: 700; font-size: 1.1rem;">22% COLLAGÈNE</div>
+                        <div style="width: 0; height: 0; border-left: 8px solid transparent; border-right: 8px solid transparent; border-top: 12px solid #2eb2a4; margin: 0.5rem auto 0;"></div>
+                    </div>
+                    
+                    <div style="position: absolute; bottom: 20%; right: 10%; text-align: center;">
+                        <div style="color: #2eb2a4; font-weight: 700; font-size: 1.1rem;">4% GAGS*</div>
+                        <div style="width: 0; height: 0; border-left: 8px solid transparent; border-right: 8px solid transparent; border-top: 12px solid #2eb2a4; margin: 0.5rem auto 0;"></div>
+                    </div>
+                    
+                    <div style="position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); text-align: center;">
+                        <div style="color: #2eb2a4; font-weight: 700; font-size: 1.1rem;">3% ACIDE HYALURONIQUE</div>
+                        <div style="width: 0; height: 0; border-left: 8px solid transparent; border-right: 8px solid transparent; border-top: 12px solid #2eb2a4; margin: 0.5rem auto 0;"></div>
+                    </div>
+                    
+                    <div style="position: absolute; top: 20%; left: 10%; text-align: center;">
+                        <div style="color: #2eb2a4; font-weight: 700; font-size: 1.1rem;">2% GLUCOSAMINE</div>
+                        <div style="width: 0; height: 0; border-left: 8px solid transparent; border-right: 8px solid transparent; border-top: 12px solid #2eb2a4; margin: 0.5rem auto 0;"></div>
+                    </div>
+                    
+                    <div style="position: absolute; top: 30%; left: 20%; text-align: center;">
+                        <div style="color: #2eb2a4; font-weight: 700; font-size: 1.1rem;">44% AUTRES MOLÉCULES DE L'ŒUF</div>
+                        <div style="width: 0; height: 0; border-left: 8px solid transparent; border-right: 8px solid transparent; border-top: 12px solid #2eb2a4; margin: 0.5rem auto 0;"></div>
+                    </div>
                 </div>
                 
-                <div class="documentation-pack">
-                    <div class="pack-icon">
-                        <span class="emoji-icon">📋</span>
+                <!-- Note explicative -->
+                <div style="margin-bottom: 2rem;">
+                    <p style="color: #2eb2a4; font-size: 1rem; margin-bottom: 1rem;">
+                        *Glucosaminoglycanes sulfatés : chondroitine, dermatane sulfate, kératane sulfatée
+                    </p>
+                    <p style="color: #2eb2a4; font-size: 0.9rem; font-style: italic;">
+                        Méthode de dosage validée et certifiée par l'Université Bretagne Sud (UBS)
+                    </p>
+                </div>
+                
+                <!-- Bouton -->
+                <div style="text-align: center;">
+                    <a href="ingredient-page.html" style="background: #4a2c7a; color: white; padding: 1rem 2rem; border-radius: 8px; text-decoration: none; font-weight: 600; display: inline-block; transition: all 0.3s ease;">
+                        En savoir plus >
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section EGGSPERTISE - Études Cliniques -->
+    <section class="section" style="background: #f8f9fa; padding: 4rem 0;">
+        <div class="container">
+            <!-- Titre principal -->
+            <div style="text-align: center; margin-bottom: 4rem;">
+                <h2 style="font-size: 2.5rem; font-weight: 700; color: #2eb2a4; margin-bottom: 1rem;">
+                    Une efficacité cliniquement prouvée : c'est ça notre <span style="color: #ffd700;">EGGSPERTISE</span> !
+                </h2>
+            </div>
+            
+            <!-- Contenu en deux colonnes -->
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; max-width: 1200px; margin: 0 auto;">
+                
+                <!-- Colonne gauche - Étude Beauté de la Peau -->
+                <div style="padding-bottom: 1.5rem;">
+                    <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem;">
+                        <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #e1bee7, #f8bbd9); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2rem;">✨</div>
+                        <h3 style="font-size: 1.5rem; font-weight: 700; color: #2eb2a4; margin: 0;">Étude Beauté de la Peau</h3>
                     </div>
-                    <h3>Pack Documentation</h3>
-                    <p>Tout ce dont vous avez besoin pour formuler</p>
-                    <button data-tally-open="3lxroW" data-tally-layout="modal" data-tally-align-left="1" data-tally-hide-title="1" data-tally-overlay="1" data-tally-emoji-text="👋" data-tally-emoji-animation="wave" data-tally-auto-close="2000" data-tally-form-events-forwarding="1" class="btn btn-primary">
-                        <span class="emoji-icon">⬇️</span>
-                        Télécharger le Pack
-                    </button>
+                    
+                    <!-- Card 1 -->
+                    <div style="background: white; border-radius: 12px; padding: 1.5rem; margin-bottom: 1.5rem; border: 1px solid #e9ecef; box-shadow: 0 2px 8px rgba(0,0,0,0.1); height: 220px; display: flex; flex-direction: column; justify-content: space-between;">
+                        <div>
+                            <h4 style="color: #2eb2a4; font-weight: 600; margin-bottom: 1rem; font-size: 1.1rem;">Test consommateur - Étude propriétaire</h4>
+                            <div style="margin-bottom: 1rem;">
+                                <p style="color: #666; font-size: 0.9rem; margin: 0.3rem 0;"><strong>Résultats clés :</strong></p>
+                                <p style="color: #666; font-size: 0.9rem; margin: 0.2rem 0;">78% fermeté (perception), 76% élasticité, 78% éclat, 76% peau douce, 60% peau souple, 71% hydratation, -79% inconfort cutané</p>
+                            </div>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 1rem; color: #999; font-size: 0.9rem;">
+                            <div style="display: flex; align-items: center; gap: 0.5rem;">
+                                <span>👥</span>
+                                <span>60 participants</span>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 0.5rem;">
+                                <span>⏰</span>
+                                <span>60 jours</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Card 2 -->
+                    <div style="background: white; border-radius: 12px; padding: 1.5rem; margin-bottom: 1.5rem; border: 1px solid #e9ecef; box-shadow: 0 2px 8px rgba(0,0,0,0.1); height: 220px; display: flex; flex-direction: column; justify-content: space-between;">
+                        <div>
+                            <h4 style="color: #2eb2a4; font-weight: 600; margin-bottom: 1rem; font-size: 1.1rem;">Étude clinique randomisée double aveugle</h4>
+                            <div style="margin-bottom: 1rem;">
+                                <p style="color: #666; font-size: 0.9rem; margin: 0.3rem 0;"><strong>Résultats clés :</strong></p>
+                                <p style="color: #666; font-size: 0.9rem; margin: 0.2rem 0;">-19% perte en eau, +51% fermeté, +25% élasticité, -33% fatigue cutanée</p>
+                            </div>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 1rem; color: #999; font-size: 0.9rem;">
+                            <div style="display: flex; align-items: center; gap: 0.5rem;">
+                                <span>👥</span>
+                                <span>50 participants</span>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 0.5rem;">
+                                <span>⏰</span>
+                                <span>60 jours</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Card 3 -->
+                    <div style="background: white; border-radius: 12px; padding: 1.5rem; margin-bottom: 0; border: 1px solid #e9ecef; box-shadow: 0 2px 8px rgba(0,0,0,0.1); height: 220px; display: flex; flex-direction: column; justify-content: space-between;">
+                        <div>
+                            <h4 style="color: #2eb2a4; font-weight: 600; margin-bottom: 1rem; font-size: 1.1rem;">Étude clinique randomisée double aveugle</h4>
+                            <div style="margin-bottom: 1rem;">
+                                <p style="color: #666; font-size: 0.9rem; margin: 0.3rem 0;"><strong>Résultats clés :</strong></p>
+                                <p style="color: #666; font-size: 0.9rem; margin: 0.2rem 0;">+21,1% densité capillaire, +1,5% uniformité teint, -6,3 pts rides pattes d'oie, cheveux/ongles renforcés</p>
+                            </div>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 1rem; color: #999; font-size: 0.9rem;">
+                            <div style="display: flex; align-items: center; gap: 0.5rem;">
+                                <span>👥</span>
+                                <span>68 participants</span>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 0.5rem;">
+                                <span>⏰</span>
+                                <span>12 semaines</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Colonne droite - Étude Santé Articulaire -->
+                <div style="padding-bottom: 1.5rem;">
+                    <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem;">
+                        <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #e1bee7, #f8bbd9); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2rem;">🦴</div>
+                        <h3 style="font-size: 1.5rem; font-weight: 700; color: #2eb2a4; margin: 0;">Étude Santé Articulaire</h3>
+                    </div>
+                    
+                    <!-- Card 1 -->
+                    <div style="background: white; border-radius: 12px; padding: 1.5rem; margin-bottom: 1.5rem; border: 1px solid #e9ecef; box-shadow: 0 2px 8px rgba(0,0,0,0.1); height: 220px; display: flex; flex-direction: column; justify-content: space-between;">
+                        <div>
+                            <h4 style="color: #2eb2a4; font-weight: 600; margin-bottom: 1rem; font-size: 1.1rem;">Étude clinique randomisée double aveugle</h4>
+                            <div style="margin-bottom: 1rem;">
+                                <p style="color: #666; font-size: 0.9rem; margin: 0.3rem 0;"><strong>Résultats clés :</strong></p>
+                                <p style="color: #666; font-size: 0.9rem; margin: 0.2rem 0;">En 7 jours: Douleur: -22%, Raideur: -24% - En 30 jours: Douleur: -33% - Raideur: -35%</p>
+                            </div>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 1rem; color: #999; font-size: 0.9rem;">
+                            <div style="display: flex; align-items: center; gap: 0.5rem;">
+                                <span>👥</span>
+                                <span>160 participants</span>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 0.5rem;">
+                                <span>⏰</span>
+                                <span>90 jours</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Card 2 -->
+                    <div style="background: white; border-radius: 12px; padding: 1.5rem; margin-bottom: 1.5rem; border: 1px solid #e9ecef; box-shadow: 0 2px 8px rgba(0,0,0,0.1); height: 220px; display: flex; flex-direction: column; justify-content: space-between;">
+                        <div>
+                            <h4 style="color: #2eb2a4; font-weight: 600; margin-bottom: 1rem; font-size: 1.1rem;">Étude clinique randomisée double aveugle</h4>
+                            <div style="margin-bottom: 1rem;">
+                                <p style="color: #666; font-size: 0.9rem; margin: 0.3rem 0;"><strong>Résultats clés :</strong></p>
+                                <p style="color: #666; font-size: 0.9rem; margin: 0.2rem 0;">Raideur: -26,6% - Douleur: -15,4% (Au bout de 60 jours avec des effets dès le 10ème jour)</p>
+                            </div>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 1rem; color: #999; font-size: 0.9rem;">
+                            <div style="display: flex; align-items: center; gap: 0.5rem;">
+                                <span>👥</span>
+                                <span>67 participants</span>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 0.5rem;">
+                                <span>⏰</span>
+                                <span>8 semaines</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Card 3 -->
+                    <div style="background: white; border-radius: 12px; padding: 1.5rem; margin-bottom: 0; border: 1px solid #e9ecef; box-shadow: 0 2px 8px rgba(0,0,0,0.1); height: 220px; display: flex; flex-direction: column; justify-content: space-between;">
+                        <div>
+                            <h4 style="color: #2eb2a4; font-weight: 600; margin-bottom: 1rem; font-size: 1.1rem;">Étude clinique randomisée double aveugle</h4>
+                            <div style="margin-bottom: 1rem;">
+                                <p style="color: #666; font-size: 0.9rem; margin: 0.3rem 0;"><strong>Résultats clés :</strong></p>
+                                <p style="color: #666; font-size: 0.9rem; margin: 0.2rem 0;">-9% de dégradation du cartilage dès 1 semaine, -38.1% de douleur dès 2 semaines, -18,5% de raideur dès 2 semaines, 56.3% d'amélioration de la récupération vs placebo</p>
+                            </div>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 1rem; color: #999; font-size: 0.9rem;">
+                            <div style="display: flex; align-items: center; gap: 0.5rem;">
+                                <span>👥</span>
+                                <span>60 participants</span>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 0.5rem;">
+                                <span>⏰</span>
+                                <span>2 semaines</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             
+            <!-- Bouton CTA -->
+            <div style="text-align: center; margin-top: 3rem;">
+                <button data-tally-open="3lxroW" data-tally-layout="modal" data-tally-align-left="1" data-tally-hide-title="1" data-tally-overlay="1" data-tally-emoji-text="👋" data-tally-emoji-animation="wave" data-tally-auto-close="2000" data-tally-form-events-forwarding="1" style="background: #2eb2a4; color: white; padding: 1rem 2rem; border-radius: 8px; border: none; font-weight: 600; font-size: 1.1rem; cursor: pointer; transition: all 0.3s ease;">
+                    Nous demander les études complètes >
+                </button>
+            </div>
+        </div>
+    </section>
 
-            
-            <div class="documentation-cta">
-                <a href="ingredient-page.html" class="btn btn-primary">
-                    <span class="emoji-icon">➡️</span>
-                    Accéder à la Page Ingrédient
-                </a>
+    <!-- Section Documentation Technique -->
+    <section id="technique" class="section" style="background: linear-gradient(135deg, #e8f4f8 0%, #d1e7dd 100%); padding: 4rem 0;">
+        <div class="container">
+            <div style="max-width: 1000px; margin: 0 auto;">
+                <div style="display: grid; grid-template-columns: 2fr 1px 1fr; gap: 3rem; align-items: start;">
+                    
+                    <!-- Colonne gauche - Documentation Technique -->
+                    <div>
+                        <h2 style="font-size: 2.2rem; font-weight: 700; color: #4a2c7a; margin-bottom: 2rem; line-height: 1.2;">
+                            La Documentation technique complète
+                        </h2>
+                        
+                        <ul style="list-style: none; padding: 0; margin: 0;">
+                            <li style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;">
+                                <span style="color: #28a745; font-size: 1.2rem;">✅</span>
+                                <span style="color: #2eb2a4; font-size: 1.1rem; font-weight: 500;">Fiche technique détaillée (solubilité, granulométrie)</span>
+                            </li>
+                            <li style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;">
+                                <span style="color: #28a745; font-size: 1.2rem;">✅</span>
+                                <span style="color: #2eb2a4; font-size: 1.1rem; font-weight: 500;">Guide formulation (compatibilité, pH, température)</span>
+                            </li>
+                            <li style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;">
+                                <span style="color: #28a745; font-size: 1.2rem;">✅</span>
+                                <span style="color: #2eb2a4; font-size: 1.1rem; font-weight: 500;">Certificats (ISO, HACCP, Attestations Qualité)</span>
+                            </li>
+                            <li style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;">
+                                <span style="color: #28a745; font-size: 1.2rem;">✅</span>
+                                <span style="color: #2eb2a4; font-size: 1.1rem; font-weight: 500;">Informations réglementaires : Allégations EFSA</span>
+                            </li>
+                            <li style="display: flex; align-items: center; gap: 1rem;">
+                                <span style="color: #28a745; font-size: 1.2rem;">✅</span>
+                                <span style="color: #2eb2a4; font-size: 1.1rem; font-weight: 500;">Etudes scientifiques</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Ligne de séparation -->
+                    <div style="background: #4a2c7a; height: 100%; width: 1px;"></div>
+                    
+                    <!-- Colonne droite - Pack Documentaire -->
+                    <div style="text-align: center;">
+                        <!-- Icône document -->
+                        <div style="width: 80px; height: 80px; margin: 0 auto 1.5rem; display: flex; align-items: center; justify-content: center; background: #4a2c7a; border-radius: 12px; position: relative;">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <polyline points="14,2 14,8 20,8" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <line x1="16" y1="13" x2="8" y2="13" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                                <line x1="16" y1="17" x2="8" y2="17" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                                <polyline points="10,9 9,9 8,9" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <div style="position: absolute; bottom: 8px; right: 8px; width: 16px; height: 16px; background: #28a745; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                                <span style="color: white; font-size: 10px;">✓</span>
+                            </div>
+                        </div>
+                        
+                        <h3 style="font-size: 1.8rem; font-weight: 700; color: #4a2c7a; margin-bottom: 1rem;">
+                            Pack Documentaire
+                        </h3>
+                        
+                        <p style="color: #2eb2a4; font-size: 1.1rem; margin-bottom: 2rem; line-height: 1.4;">
+                            Tout ce dont vous avez besoin pour formuler
+                        </p>
+                        
+                        <button data-tally-open="3lxroW" data-tally-layout="modal" data-tally-align-left="1" data-tally-hide-title="1" data-tally-overlay="1" data-tally-emoji-text="👋" data-tally-emoji-animation="wave" data-tally-auto-close="2000" data-tally-form-events-forwarding="1" style="background: #4a2c7a; color: white; padding: 1rem 2rem; border-radius: 8px; border: none; font-weight: 600; font-size: 1.1rem; cursor: pointer; transition: all 0.3s ease; display: flex; align-items: center; gap: 0.5rem; margin: 0 auto;">
+                            <span style="font-size: 1.2rem;">⬇️</span>
+                            Télécharger le Pack
+                        </button>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -780,4 +976,5 @@
         })();
     </script>
 </body>
-</html> 
+</html>
+</html>
