@@ -6,7 +6,7 @@
 }
 
 body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
     line-height: 1.6;
     color: #1a1a1a;
     overflow-x: hidden;
@@ -17,6 +17,59 @@ body {
     max-width: 1400px;
     margin: 0 auto;
     padding: 0 24px;
+}
+
+/* Unified Teal Header */
+.site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #2eb2a4; /* teal */
+    z-index: 1000;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+
+.site-header .header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 64px;
+}
+
+.site-header .brand {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.site-header .brand img {
+    height: 28px;
+    width: auto;
+    display: block;
+}
+
+.no-fade {
+    opacity: 1 !important;
+    transition: none !important;
+}
+
+.main-nav {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.main-nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 700;
+    font-family: 'League Spartan', 'Roboto', Arial, sans-serif;
+    letter-spacing: 0.2px;
+}
+
+.main-nav a:hover {
+    opacity: 0.85;
 }
 
 /* Variables CSS - Style Typology avec couleurs Circul'Egg */
@@ -354,7 +407,7 @@ body {
 }
 
 .section h2 {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'League Spartan', 'Roboto', Arial, sans-serif;
     font-size: 2.5rem;
     font-weight: 700;
     margin-bottom: 1rem;
@@ -384,7 +437,7 @@ body {
 }
 
 .section-header h2 {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'League Spartan', 'Roboto', Arial, sans-serif;
     font-size: 3rem;
     font-weight: 800;
     margin-bottom: 1.5rem;
