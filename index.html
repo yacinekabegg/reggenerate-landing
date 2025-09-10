@@ -31,51 +31,36 @@
         </div>
     </header>
 
-    <div class="hero" style="margin-top: 80px;">
-            <div class="hero-content">
-                <div class="hero-badge">
-                    <span>🥚 Innovation Brevetée</span>
-                </div>
-                <h1>Transformer l'ordinaire en <span class="highlight">EGGSTRA-ORDINAIRE</span></h1>
-                <p class="hero-subtitle">Reggenerate™ révolutionne l'industrie nutraceutique avec des <strong>biomolécules d'œufs 3x plus assimilables</strong> et <strong>cliniquement prouvées</strong>, adaptées aux tendances consommateurs et aux besoins spécifiques de chaque segment de marché.</p>
-                
-                
-                
-                <div class="hero-buttons">
-                    <a href="#produit" class="btn btn-primary">
-                        <span class="emoji-icon">💎</span>
-                        Voir le Produit
-                    </a>
-                </div>
+    <section style="margin-top: 64px; height: calc(100vh - 64px); background: #ffffff; color: #2eb2a4; overflow: hidden;">
+        <div class="brand-hero">
+            <div class="brand-hero-content">
+                <div class="innovation-badge" id="innovation-badge"><span class="icon">✅</span> Innovation brevetée</div>
+                <h1 class="brand-hero-title">
+                    Transformer l'ordinaire<br>
+                    en <span class="egg">EGG</span><span class="outline">STRA-ORDINAIRE</span>
+                </h1>
+                <p class="brand-hero-subtitle">
+                    Reggenerate™ est le 1er ingrédient upcyclé issu de l’œuf et tout-en-1 qui regroupe en une seule dose tous les ingrédients indispensables pour la beauté de la peau et la santé des articulations : collagène, acide hyaluronique, élastine, glucosamine, chondroïtine. Sa versatilité et sa faible posologie permettent une intégration dans toutes les galéniques pour s’adapter à tous les besoins.
+                </p>
+                <a href="#produit" class="brand-hero-cta" id="brand-hero-cta">En savoir plus ></a>
             </div>
-            
-            <div class="hero-sidebar">
-                <div class="singularity-box">
-                    <div class="singularity-header">
-                        <span class="emoji-icon">🛡️</span>
-                        <h3>Singularité Reggenerate™</h3>
-                    </div>
-                    <ul class="singularity-list">
-                        <li>
-                            <span class="emoji-icon">✅</span>
-                            <span>Science objectivée & brevetée</span>
-                        </li>
-                        <li>
-                            <span class="emoji-icon">✅</span>
-                            <span>Performance galénique optimale</span>
-                        </li>
-                        <li>
-                            <span class="emoji-icon">✅</span>
-                            <span>Potentiel B2B2C unique</span>
-                        </li>
-                        <li>
-                            <span class="emoji-icon">✅</span>
-                            <span>Adapté aux tendances consos</span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
+            <img class="brand-hero-image no-fade" src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?q=80&w=1200&auto=format&fit=crop" alt="Placeholder visuel (remplacera les œufs)">
         </div>
+    </section>
+    <script>
+      (function(){
+        function syncCtaWidth(){
+          var badge = document.getElementById('innovation-badge');
+          var cta = document.getElementById('brand-hero-cta');
+          if(!badge || !cta) return;
+          var badgeWidth = badge.getBoundingClientRect().width;
+          var target = Math.max(140, Math.round(badgeWidth * 0.6667));
+          cta.style.width = target + 'px';
+        }
+        window.addEventListener('load', syncCtaWidth);
+        window.addEventListener('resize', syncCtaWidth);
+      })();
+    </script>
 
     <!-- Section 1: Innovation Galénique -->
     <section id="produit" class="section innovation-section">

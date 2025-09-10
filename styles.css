@@ -214,6 +214,138 @@ body {
     z-index: 2;
 }
 
+/* Brand hero (logo outlined + image) */
+.brand-hero {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+    width: 100%;
+    height: 100%;
+}
+
+.brand-hero-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 16px;
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.brand-hero-title {
+    font-family: 'League Spartan', 'Roboto', Arial, sans-serif;
+    font-size: clamp(28px, 3.6vw, 48px);
+    line-height: 1.05;
+    font-weight: 800;
+    letter-spacing: 0.02em;
+    margin: 0;
+    max-width: 56ch; /* align width with subtitle */
+    text-wrap: balance;
+}
+
+.brand-hero-title .egg {
+    color: #f3d86b;
+}
+
+.brand-hero-title .outline { color: #2eb2a4; }
+
+.brand-hero-subtitle {
+    font-size: clamp(16px, 1.8vw, 18px);
+    line-height: 1.7;
+    color: #2eb2a4;
+    opacity: 0.95;
+    margin-top: 0.5rem;
+    max-width: 56ch;
+}
+
+/* Badge Innovation brevetée */
+.innovation-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 18px;
+    border: 3px solid #2eb2a4;
+    border-radius: 6px;
+    color: #2eb2a4;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    width: fit-content;
+    margin-bottom: 8px;
+}
+
+.innovation-badge .icon {
+    font-size: 1.1rem;
+}
+
+/* CTA */
+.brand-hero-cta {
+    display: inline-block;
+    margin-top: 24px;
+    margin-bottom: 32px;
+    background: #2eb2a4;
+    color: #ffffff;
+    padding: 10px 18px;
+    border-radius: 10px;
+    font-weight: 800;
+    text-decoration: none;
+    font-size: 0.9em;
+    min-width: 14ch;
+    text-align: center;
+}
+
+.brand-hero-image {
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+    object-fit: cover;
+    object-position: center;
+    box-shadow: none;
+    justify-self: stretch;
+}
+
+@media (min-width: 1024px) {
+    .brand-hero {
+        grid-template-columns: minmax(640px, 720px) 1fr;
+        align-items: center;
+        gap: 0; /* let the image take all remaining width */
+    }
+    .brand-hero-content {
+        margin: 0;
+        padding-left: clamp(24px, 5vw, 64px);
+        padding-right: clamp(24px, 4vw, 56px); /* keep visual spacing to the image */
+    }
+}
+
+/* Large desktop responsiveness */
+@media (min-width: 1280px) {
+    .brand-hero {
+        grid-template-columns: 1.15fr 0.85fr;
+    }
+    .brand-hero > div:first-child {
+        padding: 4vh 6vw;
+    }
+}
+
+@media (min-width: 1600px) {
+    .brand-hero {
+        grid-template-columns: 1.1fr 0.9fr;
+    }
+    .brand-hero > div:first-child {
+        padding: 5vh 7vw;
+    }
+}
+
+@media (min-width: 1900px) {
+    .brand-hero {
+        grid-template-columns: 1fr 1fr;
+    }
+    .brand-hero > div:first-child {
+        padding: 6vh 8vw;
+    }
+}
+
 .hero-badge {
     display: inline-block;
     background: var(--bg-light);
