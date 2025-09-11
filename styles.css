@@ -1521,6 +1521,38 @@ body {
     background: white;
 }
 
+/* Clients page - reuse DA */
+.clients-list-section h2 { color: #4e53a3; }
+.clients-list-section .section-subtitle { color: #2eb2a4; }
+
+.client-card {
+    border: 2px solid #4e53a3;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.client-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+}
+.client-cta {
+    background: #2eb2a4;
+    color: #ffffff;
+    border-radius: 8px;
+}
+.client-cta:hover {
+    background: #4e53a3;
+    box-shadow: 0 10px 25px rgba(78,83,163,0.2);
+}
+
+/* Harmonize DA with sections above */
+.case-studies-section h2 {
+    color: #4e53a3; /* violet title */
+}
+
+.case-studies-section .section-subtitle {
+    color: #2eb2a4; /* teal subtitle */
+}
+
 .case-studies-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
@@ -1530,15 +1562,21 @@ body {
 
 .case-study-card {
     background: white;
-    border-radius: 16px;
+    border-radius: 20px;
     overflow: hidden;
-    box-shadow: var(--shadow);
-    border: 1px solid var(--border-color);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    border: 2px solid #4e53a3; /* violet frame */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.case-study-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
 }
 
 .case-study-image img {
     width: 100%;
-    height: 200px;
+    height: 220px;
     object-fit: cover;
 }
 
@@ -1564,12 +1602,22 @@ body {
 }
 
 .case-study-stats span {
-    background: var(--text-dark);
-    color: white;
+    background: white;
+    color: #2eb2a4; /* teal text */
     padding: 0.5rem 1rem;
-    border-radius: 20px;
+    border-radius: 8px;
     font-size: 0.9rem;
     font-weight: 600;
+    border: 2px solid #2eb2a4; /* teal outline */
+}
+
+/* Teal CTA inside this section */
+.case-studies-section .btn-primary {
+    background: #2eb2a4;
+}
+.case-studies-section .btn-primary:hover {
+    background: #4e53a3;
+    box-shadow: 0 10px 25px rgba(78,83,163,0.2);
 }
 
 /* Section À propos */
@@ -1587,12 +1635,13 @@ body {
 .about-content h2 {
     text-align: left;
     margin-bottom: 1.5rem;
+    color: #4e53a3; /* violet title */
 }
 
 .about-content p {
     font-size: 1.1rem;
     margin-bottom: 2rem;
-    color: var(--text-light);
+    color: #2eb2a4; /* teal body copy */
 }
 
 .about-features {
@@ -1608,14 +1657,22 @@ body {
     gap: 0.5rem;
 }
 
-.about-feature i {
-    color: var(--primary-color);
-    font-size: 1.25rem;
+.about-feature i { color: #4e53a3; font-size: 1.25rem; }
+.about-feature .emoji-icon {
+    width: 32px;
+    height: 32px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #4e53a3; /* violet outline */
+    border-radius: 999px;
+    font-size: 1.1rem;
+    color: #4e53a3;
 }
 
 .about-feature span {
-    color: var(--text-dark);
-    font-weight: 500;
+    color: #2eb2a4; /* teal label */
+    font-weight: 600;
 }
 
 .video-section {
@@ -1625,11 +1682,11 @@ body {
 .video-section h3 {
     font-size: 1.25rem;
     margin-bottom: 0.5rem;
-    color: var(--text-dark);
+    color: #4e53a3; /* violet */
 }
 
 .video-section p {
-    color: var(--text-light);
+    color: #2eb2a4; /* teal */
     margin-bottom: 1rem;
 }
 
@@ -1744,6 +1801,10 @@ body {
 .faq-section {
     background: var(--bg-light);
 }
+.faq-section h2 { color: #4e53a3; }
+.faq-section .section-subtitle { color: #2eb2a4; }
+.faq-section .btn-secondary { background: #2eb2a4; color: #ffffff; border: none; }
+.faq-section .btn-secondary:hover { background: #4e53a3; box-shadow: 0 10px 25px rgba(78,83,163,0.2); }
 
 .faq-grid {
     max-width: 800px;
@@ -1805,6 +1866,14 @@ body {
 .blog-newsletter-section {
     background: white;
 }
+
+/* Blog section DA harmonization */
+.blog-newsletter-section h2 { color: #4e53a3; }
+.blog-section p { color: #2eb2a4; }
+.blog-section a.btn.btn-outline { border: 2px solid #2eb2a4; color: #2eb2a4; }
+.blog-section a.btn.btn-outline:hover { background: #4e53a3; color: #ffffff; box-shadow: 0 10px 25px rgba(78,83,163,0.2); }
+.blog-card { border: 2px solid #4e53a3; }
+.blog-card:hover { box-shadow: 0 10px 30px rgba(0,0,0,0.12); }
 
 .blog-newsletter-grid {
     display: grid;
@@ -1897,6 +1966,25 @@ body {
     color: white;
     padding: 3rem 0 1rem;
 }
+
+/* Minimal footer variant aligned with DA */
+.minimal-footer {
+    background: #1a1a1a;
+    padding: 2rem 0;
+}
+.minimal-footer .footer-main {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid #374151;
+}
+.minimal-footer .brand img { height: 28px; width: auto; display: block; }
+.minimal-footer .footer-nav { display: flex; gap: 1.25rem; }
+.minimal-footer .footer-nav a { color: #9ca3af; text-decoration: none; font-weight: 600; }
+.minimal-footer .footer-nav a:hover { color: #ffffff; }
+.minimal-footer .footer-bottom.minimal { text-align: center; color: #9ca3af; padding-top: 0.75rem; }
 
 .footer-grid {
     display: grid;
@@ -2526,3 +2614,25 @@ body {
         padding: 1.5rem;
     }
 } 
+
+/* === Partners (Façonniers) - Match DA of other sections === */
+.partners-section .partners-header h2 { color: #4e53a3; }
+.partners-section .partners-header .section-subtitle { color: #2eb2a4; }
+
+.partner-card {
+    border: 2px solid #4e53a3;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 20px;
+    background: #ffffff;
+}
+.partner-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+}
+.partner-title { color: #4e53a3; }
+.partner-text { color: #2eb2a4; }
+
+.partners-cta .btn-primary { background: #2eb2a4; color: #ffffff; }
+.partners-cta .btn-primary:hover { background: #4e53a3; box-shadow: 0 10px 25px rgba(78,83,163,0.2); }
+.partners-cta .btn-outline { border: 2px solid #2eb2a4; color: #2eb2a4; }
