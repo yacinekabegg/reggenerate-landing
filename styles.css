@@ -28,6 +28,7 @@ body {
     background: #2eb2a4; /* teal */
     z-index: 1000;
     border-bottom: 1px solid rgba(255,255,255,0.2);
+    padding: 0 24px;
 }
 
 .site-header .header-inner {
@@ -35,6 +36,9 @@ body {
     align-items: center;
     justify-content: space-between;
     height: 64px;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0;
 }
 
 .site-header .brand {
@@ -1545,78 +1549,200 @@ body {
 }
 
 /* Harmonize DA with sections above */
+.case-studies-section {
+    background: white; /* White section background */
+}
+
 .case-studies-section h2 {
-    color: #4e53a3; /* violet title */
+    color: #2eb2a4; /* teal title */
+    font-family: 'League Spartan', 'Roboto', Arial, sans-serif;
+    font-weight: 700;
+    font-size: 2.2rem;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.case-studies-section h2 .egg {
+    color: #f3d86b; /* Yellow for EGG */
+}
+
+.partners-section .partner-title .egg {
+    color: #f3d86b; /* Yellow for EGG */
 }
 
 .case-studies-section .section-subtitle {
     color: #2eb2a4; /* teal subtitle */
+    font-family: 'Roboto', Arial, sans-serif;
+    font-size: 1.1rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    opacity: 0.9;
 }
 
 .case-studies-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
+    gap: 2.5rem;
     margin-bottom: 3rem;
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .case-study-card {
-    background: white;
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-    border: 2px solid #4e53a3; /* violet frame */
+    background: #e2f6f4; /* Light green background */
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    border: 1px solid #ddd;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+}
+
+.case-study-card.featured {
+    border: 1px solid #ddd; /* Same border as other cards */
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
 }
 
 .case-study-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
-}
-
-.case-study-image img {
-    width: 100%;
-    height: 220px;
-    object-fit: cover;
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.12);
 }
 
 .case-study-content {
-    padding: 2rem;
-}
-
-.case-study-content h3 {
-    font-size: 1.25rem;
-    margin-bottom: 1rem;
-    color: var(--text-dark);
-}
-
-.case-study-content p {
-    color: var(--text-light);
-    margin-bottom: 1.5rem;
-}
-
-.case-study-stats {
     display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 0.75rem;
 }
 
-.case-study-stats span {
-    background: white;
-    color: #2eb2a4; /* teal text */
-    padding: 0.5rem 1rem;
-    border-radius: 8px;
+.product-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 0.75rem;
+    gap: 0.75rem;
+}
+
+.case-study-card .product-header h3 {
+    color: #2eb2a4 !important; /* Teal - same as subtitle */
+    font-family: 'League Spartan', 'Roboto', Arial, sans-serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin: 0;
+    line-height: 1.2;
+    flex: 1;
+}
+
+.product-tag {
+    background: #2eb2a4; /* Teal background */
+    color: white;
+    padding: 0.25rem 0.7rem;
+    border-radius: 12px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: lowercase;
+    white-space: nowrap;
+    flex-shrink: 0;
+    font-family: 'Roboto', Arial, sans-serif;
+}
+
+.product-brand {
+    color: #4e53a3; /* Violet - same as "Caractéristiques clés :" */
+    font-size: 0.85rem;
+    margin: 0 0 0.75rem 0;
+    font-style: italic;
+    font-family: 'Roboto', Arial, sans-serif;
+}
+
+.product-description {
+    color: #2eb2a4; /* Teal like subtitle */
+    font-family: 'Roboto', Arial, sans-serif;
+    font-size: 0.85rem;
+    line-height: 1.4;
+    margin: 0 0 1rem 0;
+}
+
+.product-characteristics {
+    margin: 0.5rem 0;
+}
+
+.product-characteristics h4 {
+    color: #4e53a3; /* Violet */
+    font-family: 'League Spartan', 'Roboto', Arial, sans-serif;
     font-size: 0.9rem;
     font-weight: 600;
-    border: 2px solid #2eb2a4; /* teal outline */
+    margin-bottom: 0.5rem;
+}
+
+.characteristics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(125px, 1fr));
+    gap: 0.5rem;
+}
+
+.characteristic-item {
+    background: white;
+    color: #2eb2a4; /* Teal text like subtitle */
+    border: 2px solid #2eb2a4; /* Teal outline */
+    border-radius: 6px;
+    padding: 0.4rem 0.6rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-align: center;
+    font-family: 'Roboto', Arial, sans-serif;
+}
+
+.product-rating {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 0.75rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid #e5e5e5;
+}
+
+.rating-left {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.rating-score {
+    color: #4e53a3; /* Violet */
+    font-weight: 700;
+    font-size: 0.95rem;
+    font-family: 'League Spartan', 'Roboto', Arial, sans-serif;
+}
+
+.stars {
+    color: #ffc107; /* Yellow */
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+}
+
+.rating-right {
+    color: #2eb2a4; /* Teal like subtitle */
+    font-size: 0.8rem;
+    font-family: 'Roboto', Arial, sans-serif;
 }
 
 /* Teal CTA inside this section */
 .case-studies-section .btn-primary {
-    background: #2eb2a4;
+    background: #2eb2a4; /* Teal */
+    color: white;
+    border: none;
+    padding: 0.8rem 2rem;
+    border-radius: 10px;
+    font-weight: 600;
+    font-family: 'League Spartan', 'Roboto', Arial, sans-serif;
+    font-size: 1rem;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s ease;
+    margin-top: 2rem;
 }
 .case-studies-section .btn-primary:hover {
-    background: #4e53a3;
+    background: #4e53a3; /* Violet on hover */
     box-shadow: 0 10px 25px rgba(78,83,163,0.2);
 }
 
