@@ -3501,3 +3501,185 @@ body {
         font-size: 1.1rem !important;
     }
 }
+
+/* ===========================
+   RESPONSIVE DESIGN - EGGSPERTISE SECTION
+   =========================== */
+
+/* EGGSPERTISE Section responsive */
+@media (max-width: 768px) {
+    .eggspertise-section {
+        padding: 2.5rem 0 !important;
+    }
+    
+    .eggspertise-header {
+        margin-bottom: 2.5rem !important;
+    }
+    
+    .eggspertise-title {
+        font-size: 2rem !important;
+        line-height: 1.3 !important;
+        padding: 0 1rem !important;
+    }
+    
+    .eggspertise-grid {
+        grid-template-columns: 1fr !important;
+        gap: 2rem !important;
+        max-width: 100% !important;
+    }
+    
+    .eggspertise-column {
+        padding-bottom: 0 !important;
+    }
+    
+    .eggspertise-column-header {
+        flex-direction: column !important;
+        text-align: center !important;
+        gap: 1rem !important;
+        margin-bottom: 1.5rem !important;
+    }
+    
+    .eggspertise-icon {
+        width: 50px !important;
+        height: 50px !important;
+    }
+    
+    .eggspertise-column-title {
+        font-size: 1.3rem !important;
+        text-align: center !important;
+    }
+    
+    .eggspertise-card {
+        height: auto !important;
+        min-height: 180px !important;
+        margin-bottom: 1rem !important;
+        padding: 1.25rem !important;
+    }
+    
+    .eggspertise-card-title {
+        font-size: 1rem !important;
+        line-height: 1.3 !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .eggspertise-section {
+        padding: 2rem 0 !important;
+    }
+    
+    .eggspertise-header {
+        margin-bottom: 2rem !important;
+    }
+    
+    .eggspertise-title {
+        font-size: 1.6rem !important;
+        line-height: 1.2 !important;
+        padding: 0 0.5rem !important;
+    }
+    
+    .eggspertise-grid {
+        gap: 1.5rem !important;
+    }
+    
+    .eggspertise-column-header {
+        margin-bottom: 1rem !important;
+    }
+    
+    .eggspertise-icon {
+        width: 45px !important;
+        height: 45px !important;
+    }
+    
+    .eggspertise-column-title {
+        font-size: 1.2rem !important;
+    }
+    
+    .eggspertise-card {
+        min-height: 150px !important;
+        padding: 1rem !important;
+        margin-bottom: 0.75rem !important;
+    }
+    
+    .eggspertise-card-title {
+        font-size: 0.95rem !important;
+        margin-bottom: 0.75rem !important;
+    }
+    
+    /* Improve text readability on mobile */
+    .eggspertise-card p {
+        font-size: 0.85rem !important;
+        line-height: 1.4 !important;
+    }
+    
+    /* Make stats section more compact */
+    .eggspertise-stats {
+        margin-top: 0.75rem !important;
+        gap: 0.75rem !important;
+        font-size: 0.8rem !important;
+        justify-content: center !important;
+        flex-wrap: wrap !important;
+    }
+    
+    .eggspertise-stats > div {
+        background: #f8f9fa !important;
+        padding: 0.3rem 0.6rem !important;
+        border-radius: 4px !important;
+        white-space: nowrap !important;
+    }
+}
+
+@media (max-width: 375px) {
+    .eggspertise-title {
+        font-size: 1.4rem !important;
+    }
+    
+    .eggspertise-column-title {
+        font-size: 1.1rem !important;
+    }
+    
+    .eggspertise-card {
+        padding: 0.875rem !important;
+    }
+    
+    .eggspertise-card-title {
+        font-size: 0.9rem !important;
+    }
+    
+    .eggspertise-stats {
+        gap: 0.5rem !important;
+        font-size: 0.75rem !important;
+    }
+    
+    .eggspertise-stats > div {
+        padding: 0.25rem 0.5rem !important;
+    }
+}
+
+/* Extra small screens (iPhone SE 320px) */
+@media (max-width: 320px) {
+    .eggspertise-title {
+        font-size: 1.25rem !important;
+        line-height: 1.1 !important;
+    }
+    
+    .eggspertise-column-title {
+        font-size: 1rem !important;
+    }
+    
+    .eggspertise-card {
+        padding: 0.75rem !important;
+    }
+    
+    .eggspertise-card-title {
+        font-size: 0.85rem !important;
+    }
+    
+    .eggspertise-card p {
+        font-size: 0.8rem !important;
+    }
+    
+    .eggspertise-stats {
+        font-size: 0.7rem !important;
+        gap: 0.4rem !important;
+    }
+}
