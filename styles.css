@@ -2182,7 +2182,79 @@ body {
 }
 
 /* Responsive Design */
+
+/* Tablet styles (768px - 1024px) */
+@media (max-width: 1024px) {
+    .container {
+        padding: 0 1.5rem;
+    }
+    
+    .hero {
+        gap: 3rem;
+    }
+    
+    .brand-hero {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .brand-hero-content {
+        padding: 0 1rem;
+    }
+    
+    .innovation-grid,
+    .trends-grid,
+    .testimonials-grid {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+    
+    .case-studies-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .about-grid,
+    .blog-newsletter-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+    
+    .documentation-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .section h2 {
+        font-size: 2.25rem;
+    }
+    
+    .section-header h2 {
+        font-size: 2.5rem;
+    }
+}
+
+/* Mobile styles (max-width: 768px) */
 @media (max-width: 768px) {
+    .container {
+        padding: 0 1rem;
+    }
+    
+    /* Header */
+    .site-header {
+        padding: 0 1rem;
+    }
+    
+    .site-header .header-inner {
+        height: 56px;
+    }
+    
+    .site-header .brand img {
+        height: 24px;
+    }
+    
+    .main-nav {
+        display: none;
+    }
+    
     .nav-menu {
         display: none;
     }
@@ -2191,19 +2263,55 @@ body {
         display: flex;
     }
     
+    /* Hero sections */
     .hero {
         grid-template-columns: 1fr;
         text-align: center;
         gap: 2rem;
+        padding: 0 1rem;
+    }
+    
+    .brand-hero {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .brand-hero-content {
+        padding: 0;
+        margin: 0;
+    }
+    
+    .brand-hero-title {
+        font-size: clamp(1.75rem, 5vw, 2.5rem);
+        line-height: 1.1;
+    }
+    
+    .brand-hero-subtitle {
+        font-size: clamp(0.9rem, 2.5vw, 1rem);
+        line-height: 1.5;
+    }
+    
+    .innovation-badge {
+        font-size: 0.85rem;
+        padding: 8px 14px;
+    }
+    
+    .brand-hero-cta {
+        font-size: 0.85rem;
+        padding: 8px 16px;
+        margin-top: 1.5rem;
     }
     
     .hero-content h1 {
         font-size: 2.5rem;
+        line-height: 1.1;
     }
     
     .hero-features {
         justify-content: center;
         gap: 1rem;
+        flex-direction: column;
+        align-items: center;
     }
     
     .hero-sidebar {
@@ -2212,8 +2320,30 @@ body {
     
     .singularity-box {
         max-width: 100%;
+        padding: 1.5rem;
     }
     
+    /* Sections */
+    .section {
+        padding: 3rem 0;
+    }
+    
+    .section h2 {
+        font-size: 2rem;
+        line-height: 1.2;
+    }
+    
+    .section-header h2 {
+        font-size: 2.25rem;
+        line-height: 1.2;
+    }
+    
+    .section-subtitle {
+        font-size: 1rem;
+        line-height: 1.5;
+    }
+    
+    /* Grids */
     .product-grid,
     .product-details-grid,
     .about-grid,
@@ -2232,54 +2362,268 @@ body {
     .documentation-content,
     .documentation-images {
         grid-template-columns: 1fr;
+        gap: 1.5rem;
     }
     
     .case-studies-grid {
         grid-template-columns: 1fr;
+        gap: 1.5rem;
     }
     
+    /* Cards */
+    .innovation-card,
+    .trend-card,
+    .testimonial-card,
+    .case-study-card,
+    .quality-card {
+        padding: 1.5rem;
+    }
+    
+    .testimonial-content {
+        margin-right: 0;
+        margin-bottom: 1rem;
+    }
+    
+    .testimonial-logo-top-right {
+        position: static;
+        width: 150px;
+        height: auto;
+        margin: 1rem auto 0;
+        display: block;
+    }
+    
+    /* Buttons */
     .hero-buttons {
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .btn {
+        padding: 12px 20px;
+        font-size: 0.9rem;
+        width: 100%;
+        max-width: 250px;
         justify-content: center;
     }
     
-    .section h2 {
-        font-size: 2rem;
-    }
-    
+    /* Features */
     .about-features {
         flex-direction: column;
         gap: 1rem;
     }
     
+    /* Newsletter section */
+    .newsletter-title-container {
+        flex-direction: column !important;
+        gap: 1rem !important;
+        text-align: center !important;
+    }
+    
+    .newsletter-title-container img {
+        height: 60px !important;
+    }
+    
+    .newsletter-title-container h2 {
+        font-size: 2rem !important;
+        line-height: 1.2 !important;
+    }
+    
+    .newsletter-description {
+        font-size: 1.1rem !important;
+        line-height: 1.5 !important;
+    }
+    
+    /* Footer */
     .footer-grid {
         grid-template-columns: 1fr;
         text-align: center;
+        gap: 2rem;
+    }
+    
+    /* Trends section */
+    .market-trend {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 1rem;
+    }
+    
+    .trend-icon-round {
+        justify-self: center;
+        margin-bottom: 1rem;
+    }
+    
+    .trend-content .trend-head {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 0.5rem;
     }
 }
 
+/* Small mobile styles (max-width: 480px) */
 @media (max-width: 480px) {
     .container {
-        padding: 0 15px;
+        padding: 0 0.75rem;
+    }
+    
+    /* Header */
+    .site-header {
+        padding: 0 0.75rem;
+    }
+    
+    .site-header .header-inner {
+        height: 52px;
+    }
+    
+    .site-header .brand img {
+        height: 20px;
+    }
+    
+    /* Hero sections */
+    .brand-hero-title {
+        font-size: clamp(1.5rem, 6vw, 2rem);
+        line-height: 1.1;
+        margin-bottom: 0.75rem;
+    }
+    
+    .brand-hero-subtitle {
+        font-size: clamp(0.85rem, 3vw, 0.95rem);
+        line-height: 1.4;
+        margin-bottom: 1rem;
+    }
+    
+    .innovation-badge {
+        font-size: 0.75rem;
+        padding: 6px 12px;
+        margin-bottom: 1rem;
+    }
+    
+    .brand-hero-cta {
+        font-size: 0.8rem;
+        padding: 8px 14px;
+        margin-top: 1rem;
     }
     
     .hero-content h1 {
-        font-size: 2rem;
+        font-size: 1.75rem;
+        line-height: 1.1;
     }
     
+    /* Sections */
     .section {
-        padding: 3rem 0;
+        padding: 2rem 0;
     }
     
-    .btn {
-        padding: 10px 20px;
+    .section h2 {
+        font-size: 1.75rem;
+        line-height: 1.2;
+        margin-bottom: 0.75rem;
+    }
+    
+    .section-header h2 {
+        font-size: 2rem;
+        line-height: 1.2;
+    }
+    
+    .section-subtitle {
         font-size: 0.9rem;
+        line-height: 1.4;
+        margin-bottom: 2rem;
     }
     
+    /* Cards */
+    .innovation-card,
     .trend-card,
     .testimonial-card,
-    .doc-card,
+    .case-study-card,
     .quality-card {
-        padding: 1.5rem;
+        padding: 1.25rem;
+    }
+    
+    .innovation-card h3 {
+        font-size: 1.1rem;
+        line-height: 1.2;
+    }
+    
+    .innovation-card p {
+        font-size: 0.9rem;
+        line-height: 1.4;
+    }
+    
+    /* Buttons */
+    .btn {
+        padding: 10px 16px;
+        font-size: 0.85rem;
+        border-radius: 6px;
+    }
+    
+    /* Icons */
+    .innovation-icon .emoji-icon {
+        font-size: 4rem;
+    }
+    
+    .trend-icon-round {
+        width: 100px;
+        height: 100px;
+        font-size: 2.5rem;
+    }
+    
+    /* Market trends */
+    .trend-title {
+        font-size: 1.4rem;
+        line-height: 1.2;
+    }
+    
+    .trend-badge {
+        font-size: 0.85rem;
+        padding: 0.2em 0.5em;
+    }
+    
+    /* Testimonials */
+    .testimonial-logo-top-right {
+        width: 120px;
+    }
+    
+    .testimonial-content p {
+        font-size: 0.9rem;
+        line-height: 1.5;
+    }
+    
+    /* Newsletter section small screens */
+    .newsletter-title-container img {
+        height: 50px !important;
+    }
+    
+    .newsletter-title-container h2 {
+        font-size: 1.6rem !important;
+        line-height: 1.2 !important;
+    }
+    
+    .newsletter-description {
+        font-size: 1rem !important;
+        line-height: 1.4 !important;
+        padding: 0 0.5rem !important;
+    }
+    
+    /* Footer */
+    .footer {
+        padding: 2rem 0 1rem;
+    }
+    
+    .minimal-footer {
+        padding: 1.5rem 0;
+    }
+    
+    .minimal-footer .footer-main {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+    
+    .minimal-footer .footer-nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
     }
 } 
 
@@ -2696,16 +3040,85 @@ body {
 }
 
 /* Responsive pour la page ingrédient */
-@media (max-width: 768px) {
-    .ingredient-hero h1 {
-        font-size: 2.5rem;
+
+/* Tablet ingredient page */
+@media (max-width: 1024px) {
+    .ingredient-hero {
+        padding: 4rem 0 3rem;
     }
     
+    .ingredient-hero h1 {
+        font-size: 2.75rem;
+    }
+    
+    .products-grid,
+    .specs-grid,
+    .applications-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+    
+    .certifications-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+}
+
+/* Mobile ingredient page */
+@media (max-width: 768px) {
+    .ingredient-hero {
+        padding: 3rem 0 2rem;
+        margin-top: 56px;
+    }
+    
+    .ingredient-hero h1 {
+        font-size: 2.25rem;
+        line-height: 1.2;
+    }
+    
+    .ingredient-hero .hero-subtitle {
+        font-size: 1.1rem;
+        line-height: 1.5;
+    }
+    
+    /* Hero section avec inline styles */
+    .left-side {
+        padding: 2rem 1rem !important;
+    }
+    
+    .left-side > div {
+        width: 100% !important;
+        max-width: 500px !important;
+        margin: 0 auto !important;
+    }
+    
+    .left-side img {
+        width: 100% !important;
+        max-width: 400px !important;
+        height: auto !important;
+    }
+    
+    .right-side {
+        min-height: 250px !important;
+    }
+    
+    /* Bandeau caractéristiques */
+    .container > div[style*="display: flex"] {
+        flex-direction: column !important;
+        gap: 2rem !important;
+        text-align: center !important;
+    }
+    
+    .container > div[style*="display: flex"] > div {
+        flex: none !important;
+        min-width: auto !important;
+    }
+    
+    /* Grids */
     .products-grid,
     .specs-grid,
     .applications-grid,
     .certifications-grid {
         grid-template-columns: 1fr;
+        gap: 1.5rem;
     }
     
     .contact-grid {
@@ -2713,8 +3126,20 @@ body {
         gap: 2rem;
     }
     
+    /* Cards */
+    .product-card,
+    .specs-card,
+    .application-card {
+        padding: 1.5rem;
+    }
+    
+    .certification-item {
+        padding: 1.5rem 1rem;
+    }
+    
     .product-cta {
         flex-direction: column;
+        gap: 0.75rem;
     }
     
     .product-header {
@@ -2722,22 +3147,114 @@ body {
         text-align: center;
         gap: 0.5rem;
     }
-}
-
-@media (max-width: 480px) {
-    .ingredient-hero h1 {
-        font-size: 2rem;
+    
+    .product-header h3 {
+        font-size: 1.3rem;
     }
     
+    /* Tabs section */
+    .tab-buttons {
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+    
+    .tab-button {
+        flex: 1;
+        min-width: calc(50% - 0.25rem);
+        font-size: 0.85rem;
+        padding: 0.5rem 0.75rem;
+    }
+    
+    /* Bar chart responsive */
+    .bar-chart-container {
+        overflow-x: auto;
+        padding-bottom: 1rem;
+    }
+    
+    .bar-chart {
+        min-width: 400px;
+        margin: 0 auto;
+    }
+}
+
+/* Small mobile ingredient page */
+@media (max-width: 480px) {
+    .ingredient-hero {
+        padding: 2rem 0 1.5rem;
+        margin-top: 52px;
+    }
+    
+    .ingredient-hero h1 {
+        font-size: 1.85rem;
+        line-height: 1.2;
+    }
+    
+    .ingredient-hero .hero-subtitle {
+        font-size: 1rem;
+        line-height: 1.4;
+    }
+    
+    /* Hero section adjustments */
+    .left-side {
+        padding: 1.5rem 0.75rem !important;
+    }
+    
+    .left-side .badge {
+        font-size: 0.85rem !important;
+        padding: 0.5rem 1rem !important;
+    }
+    
+    .left-side p {
+        font-size: 1.1rem !important;
+        line-height: 1.5 !important;
+    }
+    
+    .right-side {
+        min-height: 200px !important;
+    }
+    
+    /* Cards */
     .product-card,
     .specs-card,
     .application-card,
     .certification-item {
-        padding: 1.5rem;
+        padding: 1.25rem;
     }
     
     .contact-form {
-        padding: 1.5rem;
+        padding: 1.25rem;
+    }
+    
+    .product-header h3 {
+        font-size: 1.2rem;
+    }
+    
+    .application-icon {
+        font-size: 2.5rem;
+    }
+    
+    .certification-icon {
+        font-size: 2rem;
+    }
+    
+    /* Tab buttons on very small screens */
+    .tab-button {
+        min-width: 100%;
+        margin-bottom: 0.25rem;
+    }
+    
+    /* Smaller text in forms */
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        font-size: 0.9rem;
+        padding: 0.65rem 0.85rem;
+    }
+    
+    .contact-item {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.5rem;
     }
 } 
 
@@ -2762,3 +3279,225 @@ body {
 .partners-cta .btn-primary { background: #2eb2a4; color: #ffffff; }
 .partners-cta .btn-primary:hover { background: #4e53a3; box-shadow: 0 10px 25px rgba(78,83,163,0.2); }
 .partners-cta .btn-outline { border: 2px solid #2eb2a4; color: #2eb2a4; }
+
+/* ===========================
+   RESPONSIVE DESIGN - FEATURES SECTION 
+   =========================== */
+
+/* Features section tablet */
+@media (max-width: 768px) {
+    .features-section {
+        padding: 3rem 0 !important;
+    }
+    
+    .features-grid {
+        justify-content: center !important;
+        gap: 1.5rem !important;
+    }
+    
+    .feature-item {
+        flex: 0 0 calc(50% - 0.75rem) !important;
+        min-width: 180px !important;
+    }
+    
+    .feature-icon img {
+        width: 70px !important;
+        height: 70px !important;
+    }
+    
+    .feature-title {
+        font-size: 1.4rem !important;
+    }
+}
+
+/* Features section mobile */
+@media (max-width: 480px) {
+    .features-section {
+        padding: 2rem 0 !important;
+    }
+    
+    .features-grid {
+        flex-direction: column !important;
+        gap: 2rem !important;
+    }
+    
+    .feature-item {
+        min-width: 100% !important;
+        max-width: 300px !important;
+        margin: 0 auto !important;
+        flex: none !important;
+    }
+    
+    .feature-icon img {
+        width: 60px !important;
+        height: 60px !important;
+    }
+    
+    .feature-title {
+        font-size: 1.3rem !important;
+    }
+    
+    .feature-description {
+        font-size: 0.9rem !important;
+    }
+}
+
+/* ===========================
+   RESPONSIVE DESIGN - TABS & CHARTS
+   =========================== */
+
+/* Tabs responsive */
+@media (max-width: 768px) {
+    .tab-buttons {
+        flex-wrap: wrap !important;
+        gap: 0.5rem !important;
+        justify-content: center !important;
+    }
+    
+    .tab-button {
+        flex: 1 1 auto !important;
+        min-width: 120px !important;
+        padding: 0.75rem 1rem !important;
+        font-size: 0.9rem !important;
+    }
+    
+    /* Bar chart responsive */
+    .bar-chart-container {
+        padding: 1rem !important;
+        overflow-x: auto !important;
+    }
+    
+    .bar-chart {
+        min-width: 600px !important;
+    }
+    
+    .bar {
+        min-width: 60px !important;
+    }
+    
+    .bar-label {
+        font-size: 0.8rem !important;
+        white-space: nowrap !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .tab-buttons {
+        flex-direction: column !important;
+        align-items: stretch !important;
+        gap: 0.25rem !important;
+    }
+    
+    .tab-button {
+        width: 100% !important;
+        min-width: auto !important;
+        padding: 0.75rem !important;
+        font-size: 0.85rem !important;
+        margin-bottom: 0.25rem !important;
+        border-radius: 8px !important;
+    }
+    
+    .tab-content {
+        padding: 1rem !important;
+    }
+    
+    /* Benefits section mobile */
+    #bienfaits .bienfaits-title {
+        font-size: 1.2rem !important;
+        line-height: 1.4 !important;
+        text-align: center !important;
+    }
+    
+    #bienfaits .bienfaits-title span {
+        display: inline-block !important;
+        margin: 0.2rem !important;
+    }
+    
+    .schema-container {
+        padding: 1rem 0 !important;
+    }
+    
+    .schema-container img {
+        max-width: 100% !important;
+        height: auto !important;
+    }
+}
+
+/* ===========================
+   RESPONSIVE FIXES & IMPROVEMENTS
+   =========================== */
+
+/* General responsive utilities */
+@media (max-width: 768px) {
+    /* Ensure images never overflow */
+    img {
+        max-width: 100% !important;
+        height: auto !important;
+    }
+    
+    /* Fix any potential horizontal scroll */
+    body, html {
+        overflow-x: hidden;
+    }
+    
+    /* Improve button touch targets */
+    .btn, .tab-button, button {
+        min-height: 44px !important;
+        padding: 0.75rem 1rem !important;
+    }
+    
+    /* Better spacing for mobile */
+    .section {
+        padding: 2.5rem 0 !important;
+    }
+    
+    /* Center align text on mobile for better readability */
+    .section-subtitle, .section-description {
+        text-align: center !important;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Tighter spacing on very small screens */
+    .section {
+        padding: 2rem 0 !important;
+    }
+    
+    /* Ensure container padding doesn't make content too narrow */
+    .container {
+        padding: 0 1rem !important;
+        max-width: 100% !important;
+    }
+    
+    /* Stack hero elements vertically */
+    .hero, .ingredient-hero, .brand-hero {
+        grid-template-columns: 1fr !important;
+        text-align: center !important;
+    }
+    
+    /* Larger touch targets for tiny screens */
+    .btn, .tab-button, button {
+        min-height: 48px !important;
+        font-size: 0.9rem !important;
+    }
+}
+
+/* Fix for very wide content */
+@media (max-width: 320px) {
+    .container {
+        padding: 0 0.75rem !important;
+    }
+    
+    h1, .brand-hero-title {
+        font-size: 1.5rem !important;
+        line-height: 1.2 !important;
+    }
+    
+    h2 {
+        font-size: 1.3rem !important;
+    }
+    
+    h3 {
+        font-size: 1.1rem !important;
+    }
+}

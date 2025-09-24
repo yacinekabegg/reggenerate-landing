@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Responsive - Reggenerate</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        
+        .test-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+        
+        .screen-test {
+            border: 2px solid #2eb2a4;
+            border-radius: 8px;
+            margin: 1rem 0;
+            overflow: hidden;
+        }
+        
+        .screen-header {
+            background: #2eb2a4;
+            color: white;
+            padding: 0.5rem 1rem;
+            font-weight: 600;
+        }
+        
+        .screen-content {
+            height: 400px;
+            overflow: auto;
+            border: none;
+            width: 100%;
+        }
+        
+        .controls {
+            display: flex;
+            gap: 1rem;
+            margin: 1rem 0;
+            flex-wrap: wrap;
+        }
+        
+        .control-btn {
+            background: #4e53a3;
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background 0.3s ease;
+        }
+        
+        .control-btn:hover {
+            background: #2eb2a4;
+        }
+        
+        .control-btn.active {
+            background: #f3d86b;
+            color: #1a1a1a;
+        }
+        
+        .size-info {
+            background: #f0fffe;
+            padding: 1rem;
+            border-radius: 6px;
+            margin: 1rem 0;
+            border-left: 4px solid #2eb2a4;
+        }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <h1 style="color: #2eb2a4; text-align: center; margin-bottom: 2rem;">
+            🧪 Test Responsive - Reggenerate
+        </h1>
+        
+        <div class="size-info">
+            <strong>Taille actuelle de l'écran:</strong> <span id="current-size"></span>
+        </div>
+        
+        <div class="controls">
+            <button class="control-btn" onclick="testSize('100%', 'Desktop Large')">🖥️ Desktop Large</button>
+            <button class="control-btn" onclick="testSize('1024px', 'Desktop')">💻 Desktop</button>
+            <button class="control-btn" onclick="testSize('768px', 'Tablette')">📱 Tablette</button>
+            <button class="control-btn" onclick="testSize('480px', 'Mobile Large')">📱 Mobile Large</button>
+            <button class="control-btn" onclick="testSize('375px', 'iPhone')">📱 iPhone</button>
+            <button class="control-btn" onclick="testSize('320px', 'Mobile Small')">📱 Mobile Small</button>
+        </div>
+        
+        <!-- Test Homepage -->
+        <div class="screen-test">
+            <div class="screen-header">Homepage (index.html)</div>
+            <iframe id="homepage-frame" class="screen-content" src="index.html"></iframe>
+        </div>
+        
+        <!-- Test Ingredient Page -->
+        <div class="screen-test">
+            <div class="screen-header">Page Ingrédient (ingredient-page.html)</div>
+            <iframe id="ingredient-frame" class="screen-content" src="ingredient-page.html"></iframe>
+        </div>
+        
+        <div style="text-align: center; margin-top: 2rem; color: #666;">
+            <p>✅ <strong>Points à vérifier:</strong></p>
+            <ul style="text-align: left; max-width: 600px; margin: 0 auto;">
+                <li>Navigation mobile (hamburger menu)</li>
+                <li>Hero sections responsives</li>
+                <li>Grilles qui s'adaptent (2 colonnes → 1 colonne)</li>
+                <li>Images qui se redimensionnent</li>
+                <li>Textes lisibles (pas trop petits)</li>
+                <li>Boutons accessibles</li>
+                <li>Sections Features</li>
+                <li>Graphiques et tableaux</li>
+                <li>Footer adaptatif</li>
+            </ul>
+        </div>
+    </div>
+    
+    <script>
+        function testSize(width, name) {
+            // Update both iframes
+            const homepage = document.getElementById('homepage-frame');
+            const ingredient = document.getElementById('ingredient-frame');
+            
+            homepage.style.width = width;
+            ingredient.style.width = width;
+            
+            // Update button states
+            document.querySelectorAll('.control-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+            
+            // Update size info
+            document.getElementById('current-size').textContent = `${name} (${width})`;
+        }
+        
+        // Initialize with current window size
+        function updateCurrentSize() {
+            const width = window.innerWidth;
+            let category = '';
+            
+            if (width >= 1200) category = 'Desktop Large';
+            else if (width >= 1024) category = 'Desktop';
+            else if (width >= 768) category = 'Tablette';
+            else if (width >= 480) category = 'Mobile Large';
+            else if (width >= 375) category = 'iPhone';
+            else category = 'Mobile Small';
+            
+            document.getElementById('current-size').textContent = `${category} (${width}px)`;
+        }
+        
+        updateCurrentSize();
+        window.addEventListener('resize', updateCurrentSize);
+        
+        // Set default size
+        testSize('100%', 'Desktop Large');
+    </script>
+</body>
+</html>
