@@ -55,8 +55,17 @@ class ClientsManager {
             console.log('📡 Status réponse:', response.status);
             
             if (response.status === 200) {
-                const data = await response.json();
-                console.log('📊 Données reçues:', data);
+                const text = await response.text();
+                console.log('📊 Réponse brute:', text.substring(0, 100) + '...');
+                
+                // Vérifier si c'est du PHP brut (erreur serveur)
+                if (text.includes('<?php') || text.includes('<')) {
+                    console.log('⚠️ Serveur ne traite pas PHP, fallback vers JSON');
+                    throw new Error('Serveur ne supporte pas PHP');
+                }
+                
+                const data = JSON.parse(text);
+                console.log('📊 Données JSON parsées:', data);
                 
                 if (data.error) {
                     throw new Error(`Erreur Airtable: ${data.error.type || data.error}`);
