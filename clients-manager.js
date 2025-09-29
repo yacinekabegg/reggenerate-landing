@@ -21,8 +21,14 @@ class ClientsManager {
 
     // Charger les données (JSON local ou Airtable)
     async loadClients() {
-        if (this.airtableConfig.useAirtable) {
-            return await this.loadFromAirtable();
+        // Always try Airtable first if configured
+        if (this.airtableConfig.baseId && this.airtableConfig.tableId) {
+            try {
+                return await this.loadFromAirtable();
+            } catch (error) {
+                console.log('🔄 Fallback vers JSON après erreur Airtable');
+                return await this.loadFromJSON();
+            }
         } else {
             return await this.loadFromJSON();
         }
