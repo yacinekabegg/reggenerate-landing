@@ -41,59 +41,53 @@ class ClientsManager {
         }
     }
 
-    // Charger depuis Airtable
+    // Charger depuis Airtable (fallback vers JSON si serveur PHP non disponible)
     async loadFromAirtable() {
         try {
-            // Utiliser le PAT configuré ou depuis localStorage
-            const apiKey = this.airtableConfig.apiKey || localStorage.getItem('AIRTABLE_PAT');
-            if (!apiKey) {
-                throw new Error('API Key non configurée. Définissez window.AIRTABLE_PAT ou localStorage.AIRTABLE_PAT');
-            }
-
-            // Construire l'URL en utilisant soit l'ID de table (commence par 'tbl'), soit le nom encodé
-            const tableIdentifier = this.airtableConfig.tableId;
-            const isTableId = typeof tableIdentifier === 'string' && tableIdentifier.startsWith('tbl');
-            const encodedTable = isTableId ? tableIdentifier : encodeURIComponent(tableIdentifier);
-            // Utiliser notre proxy PHP côté serveur
+            // Essayer d'abord le proxy PHP
             const proxyUrl = './airtable-proxy.php';
-            console.log('🔍 URL avec proxy PHP:', proxyUrl);
-            console.log('🔑 API Key (premiers caractères):', this.airtableConfig.apiKey.substring(0, 20) + '...');
+            console.log('🔍 Tentative proxy PHP:', proxyUrl);
             
             const response = await fetch(proxyUrl, {
-                cache: 'no-cache'  // Forcer le rechargement sans cache
+                cache: 'no-cache'
             });
             
             console.log('📡 Status réponse:', response.status);
-            const data = await response.json();
-            console.log('📊 Données reçues:', data);
             
-            if (data.error) {
-                throw new Error(`Erreur Airtable: ${data.error.type || data.error}`);
+            if (response.status === 200) {
+                const data = await response.json();
+                console.log('📊 Données reçues:', data);
+                
+                if (data.error) {
+                    throw new Error(`Erreur Airtable: ${data.error.type || data.error}`);
+                }
+                
+                this.clients = data.records
+                    .filter(record => {
+                        console.log(`🔍 Client: ${record.fields.Nom_Entreprise}, Actif: ${record.fields.Actif}`);
+                        return record.fields.Actif === true;
+                    })
+                    .map(record => ({
+                        id: record.id,
+                        nom_entreprise: record.fields.Nom_Entreprise,
+                        nom_produit: record.fields.Nom_Produit,
+                        emoji: record.fields.Emoji,
+                        couleur_debut: record.fields.Couleur_Debut,
+                        couleur_fin: record.fields.Couleur_Fin,
+                        galenique: record.fields.Galenique,
+                        indication: record.fields.Indication,
+                        composition: record.fields.Composition,
+                        url_site: record.fields.URL_Site,
+                        actif: record.fields.Actif
+                    }));
+                
+                console.log(`✅ ${this.clients.length} clients actifs filtrés depuis Airtable`);
+                return this.clients;
+            } else {
+                throw new Error('Proxy PHP non disponible');
             }
-            
-            this.clients = data.records
-                .filter(record => {
-                    console.log(`🔍 Client: ${record.fields.Nom_Entreprise}, Actif: ${record.fields.Actif}`);
-                    return record.fields.Actif === true;
-                })
-                .map(record => ({
-                    id: record.id,
-                    nom_entreprise: record.fields.Nom_Entreprise,
-                    nom_produit: record.fields.Nom_Produit,
-                    emoji: record.fields.Emoji,
-                    couleur_debut: record.fields.Couleur_Debut,
-                    couleur_fin: record.fields.Couleur_Fin,
-                    galenique: record.fields.Galenique,
-                    indication: record.fields.Indication,
-                    composition: record.fields.Composition,
-                    url_site: record.fields.URL_Site,
-                    actif: record.fields.Actif
-                }));
-            
-            console.log(`✅ ${this.clients.length} clients actifs filtrés depuis Airtable`);
-            return this.clients;
         } catch (error) {
-            console.error('❌ Erreur lors du chargement depuis Airtable:', error);
+            console.error('❌ Erreur proxy PHP, fallback vers JSON:', error);
             // Fallback vers JSON en cas d'erreur
             return await this.loadFromJSON();
         }
