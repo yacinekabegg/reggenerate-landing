@@ -55,7 +55,7 @@ class ClientsManager {
             const isTableId = typeof tableIdentifier === 'string' && tableIdentifier.startsWith('tbl');
             const encodedTable = isTableId ? tableIdentifier : encodeURIComponent(tableIdentifier);
             // Utiliser un proxy CORS pour contourner les restrictions
-            const proxyUrl = `https://cors-anywhere.herokuapp.com/https://api.airtable.com/v0/${this.airtableConfig.baseId}/${encodedTable}`;
+            const proxyUrl = `https://api.codetabs.com/v1/proxy?quest=${encodeURIComponent(`https://api.airtable.com/v0/${this.airtableConfig.baseId}/${encodedTable}`)}`;
             console.log('🔍 URL avec proxy CORS:', proxyUrl);
             console.log('🔑 API Key (premiers caractères):', this.airtableConfig.apiKey.substring(0, 20) + '...');
             
