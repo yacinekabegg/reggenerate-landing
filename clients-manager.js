@@ -54,15 +54,12 @@ class ClientsManager {
             const tableIdentifier = this.airtableConfig.tableId;
             const isTableId = typeof tableIdentifier === 'string' && tableIdentifier.startsWith('tbl');
             const encodedTable = isTableId ? tableIdentifier : encodeURIComponent(tableIdentifier);
-            // Utiliser un proxy CORS pour contourner les restrictions
-            const proxyUrl = `https://api.codetabs.com/v1/proxy?quest=${encodeURIComponent(`https://api.airtable.com/v0/${this.airtableConfig.baseId}/${encodedTable}`)}`;
-            console.log('🔍 URL avec proxy CORS:', proxyUrl);
+            // Utiliser notre proxy PHP côté serveur
+            const proxyUrl = './airtable-proxy.php';
+            console.log('🔍 URL avec proxy PHP:', proxyUrl);
             console.log('🔑 API Key (premiers caractères):', this.airtableConfig.apiKey.substring(0, 20) + '...');
             
             const response = await fetch(proxyUrl, {
-                headers: {
-                    'Authorization': `Bearer ${this.airtableConfig.apiKey}`
-                },
                 cache: 'no-cache'  // Forcer le rechargement sans cache
             });
             
