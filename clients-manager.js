@@ -22,21 +22,9 @@ class ClientsManager {
     // Charger les données (JSON local ou Airtable)
     async loadClients() {
         console.log('🚀 loadClients() appelé');
-        // Always try Airtable first if configured
-        if (this.airtableConfig.baseId && this.airtableConfig.tableId) {
-            console.log('📡 Configuration Airtable trouvée, tentative Airtable...');
-            try {
-                const result = await this.loadFromAirtable();
-                console.log('✅ Airtable réussi:', result.length, 'clients');
-                return result;
-            } catch (error) {
-                console.log('🔄 Fallback vers JSON après erreur Airtable:', error.message);
-                return await this.loadFromJSON();
-            }
-        } else {
-            console.log('📄 Pas de config Airtable, utilisation JSON direct');
-            return await this.loadFromJSON();
-        }
+        // Force JSON pour l'instant car le serveur ne supporte pas PHP
+        console.log('📄 Utilisation JSON direct (serveur ne supporte pas PHP)');
+        return await this.loadFromJSON();
     }
 
     // Charger depuis le fichier JSON local
