@@ -10,13 +10,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=League+Spartan:wght@400;600;700&display=swap" rel="stylesheet">
     <script async src="https://tally.so/widgets/embed.js"></script>
-    
-    <!-- Configuration Airtable -->
-    <script>
-        // PAT encodé pour éviter la détection GitHub
-        const encoded = 'cGF0aFdNbFZKNkpkWnhidjYuNWE1MTA1MTU3Y2RkZGQxZTYzOTI2ZDlkYmIyNGU1YThjNTU2MmU1ZDI1OTIyZGQzZTE5NjA5MTNiZDY5ZjFjMGM=';
-        window.AIRTABLE_PAT = atob(encoded);
-    </script>
 </head>
 <body>
     <!-- Header -->
@@ -270,17 +263,19 @@
     </style>
 
     <!-- JavaScript pour Airtable -->
-    <script src="clients-manager.js?v=11"></script>
+    <script src="clients-manager.js?v=2"></script>
     <script>
         // Configuration Airtable avec vos vraies informations
         document.addEventListener('DOMContentLoaded', function() {
             // Configuration Airtable avec les bons codes
-            // Le PAT sera défini via une variable d'environnement ou localStorage
-            const AIRTABLE_PAT = window.AIRTABLE_PAT || localStorage.getItem('AIRTABLE_PAT') || '';
+            // Ne stockez pas le PAT dans le code. Utilisez localStorage pour le dev local.
+            // Dans la console du navigateur (une seule fois):
+            // localStorage.setItem('AIRTABLE_PAT', 'votre_token_complet_ici')
+            const AIRTABLE_PAT = localStorage.getItem('AIRTABLE_PAT') || '';
             clientsManager.configureAirtable(
                 'appfKJfW714uYxZxm',   // Base ID depuis votre URL
                 'tblAtG4LpnIsX2jB4',   // Table ID depuis votre URL
-                AIRTABLE_PAT           // PAT depuis variable globale ou localStorage
+                AIRTABLE_PAT           // PAT lu depuis localStorage
             );
             
             // Initialiser la page clients
