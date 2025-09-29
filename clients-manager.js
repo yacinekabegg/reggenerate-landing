@@ -21,14 +21,19 @@ class ClientsManager {
 
     // Charger les données (JSON local ou Airtable)
     async loadClients() {
-        // Essayer directement Airtable avec le PAT
-        if (this.airtableConfig.useAirtable && this.airtableConfig.apiKey) {
-            try {
-                console.log('🚀 Tentative directe Airtable...');
-                return await this.loadFromAirtable();
-            } catch (error) {
-                console.log('⚠️ Airtable direct échoué, fallback vers JSON');
+        // Priorité: proxy PHP Airtable
+        try {
+            const proxyRes = await fetch('./airtable-proxy.php', { cache: 'no-store' });
+            if (proxyRes.ok) {
+                const payload = await proxyRes.json();
+                if (Array.isArray(payload.records)) {
+                    this.clients = payload.records;
+                    console.log('✅ Données chargées depuis Airtable via PHP');
+                    return this.clients;
+                }
             }
+        } catch (error) {
+            console.log('⚠️ Proxy PHP non disponible, fallback vers JSON');
         }
 
         // Fallback: JSON local
