@@ -54,11 +54,12 @@ class ClientsManager {
             const tableIdentifier = this.airtableConfig.tableId;
             const isTableId = typeof tableIdentifier === 'string' && tableIdentifier.startsWith('tbl');
             const encodedTable = isTableId ? tableIdentifier : encodeURIComponent(tableIdentifier);
-            const finalUrl = `https://api.airtable.com/v0/${this.airtableConfig.baseId}/${encodedTable}`;
-            console.log('🔍 URL Airtable utilisée:', finalUrl);
+            // Utiliser un proxy CORS pour contourner les restrictions
+            const proxyUrl = `https://api.allorigins.win/raw?url=${encodeURIComponent(`https://api.airtable.com/v0/${this.airtableConfig.baseId}/${encodedTable}`)}`;
+            console.log('🔍 URL avec proxy CORS:', proxyUrl);
             console.log('🔑 API Key (premiers caractères):', this.airtableConfig.apiKey.substring(0, 20) + '...');
             
-            const response = await fetch(finalUrl, {
+            const response = await fetch(proxyUrl, {
                 headers: {
                     'Authorization': `Bearer ${this.airtableConfig.apiKey}`
                 },
