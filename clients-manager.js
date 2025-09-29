@@ -28,16 +28,17 @@ class ClientsManager {
                 const payload = await proxyRes.json();
                 if (Array.isArray(payload.records)) {
                     this.clients = payload.records;
+                    console.log('✅ Données chargées depuis l\'API serveur');
                     return this.clients;
                 }
             }
-        } catch (_) {}
-
-        if (this.airtableConfig.useAirtable) {
-            return await this.loadFromAirtable();
-        } else {
-            return await this.loadFromJSON();
+        } catch (error) {
+            console.log('⚠️ API serveur non disponible, fallback vers JSON');
         }
+
+        // Fallback: JSON local (fonctionne toujours)
+        console.log('📄 Chargement depuis JSON local');
+        return await this.loadFromJSON();
     }
 
     // Charger depuis le fichier JSON local
