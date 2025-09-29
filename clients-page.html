@@ -268,14 +268,12 @@
         // Configuration Airtable avec vos vraies informations
         document.addEventListener('DOMContentLoaded', function() {
             // Configuration Airtable avec les bons codes
-            // Ne stockez pas le PAT dans le code. Utilisez localStorage pour le dev local.
-            // Dans la console du navigateur (une seule fois):
-            // localStorage.setItem('AIRTABLE_PAT', 'votre_token_complet_ici')
-            const AIRTABLE_PAT = localStorage.getItem('AIRTABLE_PAT') || '';
+            // Le PAT sera défini via une variable d'environnement ou localStorage
+            const AIRTABLE_PAT = window.AIRTABLE_PAT || localStorage.getItem('AIRTABLE_PAT') || '';
             clientsManager.configureAirtable(
                 'appfKJfW714uYxZxm',   // Base ID depuis votre URL
                 'tblAtG4LpnIsX2jB4',   // Table ID depuis votre URL
-                AIRTABLE_PAT           // PAT lu depuis localStorage
+                AIRTABLE_PAT           // PAT depuis variable globale ou localStorage
             );
             
             // Initialiser la page clients

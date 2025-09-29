@@ -44,12 +44,11 @@ class ClientsManager {
     // Charger depuis Airtable
     async loadFromAirtable() {
         try {
-            // Récupérer le PAT depuis localStorage
-            const apiKey = localStorage.getItem('AIRTABLE_PAT');
+            // Utiliser le PAT configuré ou depuis localStorage
+            const apiKey = this.airtableConfig.apiKey || localStorage.getItem('AIRTABLE_PAT');
             if (!apiKey) {
-                throw new Error('AIRTABLE_PAT non trouvé dans localStorage. Veuillez le définir.');
+                throw new Error('API Key non configurée. Définissez window.AIRTABLE_PAT ou localStorage.AIRTABLE_PAT');
             }
-            this.airtableConfig.apiKey = apiKey;
 
             // Construire l'URL en utilisant soit l'ID de table (commence par 'tbl'), soit le nom encodé
             const tableIdentifier = this.airtableConfig.tableId;
