@@ -52,225 +52,15 @@
                 <p class="section-subtitle" style="max-width: 600px; margin: 0 auto;">Plus de 30 marques font déjà confiance à notre ingrédient membrane d'œuf pour leurs produits</p>
             </div>
 
-            <!-- Grille des clients -->
-            <div class="clients-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem; max-width: 1400px; margin: 0 auto;">
-                
-                <!-- Client 1: VALEBIO -->
-                <div class="client-card" style="background: white; border-radius: 20px; padding: 2rem;">
-                    <div style="text-align: center; margin-bottom: 1.5rem;">
-                        <div style="width: 120px; height: 120px; background: linear-gradient(135deg, #90EE90 0%, #98FB98 100%); border-radius: 12px; margin: 0 auto 1rem; display: flex; align-items: center; justify-content: center; font-size: 2rem;">💊</div>
-                        <h3 style="font-size: 1.3rem; font-weight: 700; color: #1a1a1a; margin-bottom: 0.5rem;">VALEBIO</h3>
-                        <p style="color: #2eb2a4; font-weight: 600; margin-bottom: 1rem;">Collagène Articulaire</p>
+            <!-- Grille des clients (dynamique depuis Airtable) -->
+            <div id="clients-grid-container" class="clients-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem; max-width: 1400px; margin: 0 auto;">
+                <!-- Les clients seront chargés dynamiquement depuis Airtable -->
+                <div style="grid-column: 1 / -1; text-align: center; padding: 2rem;">
+                    <div style="display: inline-flex; align-items: center; gap: 1rem; background: white; padding: 1rem 2rem; border-radius: 12px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+                        <div class="loading-spinner" style="width: 24px; height: 24px; border: 3px solid #f3f3f3; border-top: 3px solid #2eb2a4; border-radius: 50%; animation: spin 1s linear infinite;"></div>
+                        <p style="color: #666; margin: 0;">Chargement des clients depuis Airtable...</p>
                     </div>
-                    <div style="margin-bottom: 1.5rem;">
-                        <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
-                            <span style="font-weight: 500; color: #1a1a1a;">Galenique:</span>
-                            <span style="color: #666;">Gélule</span>
-                        </div>
-                        <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
-                            <span style="font-weight: 500; color: #1a1a1a;">Indication:</span>
-                            <span style="color: #666;">Articulations</span>
-                        </div>
-                        <div style="margin-top: 1rem;">
-                            <span style="font-weight: 500; color: #1a1a1a;">Composition:</span>
-                            <p style="color: #666; margin-top: 0.5rem; font-size: 0.9rem;">Reggenerate™ + Acide hyaluronique + Curcuma + Vitamine C</p>
-                        </div>
-                    </div>
-                    <a href="https://www.valebio.com" target="_blank" class="btn client-cta" style="display: block; text-align: center;">Visiter le site</a>
                 </div>
-
-                <!-- Client 2: NUTRIELEMENT -->
-                <div class="client-card" style="background: white; border-radius: 20px; padding: 2rem;">
-                    <div style="text-align: center; margin-bottom: 1.5rem;">
-                        <div style="width: 120px; height: 120px; background: linear-gradient(135deg, #FFB6C1 0%, #FFC0CB 100%); border-radius: 12px; margin: 0 auto 1rem; display: flex; align-items: center; justify-content: center; font-size: 2rem;">✨</div>
-                        <h3 style="font-size: 1.3rem; font-weight: 700; color: #1a1a1a; margin-bottom: 0.5rem;">NUTRIELEMENT</h3>
-                        <p style="color: #2eb2a4; font-weight: 600; margin-bottom: 1rem;">Hair Skin Nails</p>
-                    </div>
-                    <div style="margin-bottom: 1.5rem;">
-                        <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
-                            <span style="font-weight: 500; color: #1a1a1a;">Galenique:</span>
-                            <span style="color: #666;">Gélule</span>
-                        </div>
-                        <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
-                            <span style="font-weight: 500; color: #1a1a1a;">Indication:</span>
-                            <span style="color: #666;">Beauté globale</span>
-                        </div>
-                        <div style="margin-top: 1rem;">
-                            <span style="font-weight: 500; color: #1a1a1a;">Composition:</span>
-                            <p style="color: #666; margin-top: 0.5rem; font-size: 0.9rem;">Reggenerate™ + Kératine + Sélénium + Zinc + Vitamine C + Biotine + MSM</p>
-                        </div>
-                    </div>
-                    <a href="https://www.nutrielement.com" target="_blank" class="btn client-cta" style="display: block; text-align: center;">Visiter le site</a>
-                </div>
-
-                <!-- Client 3: SUPERNATURE -->
-                <div class="client-card" style="background: white; border-radius: 20px; padding: 2rem;">
-                    <div style="text-align: center; margin-bottom: 1.5rem;">
-                        <div style="width: 120px; height: 120px; background: linear-gradient(135deg, #8B4513 0%, #D2691E 100%); border-radius: 12px; margin: 0 auto 1rem; display: flex; align-items: center; justify-content: center; font-size: 2rem;">🍫</div>
-                        <h3 style="font-size: 1.3rem; font-weight: 700; color: #1a1a1a; margin-bottom: 0.5rem;">SUPERNATURE</h3>
-                        <p style="color: #2eb2a4; font-weight: 600; margin-bottom: 1rem;">Barre Chocolat Noisette Collagène</p>
-                    </div>
-                    <div style="margin-bottom: 1.5rem;">
-                        <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
-                            <span style="font-weight: 500; color: #1a1a1a;">Galenique:</span>
-                            <span style="color: #666;">Barre</span>
-                        </div>
-                        <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
-                            <span style="font-weight: 500; color: #1a1a1a;">Indication:</span>
-                            <span style="color: #666;">Beauté de la peau</span>
-                        </div>
-                        <div style="margin-top: 1rem;">
-                            <span style="font-weight: 500; color: #1a1a1a;">Composition:</span>
-                            <p style="color: #666; margin-top: 0.5rem; font-size: 0.9rem;">Reggenerate™</p>
-                        </div>
-                    </div>
-                    <a href="https://www.supernature.com" target="_blank" class="btn client-cta" style="display: block; text-align: center;">Visiter le site</a>
-                </div>
-
-                <!-- Client 4: OEMINE -->
-                <div class="client-card" style="background: white; border-radius: 20px; padding: 2rem;">
-                    <div style="text-align: center; margin-bottom: 1.5rem;">
-                        <div style="width: 120px; height: 120px; background: linear-gradient(135deg, #FF69B4 0%, #FFB6C1 100%); border-radius: 12px; margin: 0 auto 1rem; display: flex; align-items: center; justify-content: center; font-size: 2rem;">🌹</div>
-                        <h3 style="font-size: 1.3rem; font-weight: 700; color: #1a1a1a; margin-bottom: 0.5rem;">OEMINE</h3>
-                        <p style="color: #2eb2a4; font-weight: 600; margin-bottom: 1rem;">Collagène Végétarien</p>
-                    </div>
-                    <div style="margin-bottom: 1.5rem;">
-                        <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
-                            <span style="font-weight: 500; color: #1a1a1a;">Galenique:</span>
-                            <span style="color: #666;">Gélule</span>
-                        </div>
-                        <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
-                            <span style="font-weight: 500; color: #1a1a1a;">Indication:</span>
-                            <span style="color: #666;">Anti-âge & Articulations</span>
-                        </div>
-                        <div style="margin-top: 1rem;">
-                            <span style="font-weight: 500; color: #1a1a1a;">Composition:</span>
-                            <p style="color: #666; margin-top: 0.5rem; font-size: 0.9rem;">Reggenerate™ + Églantier</p>
-                        </div>
-                    </div>
-                    <a href="https://www.oemine.com" target="_blank" class="btn client-cta" style="display: block; text-align: center;">Visiter le site</a>
-                </div>
-
-                <!-- Client 5: SIHO -->
-                <div class="client-card" style="background: white; border-radius: 20px; padding: 2rem;">
-                    <div style="text-align: center; margin-bottom: 1.5rem;">
-                        <div style="width: 120px; height: 120px; background: linear-gradient(135deg, #000000 0%, #333333 100%); border-radius: 12px; margin: 0 auto 1rem; display: flex; align-items: center; justify-content: center; font-size: 2rem;">⚫</div>
-                        <h3 style="font-size: 1.3rem; font-weight: 700; color: #1a1a1a; margin-bottom: 0.5rem;">SIHO</h3>
-                        <p style="color: #2eb2a4; font-weight: 600; margin-bottom: 1rem;">Collagène Végétarien</p>
-                    </div>
-                    <div style="margin-bottom: 1.5rem;">
-                        <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
-                            <span style="font-weight: 500; color: #1a1a1a;">Galenique:</span>
-                            <span style="color: #666;">Poudre</span>
-                        </div>
-                        <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
-                            <span style="font-weight: 500; color: #1a1a1a;">Indication:</span>
-                            <span style="color: #666;">Peau & Articulations</span>
-                        </div>
-                        <div style="margin-top: 1rem;">
-                            <span style="font-weight: 500; color: #1a1a1a;">Composition:</span>
-                            <p style="color: #666; margin-top: 0.5rem; font-size: 0.9rem;">Reggenerate™ + Kératine + Sélénium + Zinc + Vitamine C + Biotine + MSM</p>
-                        </div>
-                    </div>
-                    <a href="https://www.siho.com" target="_blank" class="btn client-cta" style="display: block; text-align: center;">Visiter le site</a>
-                </div>
-
-                <!-- Client 6: SUPERNATURE Chai Latte -->
-                <div class="client-card" style="background: white; border-radius: 20px; padding: 2rem;">
-                    <div style="text-align: center; margin-bottom: 1.5rem;">
-                        <div style="width: 120px; height: 120px; background: linear-gradient(135deg, #8B4513 0%, #D2691E 100%); border-radius: 12px; margin: 0 auto 1rem; display: flex; align-items: center; justify-content: center; font-size: 2rem;">☕</div>
-                        <h3 style="font-size: 1.3rem; font-weight: 700; color: #1a1a1a; margin-bottom: 0.5rem;">SUPERNATURE</h3>
-                        <p style="color: #2eb2a4; font-weight: 600; margin-bottom: 1rem;">Chai Latte Collagène</p>
-                    </div>
-                    <div style="margin-bottom: 1.5rem;">
-                        <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
-                            <span style="font-weight: 500; color: #1a1a1a;">Galenique:</span>
-                            <span style="color: #666;">Chai Latte</span>
-                        </div>
-                        <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
-                            <span style="font-weight: 500; color: #1a1a1a;">Indication:</span>
-                            <span style="color: #666;">Beauté de la peau</span>
-                        </div>
-                        <div style="margin-top: 1rem;">
-                            <span style="font-weight: 500; color: #1a1a1a;">Composition:</span>
-                            <p style="color: #666; margin-top: 0.5rem; font-size: 0.9rem;">Reggenerate™</p>
-                        </div>
-                    </div>
-                    <a href="https://www.supernature.com" target="_blank" class="btn client-cta" style="display: block; text-align: center;">Visiter le site</a>
-                </div>
-
-                <!-- Client 7: EPYCURE -->
-                <div class="client-card" style="background: white; border-radius: 20px; padding: 2rem;">
-                    <div style="text-align: center; margin-bottom: 1.5rem;">
-                        <div style="width: 120px; height: 120px; background: linear-gradient(135deg, #000000 0%, #FFFFFF 100%); border-radius: 12px; margin: 0 auto 1rem; display: flex; align-items: center; justify-content: center; font-size: 2rem;">🎭</div>
-                        <h3 style="font-size: 1.3rem; font-weight: 700; color: #1a1a1a; margin-bottom: 0.5rem;">EPYCURE</h3>
-                        <p style="color: #2eb2a4; font-weight: 600; margin-bottom: 1rem;">Cure Peau Repulpée</p>
-                    </div>
-                    <div style="margin-bottom: 1.5rem;">
-                        <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
-                            <span style="font-weight: 500; color: #1a1a1a;">Galenique:</span>
-                            <span style="color: #666;">Gélule</span>
-                        </div>
-                        <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
-                            <span style="font-weight: 500; color: #1a1a1a;">Indication:</span>
-                            <span style="color: #666;">Beauté de la peau</span>
-                        </div>
-                        <div style="margin-top: 1rem;">
-                            <span style="font-weight: 500; color: #1a1a1a;">Composition:</span>
-                            <p style="color: #666; margin-top: 0.5rem; font-size: 0.9rem;">Reggenerate™ + Bourrache + Vitamine C + Sélénium + Vitamine E + Zinc + Biotine + Vitamine B6</p>
-                        </div>
-                    </div>
-                    <a href="https://www.epycure.com" target="_blank" class="btn client-cta" style="display: block; text-align: center;">Visiter le site</a>
-                </div>
-
-                <!-- Client 8: KOTOR PHARMA -->
-                <div class="client-card" style="background: white; border-radius: 20px; padding: 2rem;">
-                    <div style="text-align: center; margin-bottom: 1.5rem;">
-                        <div style="width: 120px; height: 120px; background: linear-gradient(135deg, #8B4513 0%, #D2691E 100%); border-radius: 12px; margin: 0 auto 1rem; display: flex; align-items: center; justify-content: center; font-size: 2rem;">🏺</div>
-                        <h3 style="font-size: 1.3rem; font-weight: 700; color: #1a1a1a; margin-bottom: 0.5rem;">KOTOR PHARMA</h3>
-                        <p style="color: #2eb2a4; font-weight: 600; margin-bottom: 1rem;">Kotor Collagène</p>
-                    </div>
-                    <div style="margin-bottom: 1.5rem;">
-                        <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
-                            <span style="font-weight: 500; color: #1a1a1a;">Galenique:</span>
-                            <span style="color: #666;">Gélule</span>
-                        </div>
-                        <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
-                            <span style="font-weight: 500; color: #1a1a1a;">Indication:</span>
-                            <span style="color: #666;">Peau & Articulations</span>
-                        </div>
-                        <div style="margin-top: 1rem;">
-                            <span style="font-weight: 500; color: #1a1a1a;">Composition:</span>
-                            <p style="color: #666; margin-top: 0.5rem; font-size: 0.9rem;">Reggenerate™ + Silicium végétal + Vitamine C + Glucosamine + Chondroïtine + Kératine</p>
-                        </div>
-                    </div>
-                    <a href="https://www.kotorpharma.com" target="_blank" class="btn client-cta" style="display: block; text-align: center;">Visiter le site</a>
-                </div>
-
-                <!-- Client 9: LEPIVITS -->
-                <div class="client-card" style="background: white; border-radius: 20px; padding: 2rem;">
-                    <div style="text-align: center; margin-bottom: 1.5rem;">
-                        <div style="width: 120px; height: 120px; background: linear-gradient(135deg, #90EE90 0%, #98FB98 100%); border-radius: 12px; margin: 0 auto 1rem; display: flex; align-items: center; justify-content: center; font-size: 2rem;">🌿</div>
-                        <h3 style="font-size: 1.3rem; font-weight: 700; color: #1a1a1a; margin-bottom: 0.5rem;">LEPIVITS</h3>
-                        <p style="color: #2eb2a4; font-weight: 600; margin-bottom: 1rem;">Dermavits</p>
-                    </div>
-                    <div style="margin-bottom: 1.5rem;">
-                        <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
-                            <span style="font-weight: 500; color: #1a1a1a;">Galenique:</span>
-                            <span style="color: #666;">Gélules</span>
-                        </div>
-                        <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
-                            <span style="font-weight: 500; color: #1a1a1a;">Indication:</span>
-                            <span style="color: #666;">Beauté de la peau</span>
-                        </div>
-                        <div style="margin-top: 1rem;">
-                            <span style="font-weight: 500; color: #1a1a1a;">Composition:</span>
-                            <p style="color: #666; margin-top: 0.5rem; font-size: 0.9rem;">Reggenerate™ + Vitamine C + Vitamine E</p>
-                        </div>
-                    </div>
-                    <a href="https://www.lepivits.com" target="_blank" class="btn client-cta" style="display: block; text-align: center;">Visiter le site</a>
-                </div>
-
             </div>
         </div>
     </section>
@@ -285,11 +75,11 @@
             
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; max-width: 1000px; margin: 0 auto;">
                 <div style="text-align: center;">
-                    <div style="font-size: 3rem; font-weight: 700; margin-bottom: 0.5rem;">30+</div>
+                    <div class="brands-counter" style="font-size: 3rem; font-weight: 700; margin-bottom: 0.5rem;">30+</div>
                     <div style="font-size: 1.1rem; font-weight: 600;">Marques partenaires</div>
                 </div>
                 <div style="text-align: center;">
-                    <div style="font-size: 3rem; font-weight: 700; margin-bottom: 0.5rem;">50+</div>
+                    <div class="products-counter" style="font-size: 3rem; font-weight: 700; margin-bottom: 0.5rem;">50+</div>
                     <div style="font-size: 1.1rem; font-weight: 600;">Produits formulés</div>
                 </div>
                 <div style="text-align: center;">
@@ -422,6 +212,95 @@
         </div>
     </footer>
 
+    <!-- CSS pour l'animation de chargement -->
+    <style>
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .client-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .client-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+        
+        .btn.client-cta {
+            background: linear-gradient(135deg, #2eb2a4 0%, #4e53a3 100%);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .btn.client-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(46, 178, 164, 0.4);
+        }
+        
+        .error-message {
+            background: #fee;
+            border: 1px solid #fcc;
+            color: #c66;
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .success-message {
+            background: #efe;
+            border: 1px solid #cfc;
+            color: #6c6;
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+    </style>
+
+    <!-- JavaScript pour Airtable -->
+    <script src="clients-manager.js?v=2"></script>
+    <script>
+        // Configuration Airtable avec vos vraies informations
+        document.addEventListener('DOMContentLoaded', function() {
+            // Configuration Airtable avec les bons codes
+            // Ne stockez pas le PAT dans le code. Utilisez localStorage pour le dev local.
+            // Dans la console du navigateur (une seule fois):
+            // localStorage.setItem('AIRTABLE_PAT', 'votre_token_complet_ici')
+            const AIRTABLE_PAT = localStorage.getItem('AIRTABLE_PAT') || '';
+            clientsManager.configureAirtable(
+                'appfKJfW714uYxZxm',   // Base ID depuis votre URL
+                'tblAtG4LpnIsX2jB4',   // Table ID depuis votre URL
+                AIRTABLE_PAT           // PAT lu depuis localStorage
+            );
+            
+            // Initialiser la page clients
+            if (document.querySelector('.clients-grid')) {
+                initializeClientsPage();
+            }
+        });
+
+        async function initializeClientsPage() {
+            try {
+                // Charger et afficher les clients depuis Airtable
+                await clientsManager.renderClients('clients-grid-container');
+                
+                // Mettre à jour les statistiques
+                clientsManager.updateStats();
+                
+            } catch (error) {
+                console.error('Erreur lors du chargement des clients:', error);
+                // En cas d'erreur, fallback silencieux vers JSON
+                await clientsManager.loadFromJSON();
+                await clientsManager.renderClients('clients-grid-container');
+                clientsManager.updateStats();
+            }
+        }
+    </script>
     <script src="script.js"></script>
 </body>
 </html>

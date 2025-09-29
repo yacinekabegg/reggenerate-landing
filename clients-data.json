@@ -1,0 +1,121 @@
+{
+  "clients": [
+    {
+      "id": 1,
+      "nom_entreprise": "VALEBIO",
+      "nom_produit": "Collagène Articulaire",
+      "emoji": "💊",
+      "couleur_debut": "#90EE90",
+      "couleur_fin": "#98FB98",
+      "galenique": "Gélule",
+      "indication": "Articulations",
+      "composition": "Reggenerate™ + Acide hyaluronique + Curcuma + Vitamine C",
+      "url_site": "https://www.valebio.com",
+      "actif": true
+    },
+    {
+      "id": 2,
+      "nom_entreprise": "NUTRIELEMENT",
+      "nom_produit": "Hair Skin Nails",
+      "emoji": "✨",
+      "couleur_debut": "#FFB6C1",
+      "couleur_fin": "#FFC0CB",
+      "galenique": "Gélule",
+      "indication": "Beauté globale",
+      "composition": "Reggenerate™ + Kératine + Sélénium + Zinc + Vitamine C + Biotine + MSM",
+      "url_site": "https://www.nutrielement.com",
+      "actif": true
+    },
+    {
+      "id": 3,
+      "nom_entreprise": "SUPERNATURE",
+      "nom_produit": "Barre Chocolat Noisette Collagène",
+      "emoji": "🍫",
+      "couleur_debut": "#8B4513",
+      "couleur_fin": "#D2691E",
+      "galenique": "Barre",
+      "indication": "Beauté de la peau",
+      "composition": "Reggenerate™",
+      "url_site": "https://www.supernature.com",
+      "actif": true
+    },
+    {
+      "id": 4,
+      "nom_entreprise": "OEMINE",
+      "nom_produit": "Collagène Végétarien",
+      "emoji": "🌹",
+      "couleur_debut": "#FF69B4",
+      "couleur_fin": "#FFB6C1",
+      "galenique": "Gélule",
+      "indication": "Anti-âge & Articulations",
+      "composition": "Reggenerate™ + Églantier",
+      "url_site": "https://www.oemine.com",
+      "actif": true
+    },
+    {
+      "id": 5,
+      "nom_entreprise": "SIHO",
+      "nom_produit": "Collagène Végétarien",
+      "emoji": "⚫",
+      "couleur_debut": "#000000",
+      "couleur_fin": "#333333",
+      "galenique": "Poudre",
+      "indication": "Peau & Articulations",
+      "composition": "Reggenerate™ + Kératine + Sélénium + Zinc + Vitamine C + Biotine + MSM",
+      "url_site": "https://www.siho.com",
+      "actif": true
+    },
+    {
+      "id": 6,
+      "nom_entreprise": "SUPERNATURE",
+      "nom_produit": "Chai Latte Collagène",
+      "emoji": "☕",
+      "couleur_debut": "#8B4513",
+      "couleur_fin": "#D2691E",
+      "galenique": "Chai Latte",
+      "indication": "Beauté de la peau",
+      "composition": "Reggenerate™",
+      "url_site": "https://www.supernature.com",
+      "actif": true
+    },
+    {
+      "id": 7,
+      "nom_entreprise": "EPYCURE",
+      "nom_produit": "Cure Peau Repulpée",
+      "emoji": "🎭",
+      "couleur_debut": "#000000",
+      "couleur_fin": "#FFFFFF",
+      "galenique": "Gélule",
+      "indication": "Beauté de la peau",
+      "composition": "Reggenerate™ + Bourrache + Vitamine C + Sélénium + Vitamine E + Zinc + Biotine + Vitamine B6",
+      "url_site": "https://www.epycure.com",
+      "actif": true
+    },
+    {
+      "id": 8,
+      "nom_entreprise": "KOTOR PHARMA",
+      "nom_produit": "Kotor Collagène",
+      "emoji": "🏺",
+      "couleur_debut": "#8B4513",
+      "couleur_fin": "#D2691E",
+      "galenique": "Gélule",
+      "indication": "Peau & Articulations",
+      "composition": "Reggenerate™ + Silicium végétal + Vitamine C + Glucosamine + Chondroïtine + Kératine",
+      "url_site": "https://www.kotorpharma.com",
+      "actif": true
+    },
+    {
+      "id": 9,
+      "nom_entreprise": "LEPIVITS",
+      "nom_produit": "Dermavits",
+      "emoji": "🌿",
+      "couleur_debut": "#90EE90",
+      "couleur_fin": "#98FB98",
+      "galenique": "Gélules",
+      "indication": "Beauté de la peau",
+      "composition": "Reggenerate™ + Vitamine C + Vitamine E",
+      "url_site": "https://www.lepivits.com",
+      "actif": false
+    }
+  ]
+}

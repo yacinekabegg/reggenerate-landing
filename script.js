@@ -42,6 +42,7 @@ document.addEventListener('DOMContentLoaded', function() {
     let lastScrollTop = 0;
     
     window.addEventListener('scroll', function() {
+        if (!navbar) return;
         const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
         
         if (scrollTop > 100) {
