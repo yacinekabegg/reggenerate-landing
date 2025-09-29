@@ -44,6 +44,13 @@ class ClientsManager {
     // Charger depuis Airtable
     async loadFromAirtable() {
         try {
+            // Récupérer le PAT depuis localStorage
+            const apiKey = localStorage.getItem('AIRTABLE_PAT');
+            if (!apiKey) {
+                throw new Error('AIRTABLE_PAT non trouvé dans localStorage. Veuillez le définir.');
+            }
+            this.airtableConfig.apiKey = apiKey;
+
             // Construire l'URL en utilisant soit l'ID de table (commence par 'tbl'), soit le nom encodé
             const tableIdentifier = this.airtableConfig.tableId;
             const isTableId = typeof tableIdentifier === 'string' && tableIdentifier.startsWith('tbl');
@@ -86,9 +93,10 @@ class ClientsManager {
                     actif: record.fields.Actif
                 }));
             
+            console.log(`✅ ${this.clients.length} clients actifs filtrés depuis Airtable`);
             return this.clients;
         } catch (error) {
-            console.error('Erreur lors du chargement depuis Airtable:', error);
+            console.error('❌ Erreur lors du chargement depuis Airtable:', error);
             // Fallback vers JSON en cas d'erreur
             return await this.loadFromJSON();
         }
